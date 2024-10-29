@@ -1,0 +1,46 @@
+{% extends "./index.html" %}
+
+{% block Article1 %}
+
+{% load static %}
+<!-- templates/contact.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+        <section>
+            <p>
+                <h1>La gestion financière</h1> 
+                <h2>Qu’est ce que la gestion financière ?</h2>
+        <p>La gestion financière s’intéresse aux décisions financières prises par les entreprises dans un but de maximisation de valeur sur le long terme. C’est une activité qui consiste en somme à gérer les ressources en argent et en actifs pour atteindre ses objectifs économiques.</p>        
+        
+        <h2>Quels sont les grands domaines de la gestion financière ?</h2>  
+        <p>Pour se faire, la gestion financière s’appui sur la gestion des ressources financières, l’analyse financière, l’évaluation des investissements, le cout du capital ainsi que la politique des dividendes.</p>
+        
+        <h2>Qu’est ce que la gestion financière peut apporter à votre entreprise ? </h2>
+        <p>Une bonne gestion financière peut vous apporter vision claire de la santé financière de votre entreprise afin de maximiser la valorisation future de votre entreprise.
+            Au travers d’une gestion financière rigoureuse, OptiRisk vous accompagne dans la budgétisation, la gestion des flux de trésorerie et l’investissement de vos projets 
+            Et met à votre disposition les outils adéquat à une prise de décision éclairée</p>
+        
+        <p>Sources :
+            https://www.psbedu.paris/fr/actus/quest-ce-que-la-finance-dentreprise
+            https://www.ey.com/fr_fr/services/strategy-transactions/capital-allocation-services</p>
+        
+        
+            </p>
+        </section>
+    <footer>
+        <p>&copy; 2024 OptiRisk Analytics. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
+
+{% endblock %}
+

@@ -1,0 +1,96 @@
+{% extends "./index.html" %}
+
+{% block services %}
+{% load static %}
+<!-- templates/services.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <section>
+        <!-- PRICING -->
+
+        <div class="container text-center">
+            <div class="row">
+                <h1>Bilan d’activité et analyse de performance </h1>
+            </div>
+            <div class="row">
+                <div class="col col-lg-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">BASIC</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Continuer avec le tarif basic</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col col-lg-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">INTERMEDIARY</h5>
+                      <p class="card-text"><div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Default checkbox
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Checked checkbox
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminateDisabled" disabled>
+                        <label class="form-check-label" for="flexCheckIndeterminateDisabled">
+                          Disabled indeterminate checkbox
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+                        <label class="form-check-label" for="flexCheckDisabled">
+                          Disabled checkbox
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled>
+                        <label class="form-check-label" for="flexCheckCheckedDisabled">
+                          Disabled checked checkbox
+                        </label>
+                      </div>
+                    </p>
+                      <a href="#" class="btn btn-primary">Continuer avec le tarif intermediaire</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col col-lg-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">PREMIUM</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Continuer avec le tarif premium</a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+        </div>
+
+        <!-- ------ -->
+
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 OptiRisk Analytics. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
+
+{% endblock %}
