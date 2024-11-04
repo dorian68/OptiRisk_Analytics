@@ -8,13 +8,11 @@ def home2(request):
 def services(request):
     return render(request, 'services.html')
 
-def article1(request):
-    return render(request, 'article1.html')
-
-"""def case_studies(request):
-    case_studies = CaseStudy.objects.all()
-    return render(request, 'case_studies.html', {'case_studies': case_studies})
-"""
+def corpoFinance(request):
+    return render(request, 'corpoFinance.html')
 
 def contact(request):
     return render(request, 'contact.html')
+
+def ratesAnalysis(request):
+    return render(request, 'ratesAnalysis.html')

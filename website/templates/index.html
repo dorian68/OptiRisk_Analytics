@@ -17,18 +17,18 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">OptiRisk Analytics</a>
+              <a class="navbar-brand" href="{% url 'home2' %}">OptiRisk Analytics</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                  <li class="nav-item">
+                  <!--<li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'home2' %}" style="color:white;">Accueil</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'services' %}" style="color:white;">Tarifs</a>
-                  </li>
+                  </li>-->
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'contact' %}" style="color:white;">Contact</a>
                   </li>
@@ -36,7 +36,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;">
                       Blog                    </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{% url 'article1' %}">La gestion financière</a></li>
+                      <li><a class="dropdown-item" href="{% url 'corpoFinance' %}">La gestion financière</a></li>
                       <li><a class="dropdown-item" href="#">Another action</a></li>
                       <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
@@ -51,6 +51,8 @@
         {% block services %}{% endblock %}
         {% block contact %}{% endblock %}
         {% block home2 %}{% endblock %}
+        {% block ratesAnalysis %}{% endblock %}
+        {% block article1 %}{% endblock %}
     </section>
 
     <footer>
