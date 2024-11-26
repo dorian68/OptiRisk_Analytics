@@ -9,4 +9,5 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('corpoFinance/', views.corpoFinance, name='corpoFinance'),   
     path('ratesAnalysis/',views.ratesAnalysis, name='ratesAnalysis'),
+    path('meanReversion/',views.meanReversion, name='meanReversion'),
 ]

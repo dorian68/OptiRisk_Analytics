@@ -34,7 +34,7 @@
                       Blog                    </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{% url 'corpoFinance' %}">La gestion financière</a></li>
-                      <li><a class="dropdown-item" href="#">Article 2 !!-- work in progress --!!</a></li>
+                      <li><a class="dropdown-item" href="{% url 'meanReversion' %}">Optimisation de la Mean reversion en HPC</a></li>
                       <li><a class="dropdown-item" href="#">Article 3 !!-- work in progress --!!</a></li>
                     </ul>
                   </li>
@@ -53,6 +53,7 @@
         {% block home2 %}{% endblock %}
         {% block ratesAnalysis %}{% endblock %}
         {% block article1 %}{% endblock %}
+        {% block meanReversionc %}{% endblock %}
     </section>
 
     <footer>

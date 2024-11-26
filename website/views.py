@@ -16,3 +16,6 @@ def contact(request):
 
 def ratesAnalysis(request):
     return render(request, 'ratesAnalysis.html')
+
+def meanReversion(request):
+    return render(request, 'meanReversion.html')

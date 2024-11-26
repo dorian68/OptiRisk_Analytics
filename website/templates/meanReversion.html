@@ -1,0 +1,66 @@
+{% extends "./index.html"%}
+
+{% block meanReversion %}
+
+{% load static %}
+<!-- templates/contact.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+        <section>
+            <p>
+                <h1>Optimisation de la stratégie "Mean reversion" en environnement haute performance</h1> 
+        <p>Dans cet article, nous explorons la stratégie de mean reversion appliquée aux marchés financiers, et son implémentation en Python dans un environnement de calcul haute performance (HPC) à l'aide de Dask. Nous démontrons également comment backtester et optimiser cette stratégie pour maximiser ses performances.</p>        
+        
+        <h2>1. Stratégie Mean Reversion</h2>  
+        <h3>Qu'est-ce que c'est?</h3>
+        <p>
+            La stratégie mean reversion repose sur l’idée que les prix des actifs financiers fluctuent autour d’une moyenne à long terme. Lorsqu’un prix s’éloigne trop de cette moyenne, la stratégie suppose un retour probable vers la moyenne, offrant des opportunités d'achat (survente) ou de vente (surachat).
+        </p>
+        <h3>Définition de la stratégie</h3>
+        <p>
+            Pour implémenter une stratégie de mean reversion :
+            <li>1.	Définir la moyenne de référence : Cela peut être une moyenne mobile (SMA/EMA) ou une valeur statistique calculée.</li>
+            <li>2. 	Déterminer les signaux d'achat ou de vente : 
+                <li>o	Achat : Lorsque le prix est significativement en dessous de la moyenne (sous-évalué).</li>
+                <li>o	Vente : Lorsque le prix est significativement au-dessus de la moyenne (sur-évalué).</li>
+            </li>
+            <li>3.	Ajouter des filtres pour renforcer les signaux, comme le RSI, les Bandes de Bollinger, ou les volumes.</li>
+        </p>
+        <p>
+            Indicateurs couramment utilisés
+            <li>•	RSI (Relative Strength Index) : Mesure la vitesse et l’amplitude des mouvements de prix pour détecter des niveaux de surachat/survente.</li>
+            <li>•	Moyennes mobiles : Les SMA et EMA sont essentielles pour définir la moyenne de référence.</li>
+            <li>•	Bandes de Bollinger : Identifient les écarts significatifs autour de la moyenne.</li>
+            <li>•	Volumes : Utilisés pour confirmer la validité des signaux.</li>
+            <li>•	ATX (Average True Range) : Indique la volatilité du marché.</li>
+        </p>
+        <p>
+            <h2>2. Configuration de l'environnement HPC</h2>
+            Dask est une bibliothèque Python conçue pour le calcul distribué. Elle permet de traiter efficacement de grandes quantités de données en exploitant le multi-threading ou le multi-processing.
+        </p>
+
+        
+               
+        <p>Sources :
+            https://www.psbedu.paris/fr/actus/quest-ce-que-la-finance-dentreprise
+            https://www.ey.com/fr_fr/services/strategy-transactions/capital-allocation-services</p>
+        
+        
+            </p>
+        </section>
+    <footer>
+        <p>&copy; 2024 OptiRisk Analytics. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
+
+{% endblock %}
