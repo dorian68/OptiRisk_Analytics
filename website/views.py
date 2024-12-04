@@ -8,6 +8,15 @@ def home2(request):
 def services(request):
     return render(request, 'services.html')
 
+def serviceFirst(request):
+    return render(request, 'serviceFirst.html')
+
+def serviceSecond(request):
+    return render(request, 'serviceSecond.html')
+
+def serviceThird(request):
+    return render(request, 'serviceThird.html')
+
 def corpoFinance(request):
     return render(request, 'corpoFinance.html')
 
