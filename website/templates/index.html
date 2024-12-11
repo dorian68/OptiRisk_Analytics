@@ -32,7 +32,7 @@
                     <a class="nav-link" href="{% url 'services' %}" style="color:white;">Tarifs</a>
                   </li>-->
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}" style="color:white;">A propos</a>
+                    <a class="nav-link" href="{% url 'about' %}" style="color:white;">A propos</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'contact' %}" style="color:white;">Simulateur de risques</a>
@@ -61,6 +61,7 @@
     <section>
         {% block contact %}{% endblock %}
         {% block home2 %}{% endblock %}
+        {% block about %}{% endblock %}
         {% block ratesAnalysis %}{% endblock %}
         {% block corpoFinance %}{% endblock %}
         {% block meanReversion %}{% endblock %}

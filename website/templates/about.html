@@ -1,0 +1,99 @@
+{% extends "./index.html" %}
+
+{% block about %}
+{% load static %}
+<!-- templates/services.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <section>
+        <div class="row mb-5"></div>
+        <!-- PRICING -->
+        <div class="row">
+            <h2 class="text-center"><strong>Optirisk Analytics - la liberté de pouvoir piloter votre avenir</strong></h2>
+        <div>
+        <div class="container mt-4">
+            <!-- VISION OPTIRISK -->
+            <div class="row row-cols-1 row-cols-lg-2 m-5">
+                <div class="col">
+                    <h4>Optirisk - Faire le choix de piloter votre futur</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                       finibus nibh in neque volutpat, sed lobortis nisi finibus. 
+                       Donec mattis lectus arcu, in commodo arcu placerat ac. Pellentesque 
+                       porta dictum nibh, eget commodo mi dignissim eget. Pellentesque vitae 
+                       lorem volutpat, aliquam lectus id, semper turpis. Pellentesque odio augue,
+                       suscipit ac velit pellentesque, vehicula aliquam odio. Lorem ipsum dolor sit
+                       amet, consectetur adipiscing elit. Suspendisse eros neque, lacinia vitae 
+                       tincidunt eu, imperdiet finibus magna. Curabitur nunc tortor, varius sit 
+                       amet elit sed, ultricies porta arcu. Aliquam quis odio et ipsum finibus 
+                       pellentesque non at enim.</p>
+                </div>
+                <div class="col">
+                    <img src="../static/logo_optirisk_analytics.PNG" class="img-fluid rounded-pill" style="width:100%">                   
+                </div>
+            </div>
+            <!-- END VISION OPTIRISK -->
+            <div class="row">
+            <!-- PRESENTATION DORIAN - ETUDE -->
+            <div class="row row-cols-1 row-cols-lg-2 m-5">
+                <div class="col">
+                    <img src="../static/new-york-wall-street.jpg" class="img-fluid rounded-pill" style="width:100%">
+                </div>
+                <div class="col px-5">
+                    <h4>Dorian - fondateur de Optirisk Analytics</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                       finibus nibh in neque volutpat, sed lobortis nisi finibus. 
+                       Donec mattis lectus arcu, in commodo arcu placerat ac. Pellentesque 
+                       porta dictum nibh, eget commodo mi dignissim eget. Pellentesque vitae 
+                       lorem volutpat, aliquam lectus id, semper turpis. Pellentesque odio augue,
+                       suscipit ac velit pellentesque, vehicula aliquam odio. Lorem ipsum dolor sit
+                       amet, consectetur adipiscing elit. Suspendisse eros neque, lacinia vitae 
+                       tincidunt eu, imperdiet finibus magna. Curabitur nunc tortor, varius sit 
+                       amet elit sed, ultricies porta arcu. Aliquam quis odio et ipsum finibus 
+                       pellentesque non at enim.</p>
+                </div>
+            </div>
+            <!-- END PRESENTATION DORIAN - ETUDE -->
+             <div class="row">
+            <!-- PRESENTATION DORIAN - PRO -->
+            <div class="row row-cols-1 row-cols-lg-2 m-5">
+                <div class="col px-5">
+                    <h4>Dorian - Son parcours</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                       finibus nibh in neque volutpat, sed lobortis nisi finibus. 
+                       Donec mattis lectus arcu, in commodo arcu placerat ac. Pellentesque 
+                       porta dictum nibh, eget commodo mi dignissim eget. Pellentesque vitae 
+                       lorem volutpat, aliquam lectus id, semper turpis. Pellentesque odio augue,
+                       suscipit ac velit pellentesque, vehicula aliquam odio. Lorem ipsum dolor sit
+                       amet, consectetur adipiscing elit. Suspendisse eros neque, lacinia vitae 
+                       tincidunt eu, imperdiet finibus magna. Curabitur nunc tortor, varius sit 
+                       amet elit sed, ultricies porta arcu. Aliquam quis odio et ipsum finibus 
+                       pellentesque non at enim.</p>
+                </div>
+                <div class="col px-5">
+                    <img src="https://cdn.jobs.makesense.org/projects/9561/project/1716457565390lwj2ilse.webp" class="img-fluid rounded-pill" style="width:100%">
+                </div>
+            </div>
+        </div>
+        <!-- END PRESENTATION DORIAN - PRO -->
+        <div class="row">
+        <!-- ------ -->
+
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 OptiRisk Analytics. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
+
+{% endblock %}
