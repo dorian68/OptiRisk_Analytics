@@ -14,5 +14,6 @@ urlpatterns = [
     path('ratesAnalysis/',views.ratesAnalysis, name='ratesAnalysis'),
     path('meanReversion/',views.meanReversion, name='meanReversion'),
     path('aPropos/', views.aPropos, name='aPropos'),
+    path('riskCalculator/', views.riskCalculator, name='riskCalculator'),
 ]
 

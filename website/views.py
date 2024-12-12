@@ -31,3 +31,6 @@ def ratesAnalysis(request):
 
 def meanReversion(request):
     return render(request, 'meanReversion.html')
+
+def riskCalculator(request):
+    return render(request, 'riskCalculator.html')
