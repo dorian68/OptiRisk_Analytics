@@ -13,6 +13,6 @@ urlpatterns = [
     path('corpoFinance/', views.corpoFinance, name='corpoFinance'),   
     path('ratesAnalysis/',views.ratesAnalysis, name='ratesAnalysis'),
     path('meanReversion/',views.meanReversion, name='meanReversion'),
-    path('about/', views.about, name='about'),
+    path('aPropos/', views.aPropos, name='aPropos'),
 ]
 
