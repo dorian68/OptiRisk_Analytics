@@ -17,7 +17,8 @@
 <body>
     <header>
         <!--<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-fixed-top">-->
-          <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2E86C1;">
+          <!--<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2E86C1;">-->
+          <nav class="navbar fixed-top navbar-expand-md navbar-light bg-faded" style="background-image:linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)), url('../static/home_pageTWO.jpg');background-attachment: fixed;background-position: auto,center top;">
             <div class="container-fluid">
               <a class="navbar-brand" href="{% url 'home2' %}" style="color: white;">OptiRisk Analytics</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,9 +66,8 @@
         {% block serviceThird %}{% endblock %}
         {% block aPropos %}{% endblock %}
     </section>
-
-    <footer>
-        <p>&copy; 2024 OptiRisk Analytics. Tous droits réservés.</p>
-    </footer>
 </body>
+<footer style="top: absolute;background-image: url(../home_pageTWO.jpg);">
+  <p>&copy; 2024 OptiRisk Analytics. Tous droits réservés.</p>
+</footer>
 </html>
