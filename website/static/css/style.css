@@ -13,7 +13,6 @@ header {
     text-align: center;
 }
 
-
 nav a {
     color: rgb(255, 255, 255);
     margin: 0 10px;
@@ -30,6 +29,22 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Empêche le scroll horizontal */
+body, html {
+  overflow-x: hidden; /* Cache le débordement horizontal */
+  margin: 0; /* Supprime les marges par défaut du body */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Assurez-vous que les enfants ne dépassent pas la largeur */
+.container-fluid {
+  max-width: 100%; /* Empêche le conteneur de dépasser la largeur */
+  overflow-x: hidden;
+}
+
+
 
 .hex.image {
     width: 100%;
