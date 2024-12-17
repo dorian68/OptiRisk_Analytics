@@ -15,10 +15,36 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <section>
+    <section>        
         <div class="constainer">
             <h1 class="text-center">EN CONSTRUCTION</h1>
         </div>
+        <div class="container my-4">
+            <h4 class="text-white">What If...</h4>
+            <label class="text-white">We Decrease Our Return Rate (%) to:</label>
+            <div class="conatainer d-flex align-items-center">
+                <!-- Input pour saisir la valeur -->
+                <input type="number" id="sliderValue" class="form-control me-3" min="0" max="100" value="42" style="width: 80px;">
+                <!-- Slider pour ajuster la valeur -->
+                <input type="range" id="slider" class="form-range" min="0" max="100" value="42">
+                <script>
+                    const slider = document.getElementById('slider');
+                    const sliderValue = document.getElementById('sliderValue');
+                
+                    // Synchronise la valeur de l'input avec le slider
+                    slider.addEventListener('input', () => {
+                        sliderValue.value = slider.value;
+                    });
+                
+                    // Synchronise la valeur du slider avec l'input
+                    sliderValue.addEventListener('input', () => {
+                        slider.value = sliderValue.value;
+                    });
+                </script>
+            </div>
+        </div>
+        
+
     </section>
 </body>
 </html>
