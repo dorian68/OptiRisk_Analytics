@@ -16,69 +16,90 @@
     </div>
   </div>-->
 
-        <style>
+<style>
 
 .middle_image {
-  background-image: url('../static/outil_bureautique.jpg');
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-  width: 100%;
-  height: 300px;
+background-image: url('../static/outil_bureautique.jpg');
+background-position: center;
+background-attachment: fixed;
+position: relative;
+width: 100%;
+height: 300px;
 }
-            /* Style par défaut pour l'image */
+
+.middle_image2 {
+background-image: url('../static/modern_tool.jpg');
+background-position: center;
+background-attachment: fixed;
+position: relative;
+width: 110%;
+height: 300px;
+zoom: 100%;
+}
+
+.middle_image3 {
+background-image: url('../static/dataBase.jpg');
+background-position: center;
+background-attachment: fixed;
+position: relative;
+width: 110%;
+height: 300px;
+zoom: 100%;
+}
+
+    /* Style par défaut pour l'image */
 .front_img {
-    background-size: contain;
-    background-position: center;
-    background-image: url('../static/home_pageONE.jpg');
-    position: relative;
-    width: 100%;
-    height: 700px;
-    background-attachment: fixed;
-    overflow: hidden; /* Empêche les débordements */
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    text-align: center;
-    padding: 20px; /* Ajoute un padding pour éviter les débords */
-    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+background-size: contain;
+background-position: center;
+background-image: url('../static/home_pageONE.jpg');
+position: relative;
+width: 100%;
+height: 700px;
+background-attachment: fixed;
+overflow: hidden; /* Empêche les débordements */
+display: flex;
+justify-content: center; /* Centre horizontalement */
+align-items: center; /* Centre verticalement */
+text-align: center;
+padding: 20px; /* Ajoute un padding pour éviter les débords */
+box-sizing: border-box; /* Inclut le padding dans la largeur totale */
 }
 
 /* Style du texte */
 .front_img .text-container {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    max-width: 90%; /* Largeur maximale pour éviter les dépassements */
-    overflow: hidden; /* Empêche les débordements */
+color: white;
+font-size: 24px;
+font-weight: bold;
+max-width: 90%; /* Largeur maximale pour éviter les dépassements */
+overflow: hidden; /* Empêche les débordements */
 }
 
 /* Adaptation pour les écrans mobiles */
 @media (max-width: 768px) {
-    .front_img {
-        background-size: cover; /* Zoom pour petits écrans */
-        background-attachment: fixed; /* Désactive l'effet fixe */
-        height: 100vh; /* Ajuste la hauteur */
-    }
-
-    .front_img .text-container {
-        font-size: 22px; /* Réduit la taille du texte */
-        padding: 10px; /* Ajoute un léger padding */
-        text-align: center; /* Centre le texte horizontalement */
-    }
-
-    .front_img .text-container h1 {
-        font-size: 29px; /* Réduit la taille du titre */
-        font-weight: bold;
-    }
-
-    .carousel-inner .p {
-        font-size: 22px; /* Réduit la taille du texte */
-        padding: 10px; /* Ajoute un léger padding */
-        text-align: center; /* Centre le texte horizontalement */
-    }
+.front_img {
+background-size: cover; /* Zoom pour petits écrans */
+background-attachment: fixed; /* Désactive l'effet fixe */
+height: 100vh; /* Ajuste la hauteur */
 }
-        </style>
+
+.front_img .text-container {
+font-size: 22px; /* Réduit la taille du texte */
+padding: 10px; /* Ajoute un léger padding */
+text-align: center; /* Centre le texte horizontalement */
+}
+
+.front_img .text-container h1 {
+font-size: 29px; /* Réduit la taille du titre */
+font-weight: bold;
+}
+
+.carousel-inner .p {
+font-size: 22px; /* Réduit la taille du texte */
+padding: 10px; /* Ajoute un léger padding */
+text-align: center; /* Centre le texte horizontalement */
+}
+}
+</style>
 
 <div class="container-fluid front_img">
     <div class="text-container">
@@ -222,16 +243,13 @@
     </div>
 </div>
 
+<!-- FIRST FIXED IMAGE -->
 <div class="container-fluid middle_image mt-4">
 
 </div>
 
 <div class="container text-left mt-4">
 
-    <!--SAPCING-->
-    <div class="row mt-4">
-
-    </div>
     <!--SAPCING-->
     <div class="row mt-4">
     
@@ -249,10 +267,15 @@
             <a type="button" class="btn btn-outline-primary" href="{% url 'serviceFirst' %}">Voir plus</a>
         </div>
     </div>
-    <!--SAPCING-->
-    <div class="row mt-4">
-        
-    </div>
+
+ </div>
+
+<!-- SECOND FIXED IMAGE -->
+<div class="container-fluid middle_image2 mt-4">
+
+</div>
+
+<div class="container text-left mt-4">
     <!--SAPCING-->
     <div class="row mt-4">
     
@@ -268,18 +291,21 @@
             <img src="../static/outil_bureautique2.png" class="img-fluid"  style="width:100%"></img>
         </div>
     </div>
+</div>
 
+<!-- THIRD FIXED IMAGE -->
+<div class="container-fluid middle_image3 mt-4">
+
+</div>
+
+<div class="container text-left mt-4">
+    
     <!--SAPCING-->
     <div class="row mt-4">
     
     </div>
-    <!--SAPCING-->
-    <div class="row mt-4">
-    
-    </div>
-
+    <!-- Prestation 3-->
     <div class="row row-cols-1 row-cols-md-3 mt-4">
-        <!-- Prestation 3-->
         <div class="col mx-auto">
             <img src="https://www.eurotechconseil.com/wp-content/uploads/2023/12/evolution-data.webp" class="img-fluid" style="width:100%"></img>
         </div>
@@ -293,12 +319,24 @@
             <a type="button" class="btn btn-outline-primary" href="{% url 'serviceThird' %}">Voir plus</a>
         </div>        
     </div>
+
+    
+
     <!--SAPCING-->
     <div class="row mt-4">
-    
-    </div>
+
+    </div>  
+
+
+
     <!--SAPCING-->
-    <div class="row my-4">
+    <div class="row mt-4">
+
+    </div>
+
+    
+    <!--SAPCING-->
+    <div class="row mt-4">
     
     </div>
 </div>
