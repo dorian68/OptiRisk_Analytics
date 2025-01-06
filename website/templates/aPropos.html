@@ -24,7 +24,7 @@
             background-attachment: fixed;
             position: relative;
             width: 110%;
-            height: 300px;
+            height: 400px;
             zoom: 100%;
             }
 
@@ -34,15 +34,29 @@
             background-attachment: fixed;
             position: relative;
             width: 110%;
-            height: 300px;
+            height: 400px;
             zoom: 100%;
             }
+
+            .optirisk_container {
+                height: 450px;
+            }
+
+            @media (max-width: 768px) {
+            .optirisk_img {
+                height: 70%; /* Ajuste la hauteur */
+                margin-bottom: 100px;
+            }
+            .optirisk_container {
+                height: 80vh;
+            }
+        }
         </style>
         <!-- PRICING -->
-        <div class="row mt-5">
+        <div class="row my-5">
             <h2 class="text-center" style="color: #2E86C1;"><strong>Optirisk Analytics - la liberté de pouvoir piloter votre avenir</strong></h2>
         <div>
-        <div class="container mt-4" style="height: 60vh;">
+        <div class="optirisk_container container my-4">
 
             <!-- VISION OPTIRISK -->
             <div class="row row-cols-1 row-cols-lg-2 mt-5">
@@ -59,7 +73,7 @@
                         l'autonomie et la transparence au cœur de notre démarche.</p>
                 </div>
                 <div class="col mx-auto">
-                    <img src="../static/logo_optirisk_analytics.PNG" class="img-fluid rounded-pill" style="width:100%">                   
+                    <img src="../static/logo_optirisk_analytics.PNG" class="optirisk_img img-fluid rounded-pill" style="width:100%">                   
                 </div>
             </div>
             <!-- END VISION OPTIRISK -->
