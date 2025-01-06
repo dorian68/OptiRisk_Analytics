@@ -16,8 +16,8 @@
 </head>
 <body>
     <section>
+        <div class="container" style="height: 80vh;margin-top: 50px;">
         <h2>Envoyez-nous un message</h2>
-        <div class="container" style="height: 100vh;">
             <form action="/send-message/" method="post">
                 {% csrf_token %}
                 <label for="name">Nom:</label>

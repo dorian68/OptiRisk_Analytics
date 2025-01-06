@@ -8,6 +8,9 @@ def home2(request):
 def about(request):
     return render(request, 'aPropos.html')
 
+def articles(request):
+    return render(request,'articles.html')
+
 def services(request):
     return render(request, 'services.html')
 

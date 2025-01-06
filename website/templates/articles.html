@@ -1,0 +1,52 @@
+{% extends "./index.html" %}
+
+{% block articles %}
+
+{% load static %}
+<!-- templates/services.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <section>
+        <div class="container" style="height: 80vh;margin-top: 50px;">
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+                <div class="col mx-auto">
+                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 7%;">
+                        <h5 class="card-header text-center">La gestion financière</h5>
+                        <div class="card-body">   
+                            <p class="card-text">
+                            <!--PRESTATIONS BASIQUE-->
+
+                                Suspendisse venenatis commodo justo a feugiat. Duis vel pretium mauris. Proin in nisl ac ipsum semper tempor.
+                            <!--FIN PRESTATIONS BASIQUE-->
+                            </p>
+                        </div>
+                        </div>
+                </div>
+                <div class="col mx-auto">
+                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 7%;">
+                        <h5 class="card-header text-center">Optimisation de la Mean reversion en HPC</h5>
+                        <div class="card-body">   
+                            <p class="card-text">
+   
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis libero vel nunc dictum egestas. <!--FIN PRESTATIONS BASIQUE-->
+                            </p>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+</body>
+</html>
+
+{% endblock %}
