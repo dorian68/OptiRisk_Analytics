@@ -77,3 +77,9 @@ body, html {
     border-bottom: 100px solid white;
     border-top: 100px solid white;
   }
+
+  @media (max-width: 768px) {
+    .custom-spacing .col{
+        margin-bottom: 50px;
+    }
+  }
