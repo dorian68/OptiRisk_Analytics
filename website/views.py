@@ -5,32 +5,32 @@ from django.shortcuts import render
 def home2(request):
     return render(request, 'home2.html')
 
-def aPropos(request):
+def about(request):
     return render(request, 'aPropos.html')
 
 def services(request):
     return render(request, 'services.html')
 
-def serviceFirst(request):
-    return render(request, 'serviceFirst.html')
+def service_analysis(request):
+    return render(request, 'service_analysis.html')
 
-def serviceSecond(request):
-    return render(request, 'serviceSecond.html')
+def service_dev_tool(request):
+    return render(request, 'service_dev_tool.html')
 
-def serviceThird(request):
-    return render(request, 'serviceThird.html')
+def service_data_management(request):
+    return render(request, 'service_data_management.html')
 
-def corpoFinance(request):
+def article_corpo_finance(request):
     return render(request, 'corpoFinance.html')
 
 def contact(request):
     return render(request, 'contact.html')
 
-def ratesAnalysis(request):
+def rates_analysis(request):
     return render(request, 'ratesAnalysis.html')
 
-def meanReversion(request):
+def article_mean_reversion(request):
     return render(request, 'meanReversion.html')
 
-def riskCalculator(request):
+def tool_risk_calculator(request):
     return render(request, 'riskCalculator.html')
