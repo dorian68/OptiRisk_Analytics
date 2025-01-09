@@ -23,7 +23,7 @@ def service_dev_tool(request):
 def service_data_management(request):
     return render(request, 'service_data_management.html')
 
-def article_corpo_finance(request):
+def corpoFinance(request):
     return render(request, 'corpoFinance.html')
 
 def contact(request):
@@ -32,8 +32,19 @@ def contact(request):
 def rates_analysis(request):
     return render(request, 'ratesAnalysis.html')
 
-def article_mean_reversion(request):
+def meanReversion(request):
     return render(request, 'meanReversion.html')
 
 def tool_risk_calculator(request):
     return render(request, 'riskCalculator.html')
+
+def article_automation_for_small_business(request):
+    return render(request, 'article_automation_for_small_business.html')
+
+def article_ml_for_small_business(request):
+    return render(request, 'article_ml_for_small_business.html')
+
+def article_risk_management(request):
+    return render(request, 'article_risk_management.html')
+
+

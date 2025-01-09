@@ -16,37 +16,83 @@
 </head>
 <body>
     <section>
-        <div class="container" style="height: 80vh;margin-top: 50px;">
+        <div class="container my-4" style="height: 100vh;">
             <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
                 <div class="col mx-auto">
-                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 7%;">
+                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 25px 25px 25px 25px;">
                         <h5 class="card-header text-center">La gestion financière</h5>
                         <div class="card-body">   
                             <p class="card-text">
                             <!--PRESTATIONS BASIQUE-->
 
-                                Suspendisse venenatis commodo justo a feugiat. Duis vel pretium mauris. Proin in nisl ac ipsum semper tempor.
-                            <!--FIN PRESTATIONS BASIQUE-->
+                            Une introduction aux principes fondamentaux de la gestion financière, incluant la planification, la gestion des flux de trésorerie, la maîtrise des coûts et l’optimisation des investissements. Cet article met en avant l’importance d’une bonne gestion financière pour assurer la stabilité et la croissance à long terme des entreprises.                            <!--FIN PRESTATIONS BASIQUE-->
                             </p>
+                            <a type="button" class="btn btn-outline-primary" href="{% url 'corpoFinance' %}">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mx-auto">
+                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 25px 25px 25px 25px;">
+                        <h5 class="card-header text-center">Optimisation de la stratégie d'inversion de moyenne en HPC</h5>
+                        <div class="card-body">   
+                            <p class="card-text">
+   
+                                Une exploration des stratégies d’investissement basées sur le concept de mean reversion (retour à la moyenne), combinées à des technologies de calcul haute performance (HPC). L’article présente comment l’utilisation de techniques avancées, telles que les algorithmes quantitatifs et le machine learning, permet d’identifier des opportunités d’arbitrage et d’optimiser les performances en trading algorithmique.                            </p>
+                            <a type="button" class="btn btn-outline-primary" href="{% url 'meanReversion' %}">Voir plus</a>
                         </div>
                         </div>
                 </div>
                 <div class="col mx-auto">
-                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 7%;">
-                        <h5 class="card-header text-center">Optimisation de la Mean reversion en HPC</h5>
+                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 25px 25px 25px 25px;">
+                        <h5 class="card-header text-center">La gestion des risques financiers</h5>
                         <div class="card-body">   
                             <p class="card-text">
-   
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis libero vel nunc dictum egestas. <!--FIN PRESTATIONS BASIQUE-->
+                            <!--PRESTATIONS BASIQUE-->
+
+                            Une présentation des outils et techniques permettant aux entreprises d’anticiper, de mesurer et de gérer les risques financiers. L’article aborde les risques de marché, de crédit, de liquidité et opérationnels, tout en montrant comment une gestion proactive peut limiter les pertes financières et préserver la santé économique de l’entreprise.                            <!--FIN PRESTATIONS BASIQUE-->
                             </p>
+                            <a type="button" class="btn btn-outline-primary" href="{% url 'article_automation_for_small_business' %}">Voir plus</a>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+                <div class="col mx-auto">
+                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 25px 25px 25px 25px;">
+                        <h5 class="card-header text-center">Les bénéfices d'une bonne gestion financière</h5>
+                        <div class="card-body">   
+                            <p class="card-text">
+                            <!--PRESTATIONS BASIQUE-->
+    
+                            Cet article met l’accent sur les avantages qu’une gestion financière efficace peut offrir aux entreprises, notamment : l’amélioration de la rentabilité, une meilleure allocation des ressources, la réduction des risques, et une capacité accrue à se développer et à s’adapter aux changements économiques. Il est particulièrement utile pour convaincre les dirigeants de l'importance d'investir dans des solutions professionnelles.                            <!--FIN PRESTATIONS BASIQUE-->
+                            </p>
+                            <a type="button" class="btn btn-outline-primary" href="{% url 'article_risk_management' %}">Voir plus</a>
                         </div>
+                    </div>
+                </div>
+                <div class="col mx-auto">
+                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 25px 25px 25px 25px;">
+                        <h5 class="card-header text-center">L'apport du machine learning aux petites et moyennes entreprises guadeloupéennes</h5>
+                        <div class="card-body">   
+                            <p class="card-text">
+                            <!--PRESTATIONS BASIQUE-->
+    
+                            Un article qui explore comment le machine learning peut révolutionner les processus décisionnels des TPE et PME en Guadeloupe. Il explique comment ces technologies peuvent être utilisées pour optimiser les ventes, améliorer les prévisions financières, réduire les coûts et mieux comprendre les besoins des clients. L’article se concentre sur des exemples pratiques et accessibles pour des entreprises locales.                            <!--FIN PRESTATIONS BASIQUE-->
+                            </p>
+                            <a type="button" class="btn btn-outline-primary" href="{% url 'article_ml_for_small_business' %}">Voir plus</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
     </section>
 </body>
 </html>
 
 {% endblock %}
+
+
+
+
+
+
