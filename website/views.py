@@ -1,6 +1,7 @@
 # website/views.py
 from django.shortcuts import render
 #from .models import CaseStudy
+from django.http import JsonResponse
 
 def home2(request):
     return render(request, 'home2.html')
@@ -46,5 +47,24 @@ def article_ml_for_small_business(request):
 
 def article_risk_management(request):
     return render(request, 'article_risk_management.html')
+
+def chart_data(request):
+    # Exemple de données pour la courbe
+    data = {
+        "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        "datasets": [
+            {
+                "label": "Ventes",
+                "data": [12, 19, 3, 5, 2, 3],
+                "borderColor": "rgba(75, 192, 192, 1)",
+                "backgroundColor": "rgba(75, 192, 192, 0.2)",
+                "fill": True
+            }
+        ]
+    }
+    return JsonResponse(data)
+
+def chart_view(request):
+    return render(request, "chart.html")
 
 

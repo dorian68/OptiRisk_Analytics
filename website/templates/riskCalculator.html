@@ -13,10 +13,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <section>        
-        <div class="constainer" style="height: 80vh;margin-top: 50px;">
+        <div class="constainer" style="height: 100vh;margin-top: 50px;">
             <h1 class="text-center">EN CONSTRUCTION</h1>
         <div class="container my-4">
             <h4 class="text-white">What If...</h4>
@@ -41,6 +42,37 @@
                     });
                 </script>
             </div>
+            <div style="width: 70%; margin: 0 auto;">
+                <canvas id="myChart"></canvas>
+            </div>
+            <script>
+                async function loadChartData() {
+                    // Charger les données depuis l'API Django
+                    const response = await fetch("{% url 'chart_data' %}");
+                    const chartData = await response.json();
+        
+                    // Configuration du graphique
+                    const ctx = document.getElementById('myChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: chartData,
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Exemple de courbe'
+                                }
+                            }
+                        }
+                    });
+                }
+        
+                loadChartData();
+            </script>
         </div>
         
 
