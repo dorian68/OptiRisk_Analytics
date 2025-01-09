@@ -1,5 +1,8 @@
 <!-- templates/home.html -->
 {% load static %}
+
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -26,23 +29,35 @@
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}" style="color:white;">A propos</a>
+                    <a class="nav-link" href="{% url 'about' %}" style="color:white;">{% trans "A propos" %}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'tool_risk_calculator' %}" style="color:white;">Simulateur de risques</a>
+                    <a class="nav-link" href="{% url 'tool_risk_calculator' %}" style="color:white;">{% trans "Simulateur de risques" %}</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link" href="{% url 'articles' %}" style="color:white;">
-                      Blog                    </a>
+                      {% trans "Blog" %}                   </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'services' %}" style="color:white;">Tarifs</a>
+                    <a class="nav-link" href="{% url 'services' %}" style="color:white;">{% trans "Tarifs" %}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}" style="color:white;">Contact</a>
+                    <a class="nav-link" href="{% url 'contact' %}" style="color:white;">{% trans "Contact" %}</a>
                   </li>
                 </ul>
-              </div>   
+                <form class="form-inline ms-auto" action="{% url 'set_language' %}" method="post">
+                  {% csrf_token %}
+                  {% get_available_languages as LANGUAGES %}
+                  {% for lang_code, lang_name in LANGUAGES %}
+                      <button class="btn btn-link text-white" type="submit" name="language" value="{{ lang_code }}">
+                          {{ lang_name }}
+                      </button>
+                  {% endfor %}
+              </form>
+              </div> 
+
+              
+                        
           </div>    
         </nav>
   </header>

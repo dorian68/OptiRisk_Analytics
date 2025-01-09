@@ -13,29 +13,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_article.css' %}">
 </head>
 <body>
+    <style>
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .front_article {
+        background-size: contain;
+        background-position: center;
+        background-image: url('../static/ai-ml.jpg');
+        position: relative;
+        width: 100%;
+        height: 700px;
+        background-attachment: fixed;
+        overflow: hidden; /* Empêche les débordements */
+        display: flex;
+        justify-content: center; /* Centre horizontalement */
+        align-items: center; /* Centre verticalement */
+        text-align: center;
+        padding: 20px; /* Ajoute un padding pour éviter les débords */
+        box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    }
+    /* Style du texte */
+    .front_article .text-container {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        max-width: 90%; /* Largeur maximale pour éviter les dépassements */
+        overflow: hidden; /* Empêche les débordements */
+    }
+    </style>
     <section>
-            <div class="container">
-                <div class="row m-5">
-                <h3 class="tb-5"><strong>La gestion financière</strong></h3> 
-                <h4>Qu’est ce que la gestion financière ?</h4>
-        <p>La gestion financière s’intéresse aux décisions financières prises par les entreprises dans un but de maximisation de valeur sur le long terme. C’est une activité qui consiste en somme à gérer les ressources en argent et en actifs pour atteindre ses objectifs économiques.</p>        
-        
-        <h4>Quels sont les grands domaines de la gestion financière ?</h4>  
-        <p>Pour se faire, la gestion financière s’appui sur la gestion des ressources financières, l’analyse financière, l’évaluation des investissements, le cout du capital ainsi que la politique des dividendes.</p>
-        
-        <h4>Qu’est ce que la gestion financière peut apporter à votre entreprise ? </h4>
-        <p>Une bonne gestion financière peut vous apporter vision claire de la santé financière de votre entreprise afin de maximiser la valorisation future de votre entreprise.
-            Au travers d’une gestion financière rigoureuse, OptiRisk vous accompagne dans la budgétisation, la gestion des flux de trésorerie et l’investissement de vos projets 
-            Et met à votre disposition les outils adéquat à une prise de décision éclairée</p>
-        
-        <p>Sources :
-            https://www.psbedu.paris/fr/actus/quest-ce-que-la-finance-dentreprise
-            https://www.ey.com/fr_fr/services/strategy-transactions/capital-allocation-services</p>
-        
+        <div class="container-fluid front_article">
+            <div class="text-container">
+                <h2 class="tb-5"><strong>Les Principes Fondamentaux de la Gestion Financière</strong></h2> 
+                <p>La gestion financière est l’un des piliers essentiels de la réussite et de la pérennité des entreprises. Elle englobe un ensemble de pratiques et de stratégies visant à optimiser l’utilisation des ressources financières afin d’assurer la stabilité à court terme et la croissance à long terme. Cet article explore les principes fondamentaux de la gestion financière, tels que la planification, la gestion des flux de trésorerie, la maîtrise des coûts et l’optimisation des investissements.</p>
+            </div>
         </div>
+        <div class="container mb-4 pb-4 px-4 article_p" style="border-radius: 25px 25px 25px 25px;background-color: white;margin-top: 50px;">       
+            <div class="row justify-content-center">
+              <div class="col-6">
+        
+                <h2>La Planification Financière : Anticiper pour Mieux Décider</h2>
+                <p>La planification financière constitue la première étape vers une gestion efficace. Elle consiste à établir des objectifs financiers clairs et à définir les moyens nécessaires pour les atteindre. Une planification rigoureuse permet aux entreprises d’anticiper les besoins en liquidités, de prévoir les investissements futurs et d’aligner les décisions financières sur la stratégie globale de l’entreprise.</p>
+                <p>Un bon plan financier intègre des prévisions réalistes basées sur des données historiques et des analyses de marché. Il inclut également des scénarios alternatifs pour faire face aux imprévus, garantissant ainsi une flexibilité opérationnelle.</p>
+        
+                <h2>La Gestion des Flux de Trésorerie : La Clé de la Stabilité</h2>
+                <p>Les flux de trésorerie (ou cash flows) représentent les entrées et sorties d’argent d’une entreprise. Une gestion efficace de ces flux est cruciale pour éviter les situations de liquidité tendue. En surveillant régulièrement les flux de trésorerie, les entreprises peuvent identifier les périodes de tension, optimiser le calendrier des paiements et maximiser l’utilisation des excédents de trésorerie.</p>
+                <p>Des outils numériques, comme les tableaux de bord personnalisés ou les logiciels de gestion, permettent de suivre en temps réel les mouvements de trésorerie, offrant ainsi une meilleure visibilité et un contrôle accru.</p>
+        
+                <h2>La Maîtrise des Coûts : Une Gestion Prudente</h2>
+                <p>La maîtrise des coûts est un autre aspect fondamental de la gestion financière. Cela implique l’analyse régulière des dépenses pour identifier les inefficacités et réduire les coûts inutiles sans compromettre la qualité des produits ou services. Une approche proactive permet non seulement de maintenir la rentabilité, mais aussi de dégager des ressources pour financer des initiatives stratégiques.</p>
+                <p>L’élaboration de budgets détaillés et la mise en place d’indicateurs clés de performance (KPI) facilitent le suivi des coûts et la prise de décisions éclairées.</p>
+        
+                <h2>L’Optimisation des Investissements : Maximiser les Rendements</h2>
+                <p>Les décisions d’investissement jouent un rôle déterminant dans la croissance à long terme. Une évaluation rigoureuse des opportunités d’investissement, basée sur des outils comme la valeur actuelle nette (VAN) ou le taux de rendement interne (TRI), permet de choisir les projets offrant le meilleur rapport risque/rendement.</p>
+                <p>L’optimisation des investissements passe également par une diversification des actifs et une allocation stratégique des ressources pour minimiser les risques tout en maximisant les gains potentiels.</p>
+        
+                <h2>L’Importance d’une Bonne Gestion Financière</h2>
+                <p>Une gestion financière rigoureuse offre de nombreux avantages, notamment :</p>
+                <ul>
+                    <li><strong>La stabilité opérationnelle</strong> : en assurant une liquidité suffisante pour répondre aux besoins quotidiens.</li>
+                    <li><strong>La capacité à saisir des opportunités</strong> : grâce à une allocation optimale des ressources.</li>
+                    <li><strong>La résilience face aux crises</strong> : en s’appuyant sur une planification et des réserves solides.</li>
+                    <li><strong>La confiance des parties prenantes</strong> : en démontrant une gestion transparente et efficace.</li>
+                </ul>
+                <p>Chez <strong>OptiRisk Analytics</strong>, nous croyons que chaque entreprise, quelle que soit sa taille, peut bénéficier d’une gestion financière bien pensée. Nos outils personnalisés et nos analyses sur mesure sont conçus pour aider les entreprises à naviguer dans un environnement économique complexe tout en atteignant leurs objectifs stratégiques.</p>
+                <p>En adoptant les principes fondamentaux de la gestion financière, votre entreprise peut non seulement survivre, mais prospérer dans un monde en constante évolution.</p>
+
+
+                
+            </div>
         </div>
+    </div>
         </section>
 </body>
 </html>

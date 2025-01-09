@@ -4,6 +4,8 @@
 
 {% load static %}
 
+{% load i18n %}
+
 <!--<img src="../static/home_pageTWO.jpg" style="background-image: url('../static/home_pageTWO.jpg');background-attachment: fixed;background-position: center top;width: 100%;">-->
 
 <!--<div class="container-fluid" style="position: relative; width: 100%;background-attachment: fixed;">
@@ -108,8 +110,8 @@ font-weight: bold;
 
 <div class="container-fluid front_img">
     <div class="text-container">
-        <h1 class="th1"><strong>« La liberté de piloter votre futur financier »</strong></h1>
-        <p><strong>OptiRisk Analytics, votre partenaire pour une croissance sans surprises.</strong></p>
+        <h1 class="th1"><strong>{% trans "« La liberté de piloter votre futur financier »" %}</strong></h1>
+        <p><strong>{% trans "OptiRisk Analytics, votre partenaire pour une croissance sans surprises."%}</strong></p>
     </div>
 </div>
 
@@ -120,8 +122,8 @@ font-weight: bold;
                 <div class="card-body">   
                     <p class="card-text">
                     <!--PRESTATIONS BASIQUE-->
-                        <h1 class="text-center">Des solutions numériques innovantes</h1>
-                        <h4><i>"Avec OptiRisk Analytics, transformez vos données financières en leviers de croissance. Anticipez les risques, optimisez vos ressources et pilotez l'avenir de votre entreprise avec des outils sur mesure combinant IA et gestion de risques."</i></h4>
+                        <h1 class="text-center">{% trans "Des solutions numériques innovantes" %}</h1>
+                        <h4><i>{% trans "« Avec OptiRisk Analytics, transformez vos données financières en leviers de croissance. Anticipez les risques, optimisez vos ressources et pilotez l'avenir de votre entreprise avec des outils sur mesure combinant IA et gestion de risques. »"%}</i></h4>
                     <!--FIN PRESTATIONS BASIQUE-->
                     </p>
                 </div>
@@ -137,8 +139,8 @@ font-weight: bold;
                 <div class="carousel-item active">
                     <img src="../static/home_page2.jpg" class="d-block w-100" style=" border-radius: 25px 25px 25px 25px; width: 300px;height: 300px;">
                     <div class="carousel-caption d-md-block">
-                    <h5>Saisonnalité</h5>
-                    <p class="cText">Nous vous aidons à identifier les tendances intrèseques à votre activité pour que vous sachiez quand prendre les bonnes décisions </p>    
+                    <h5>{% trans "Saisonnalité" %}</h5>
+                    <p class="cText">{% trans "Nous vous aidons à identifier les tendances intrèseques à votre activité pour que vous sachiez quand prendre les bonnes décisions" %} </p>    
                     </div>
                 </div>
                 </div>
@@ -152,8 +154,8 @@ font-weight: bold;
                 <div class="carousel-item active">
                     <img src="../static/home_page4.jpg" class="d-block w-100" style=" border-radius: 25px 25px 25px 25px; width: 300px;height: 300px;">
                     <div class="carousel-caption d-md-block">
-                    <h5>Granularité</h5>
-                    <p>Les petits mouvements composent les grandes tendances. OptiRisk Analytics vous accompagne dans la décomposition des postes clés pour que vous compreniez les dynamiques de votre activité</p>
+                    <h5>{% trans "Granularité" %}</h5>
+                    <p>{% trans "Les petits mouvements composent les grandes tendances. OptiRisk Analytics vous accompagne dans la décomposition des postes clés pour que vous compreniez les dynamiques de votre activité" %}</p>
                     </div>
                 </div>
                 </div>
@@ -167,8 +169,8 @@ font-weight: bold;
                 <div class="carousel-item active">
                     <img src="../static/home_page5.jpg" class="d-block w-100" style=" border-radius: 25px 25px 25px 25px; width: 300px;height: 300px;">
                     <div class="carousel-caption d-md-block" style="margin-top: 10px;">
-                    <h5>Pilotage</h5>
-                    <p>"Prévoir" est le mot d'ordre de OptiRisk Analytics, nous mettrons à votre disposition notre expertise en IA afin que vous ayez le controle. </p>
+                    <h5>{% trans "Pilotage" %}</h5>
+                    <p>{% trans "'Prévoir' est le mot d'ordre de OptiRisk Analytics, nous mettrons à votre disposition notre expertise en IA afin que vous ayez le controle." %} </p>
                     </div>
                 </div>
                 </div>
@@ -197,11 +199,11 @@ font-weight: bold;
             <img src="../static/bilan_act1.png" class="img-fluid" style="width:100%"></img>
         </div>
         <div class="col mx-auto">
-            <h2>Construisons votre bilan d’activité</h2>
-            <p>Etablissons ensemble un état des lieux de la performance de votre entreprise</p>
-            <p>Une revue régulière de vos scénarios de gains et pertes potentiels </p>
-            <p>Pilotons et surveillons régulièrement l'atteinte de vos objectifs grace à l'IA</p>
-            <a type="button" class="btn btn-outline-primary" href="{% url 'service_analysis' %}">Voir plus</a>
+            <h2>{% trans "Construisons votre bilan d’activité" %}</h2>
+            <p>{% trans "Etablissons ensemble un état des lieux de la performance de votre entreprise" %}</p>
+            <p>{% trans "Une revue régulière de vos scénarios de gains et pertes potentiels" %} </p>
+            <p>{% trans "Pilotons et surveillons régulièrement l'atteinte de vos objectifs grace à l'IA" %}</p>
+            <a type="button" class="btn btn-outline-primary" href="{% url 'service_analysis' %}">{% trans "Voir plus" %}</a>
         </div>
     </div>
 
@@ -220,9 +222,9 @@ font-weight: bold;
     <!-- Prestation 2-->
     <div class="row row-cols-1 row-cols-md-3 mt-4">
         <div class="col mx-auto">
-            <h2>Construisons votre outil de gestion financière personnalisé</h2>
-            <p>Qu'ils soient bureautique, sous Excel sur le web, sous mobile ou intégrant une intelligence artificielle, nous vous accompagnons dans le développemment de vos outils fait maison pour qu'ils correspondent a <strong>vos besoins</strong></p>
-            <a type="button" class="btn btn-outline-primary" href="{% url 'service_dev_tool' %}">Voir plus</a>
+            <h2>{% trans "Construisons votre outil de gestion financière personnalisé" %}</h2>
+            <p>{% trans "Qu'ils soient bureautique, sous Excel sur le web, sous mobile ou intégrant une intelligence artificielle, nous vous accompagnons dans le développemment de vos outils fait maison pour qu'ils correspondent a " %}<strong>{% trans "vos besoins" %}</strong></p>
+            <a type="button" class="btn btn-outline-primary" href="{% url 'service_dev_tool' %}">{% trans "Voir plus" %}</a>
         </div>
         <div class="col mx-auto">
             <img src="../static/outil_bureautique2.png" class="img-fluid"  style="width:100%"></img>
@@ -247,13 +249,13 @@ font-weight: bold;
             <img src="https://www.eurotechconseil.com/wp-content/uploads/2023/12/evolution-data.webp" class="img-fluid" style="width:100%"></img>
         </div>
         <div class="col mx-auto">
-            <h2>Construisons l'architecture de collecte et gestion des données interne de votre entreprise</h2>
-            <p> Etablissons ensemble une architecture sécurisé pour la gestion de vos données</p>
-            <p>   •	Installation d’une base de données interne (Sql serveur, …)</p>
-            <p>   •	Interface Excel</p>
-            <p>   •	Outil d’intégration d’inputs </p>
-            <p>   •	Collecte des données </p>
-            <a type="button" class="btn btn-outline-primary" href="{% url 'service_data_management' %}">Voir plus</a>
+            <h2>{% trans "Construisons l'architecture de collecte et gestion des données interne de votre entreprise" %}</h2>
+            <p> {% trans "Etablissons ensemble une architecture sécurisé pour la gestion de vos données" %}</p>
+            <p>   •	{% trans "Installation d’une base de données interne (Sql serveur, …)" %}</p>
+            <p>   •	{% trans "Interface Excel" %}</p>
+            <p>   •	{% trans "Outil d’intégration d’inputs " %}</p>
+            <p>   •	{% trans "Collecte des données " %}</p>
+            <a type="button" class="btn btn-outline-primary" href="{% url 'service_data_management' %}">{% trans "Voir plus" %}</a>
         </div>        
     </div>
 

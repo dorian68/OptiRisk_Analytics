@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-#@jj3h@*t+#^h822(h7_og^=zs2csay!@s=c7z%4*71ew%5ut)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 
 ]
 
@@ -108,7 +110,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr'
+
+LANGUAGES = [
+    ('fr', 'Francais'),
+    ('en-us', 'English'),
+]
 
 TIME_ZONE = 'UTC'
 
@@ -136,4 +143,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage' 
+
+# Répertoire des fichiers de traduction
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',  # Ou tout autre dossier où vous souhaitez stocker vos traductions
+]
 
