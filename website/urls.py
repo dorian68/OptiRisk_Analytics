@@ -20,5 +20,6 @@ urlpatterns = [
     path('article_ml_for_small_business/', views.article_ml_for_small_business, name='article_ml_for_small_business'),
     path('article_risk_management/', views.article_risk_management, name='article_risk_management'),
     path("chart-data/", views.chart_data, name="chart_data"),
+    path("article_automation_email_sending/",views.article_automation_email_sending, name="article_automation_email_sending"),
     path("chart/", views.chart_view, name="chart_view"),
 ]

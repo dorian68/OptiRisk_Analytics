@@ -19,13 +19,48 @@
 </head>
 <body>
     <section>
+        <style>
+            .text-truncate {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap; /* Pour une seule ligne */
+            }
+            .text-expanded {
+                display: block;
+                white-space: normal; /* Permet de tout afficher */
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.read-more').forEach(link => {
+                link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                const target = document.getElementById(targetId);
+
+                if (target.classList.contains('text-truncate')) {
+                    target.classList.remove('text-truncate');
+                    target.classList.add('text-expanded');
+                    this.textContent = 'Read less';
+                } else {
+                    target.classList.remove('text-expanded');
+                    target.classList.add('text-truncate');
+                    this.textContent = 'Read more';
+                }
+                });
+            });
+            });
+
+        </script>
         <div class="container my-4">
             <div class="row row-cols-1 row-cols-md-3 g-4 my-5">
                 <div class="col mx-auto">
                     <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 25px 25px 25px 25px;">
                         <h5 class="card-header text-center">{% trans "La gestion financière" %}</h5>
                         <div class="card-body">   
-                            <p class="card-text">
+                            <p class="card-text text-truncate">
                             <!--PRESTATIONS BASIQUE-->
 
                             {% trans "Une introduction aux principes fondamentaux de la gestion financière, incluant la planification, la gestion des flux de trésorerie, la maîtrise des coûts et l’optimisation des investissements. Cet article met en avant l’importance d’une bonne gestion financière pour assurer la stabilité et la croissance à long terme des entreprises." %}                            <!--FIN PRESTATIONS BASIQUE-->
@@ -38,7 +73,7 @@
                     <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 25px 25px 25px 25px;">
                         <h5 class="card-header text-center">{% trans "Optimisation de la stratégie d'inversion de moyenne en HPC" %}</h5>
                         <div class="card-body">   
-                            <p class="card-text">
+                            <p class="card-text text-truncate">
    
                                 {% trans "Une exploration des stratégies d’investissement basées sur le concept de mean reversion (retour à la moyenne), combinées à des technologies de calcul haute performance (HPC). L’article présente comment l’utilisation de techniques avancées, telles que les algorithmes quantitatifs et le machine learning, permet d’identifier des opportunités d’arbitrage et d’optimiser les performances en trading algorithmique." %}                            </p>
                             <a type="button" class="btn btn-outline-primary" href="{% url 'meanReversion' %}">{% trans "Voir plus" %}</a>
@@ -49,7 +84,7 @@
                     <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 25px 25px 25px 25px;">
                         <h5 class="card-header text-center">{% trans "Pourquoi un ingénieur peut complètement optimiser les performances de votre entreprise" %}</h5>
                         <div class="card-body">   
-                            <p class="card-text">
+                            <p class="card-text text-truncate">
                             <!--PRESTATIONS BASIQUE-->
 
                             {% trans "Une présentation des outils et techniques permettant aux entreprises d’anticiper, de mesurer et de gérer les risques financiers. L’article aborde les risques de marché, de crédit, de liquidité et opérationnels, tout en montrant comment une gestion proactive peut limiter les pertes financières et préserver la santé économique de l’entreprise." %}                            <!--FIN PRESTATIONS BASIQUE-->
@@ -64,7 +99,7 @@
                     <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 25px 25px 25px 25px;">
                         <h5 class="card-header text-center">{% trans "Les bénéfices d'une bonne gestion financière" %}</h5>
                         <div class="card-body">   
-                            <p class="card-text">
+                            <p class="card-text text-truncate">
                             <!--PRESTATIONS BASIQUE-->
     
                             {% trans "Cet article met l’accent sur les avantages qu’une gestion financière efficace peut offrir aux entreprises, notamment : l’amélioration de la rentabilité, une meilleure allocation des ressources, la réduction des risques, et une capacité accrue à se développer et à s’adapter aux changements économiques. Il est particulièrement utile pour convaincre les dirigeants de l'importance d'investir dans des solutions professionnelles." %}                            <!--FIN PRESTATIONS BASIQUE-->
@@ -77,7 +112,7 @@
                     <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 25px 25px 25px 25px;">
                         <h5 class="card-header text-center">{% trans "L'apport du machine learning aux petites et moyennes entreprises guadeloupéennes" %}</h5>
                         <div class="card-body">   
-                            <p class="card-text">
+                            <p class="card-text text-truncate">
                             <!--PRESTATIONS BASIQUE-->
     
                             {% trans "Un article qui explore comment le machine learning peut révolutionner les processus décisionnels des TPE et PME en Guadeloupe. Il explique comment ces technologies peuvent être utilisées pour optimiser les ventes, améliorer les prévisions financières, réduire les coûts et mieux comprendre les besoins des clients. L’article se concentre sur des exemples pratiques et accessibles pour des entreprises locales." %}                            <!--FIN PRESTATIONS BASIQUE-->
@@ -85,6 +120,20 @@
                             <a type="button" class="btn btn-outline-primary" href="{% url 'article_ml_for_small_business' %}">{% trans "Voir plus" %}</a>
                         </div>
                     </div>
+                </div>
+                <div class="col mx-auto">
+                    <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 25px 25px 25px 25px;">
+                        <h5 class="card-header text-center">{% trans "l'automatisation d'envoi de E-mail réguliers " %}</h5>
+                        <div class="card-body">   
+                            <p class="card-text text-truncate">
+                            <!--PRESTATIONS BASIQUE-->
+    
+                            {% trans "Dans cet article nous arborderons l'un des piliers de l'automatisation de taches bureautiques, l'envoi programmé d'E-mails automatiques" %}                            <!--FIN PRESTATIONS BASIQUE-->
+                            </p>
+                            <a type="button" class="btn btn-outline-primary" href="{% url 'article_automation_email_sending' %}">{% trans "Voir plus" %}</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <!--

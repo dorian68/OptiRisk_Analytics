@@ -55,23 +55,21 @@
 
             <div class="container mb-4 pb-4 px-4 article_p" style="border-radius: 25px 25px 25px 25px;background-color: white;margin-top: 50px;">       
                 <div class="row justify-content-center">
-                  <div class="col-6">
+                  <div class="col-lg-6 col-sm-12">
 
         <h2>{% trans "1. Stratégie Mean Reversion" %}</h2>  
         <h3>{% trans "Qu'est-ce que c'est?" %}</h3>
-        <p>{% trans "
-            La stratégie mean reversion repose sur l’idée que les prix des actifs financiers fluctuent autour d’une moyenne à long terme. Lorsqu’un prix s’éloigne trop de cette moyenne, la stratégie suppose un retour probable vers la moyenne, offrant des opportunités d'achat (survente) ou de vente (surachat).
-        " %}</p>
+        <p>{% trans "La stratégie mean reversion repose sur l’idée que les prix des actifs financiers fluctuent autour d’une moyenne à long terme. Lorsqu’un prix s’éloigne trop de cette moyenne, la stratégie suppose un retour probable vers la moyenne, offrant des opportunités d'achat (survente) ou de vente (surachat)." %}</p>
         <h3>{% trans "Définition de la stratégie" %}</h3>
         
         <p>{% trans "Pour implémenter une stratégie de mean reversion :" %}</p>
             <li>{% trans "Définir la moyenne de référence : Cela peut être une moyenne mobile (SMA/EMA) ou une valeur statistique calculée." %}</li>
-            <li>{% trans "Déterminer les signaux d'achat ou de vente : 
+            <li>{% trans "Déterminer les signaux d'achat ou de vente : " %}
                 <ul>
                     <li>{% trans "Achat : Lorsque le prix est significativement en dessous de la moyenne (sous-évalué)." %}</li>
                     <li>{% trans "Vente : Lorsque le prix est significativement au-dessus de la moyenne (sur-évalué)." %}</li>    
                 </ul>
-            " %}</li>
+            </li>
             <li>{% trans "Ajouter des filtres pour renforcer les signaux, comme le RSI, les Bandes de Bollinger, ou les volumes." %}</li>
         
         
@@ -82,10 +80,10 @@
             <li>{% trans "Volumes : Utilisés pour confirmer la validité des signaux." %}</li>
             <li>{% trans "ATX (Average True Range) : Indique la volatilité du marché." %}</li>
         </p>
-        <p>{% trans "
+        <p>
             <h2>{% trans "2. Configuration de l'environnement HPC" %}</h2>
-            Dask est une bibliothèque Python conçue pour le calcul distribué. Elle permet de traiter efficacement de grandes quantités de données en exploitant le multi-threading ou le multi-processing.
-        " %}</p>
+            {% trans "Dask est une bibliothèque Python conçue pour le calcul distribué. Elle permet de traiter efficacement de grandes quantités de données en exploitant le multi-threading ou le multi-processing." %}
+        </p>
 
         
                

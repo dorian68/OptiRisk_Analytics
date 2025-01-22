@@ -95,6 +95,10 @@ font-size: 29px; /* Réduit la taille du titre */
 font-weight: bold;
 }
 
+.small_header {
+font-size: 22px; /* Réduit la taille du texte */
+}
+
 @media (max-width: 768px) {
     .custom-spacing .col{
         margin-bottom: 20px;
@@ -122,7 +126,7 @@ font-weight: bold;
                 <div class="card-body">   
                     <p class="card-text">
                     <!--PRESTATIONS BASIQUE-->
-                        <h1 class="text-center">{% trans "Des solutions numériques innovantes" %}</h1>
+                        <h1 class="text-center small_header">{% trans "Des solutions numériques innovantes" %}</h1>
                         <h4><i>{% trans "« Avec OptiRisk Analytics, transformez vos données financières en leviers de croissance. Anticipez les risques, optimisez vos ressources et pilotez l'avenir de votre entreprise avec des outils sur mesure combinant IA et gestion de risques. »"%}</i></h4>
                     <!--FIN PRESTATIONS BASIQUE-->
                     </p>
@@ -223,7 +227,7 @@ font-weight: bold;
     <div class="row row-cols-1 row-cols-md-3 mt-4">
         <div class="col mx-auto">
             <h2>{% trans "Construisons votre outil de gestion financière personnalisé" %}</h2>
-            <p>{% trans "Qu'ils soient bureautique, sous Excel sur le web, sous mobile ou intégrant une intelligence artificielle, nous vous accompagnons dans le développemment de vos outils fait maison pour qu'ils correspondent a " %}<strong>{% trans "vos besoins" %}</strong></p>
+            <p>{% trans "Qu'ils soient bureautique, sous Excel sur le web, sous mobile ou intégrant une intelligence artificielle, nous vous accompagnons dans le développemment de vos outils fait maison pour qu'ils correspondent a " %}<strong> {% trans "vos besoins" %}</strong></p>
             <a type="button" class="btn btn-outline-primary" href="{% url 'service_dev_tool' %}">{% trans "Voir plus" %}</a>
         </div>
         <div class="col mx-auto">

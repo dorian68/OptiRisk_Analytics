@@ -48,6 +48,9 @@ def article_ml_for_small_business(request):
 def article_risk_management(request):
     return render(request, 'article_risk_management.html')
 
+def article_automation_email_sending(request):
+    return render(request, 'article_automation_email_sending.html')
+
 def chart_data(request):
     # Exemple de données pour la courbe
     data = {
