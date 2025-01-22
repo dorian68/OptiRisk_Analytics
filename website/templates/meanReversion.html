@@ -3,6 +3,9 @@
 {% block meanReversion %}
 
 {% load static %}
+
+{% load i18n %}
+
 <!-- templates/contact.html -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,8 +48,8 @@
         <section>
             <div class="container-fluid front_article">
                 <div class="text-container">
-                    <h1 class="tb-5"><strong>Optimisation de la stratégie "Inversion de moyenne" en environnement haute performance</strong></h1> 
-                    <p>Dans cet article, nous explorons la stratégie de mean reversion appliquée aux marchés financiers, et son implémentation en Python dans un environnement de calcul haute performance (HPC) à l'aide de Dask. Nous démontrons également comment backtester et optimiser cette stratégie pour maximiser ses performances.</p>                    
+                    <h1 class="tb-5"><strong>{% trans "Optimisation de la stratégie « Inversion de moyenne » en environnement haute performance" %}</strong></h1> 
+                    <p>{% trans "Dans cet article, nous explorons la stratégie de mean reversion appliquée aux marchés financiers, et son implémentation en Python dans un environnement de calcul haute performance (HPC) à l'aide de Dask. Nous démontrons également comment backtester et optimiser cette stratégie pour maximiser ses performances." %}</p>                    
                 </div>
             </div>
 
@@ -54,39 +57,39 @@
                 <div class="row justify-content-center">
                   <div class="col-6">
 
-        <h2>1. Stratégie Mean Reversion</h2>  
-        <h3>Qu'est-ce que c'est?</h3>
-        <p>
+        <h2>{% trans "1. Stratégie Mean Reversion" %}</h2>  
+        <h3>{% trans "Qu'est-ce que c'est?" %}</h3>
+        <p>{% trans "
             La stratégie mean reversion repose sur l’idée que les prix des actifs financiers fluctuent autour d’une moyenne à long terme. Lorsqu’un prix s’éloigne trop de cette moyenne, la stratégie suppose un retour probable vers la moyenne, offrant des opportunités d'achat (survente) ou de vente (surachat).
-        </p>
-        <h3>Définition de la stratégie</h3>
+        " %}</p>
+        <h3>{% trans "Définition de la stratégie" %}</h3>
         
-        <p>Pour implémenter une stratégie de mean reversion :</p>
-            <li>Définir la moyenne de référence : Cela peut être une moyenne mobile (SMA/EMA) ou une valeur statistique calculée.</li>
-            <li>Déterminer les signaux d'achat ou de vente : 
+        <p>{% trans "Pour implémenter une stratégie de mean reversion :" %}</p>
+            <li>{% trans "Définir la moyenne de référence : Cela peut être une moyenne mobile (SMA/EMA) ou une valeur statistique calculée." %}</li>
+            <li>{% trans "Déterminer les signaux d'achat ou de vente : 
                 <ul>
-                    <li>Achat : Lorsque le prix est significativement en dessous de la moyenne (sous-évalué).</li>
-                    <li>Vente : Lorsque le prix est significativement au-dessus de la moyenne (sur-évalué).</li>    
+                    <li>{% trans "Achat : Lorsque le prix est significativement en dessous de la moyenne (sous-évalué)." %}</li>
+                    <li>{% trans "Vente : Lorsque le prix est significativement au-dessus de la moyenne (sur-évalué)." %}</li>    
                 </ul>
-            </li>
-            <li>Ajouter des filtres pour renforcer les signaux, comme le RSI, les Bandes de Bollinger, ou les volumes.</li>
+            " %}</li>
+            <li>{% trans "Ajouter des filtres pour renforcer les signaux, comme le RSI, les Bandes de Bollinger, ou les volumes." %}</li>
         
         
-            <p>Indicateurs couramment utilisés :</p>
-            <li>RSI (Relative Strength Index) : Mesure la vitesse et l’amplitude des mouvements de prix pour détecter des niveaux de surachat/survente.</li>
-            <li>Moyennes mobiles : Les SMA et EMA sont essentielles pour définir la moyenne de référence.</li>
-            <li>Bandes de Bollinger : Identifient les écarts significatifs autour de la moyenne.</li>
-            <li>Volumes : Utilisés pour confirmer la validité des signaux.</li>
-            <li>ATX (Average True Range) : Indique la volatilité du marché.</li>
+            <p>{% trans "Indicateurs couramment utilisés :" %}</p>
+            <li>{% trans "RSI (Relative Strength Index) : Mesure la vitesse et l’amplitude des mouvements de prix pour détecter des niveaux de surachat/survente." %}</li>
+            <li>{% trans "Moyennes mobiles : Les SMA et EMA sont essentielles pour définir la moyenne de référence." %}</li>
+            <li>{% trans "Bandes de Bollinger : Identifient les écarts significatifs autour de la moyenne." %}</li>
+            <li>{% trans "Volumes : Utilisés pour confirmer la validité des signaux." %}</li>
+            <li>{% trans "ATX (Average True Range) : Indique la volatilité du marché." %}</li>
         </p>
-        <p>
-            <h2>2. Configuration de l'environnement HPC</h2>
+        <p>{% trans "
+            <h2>{% trans "2. Configuration de l'environnement HPC" %}</h2>
             Dask est une bibliothèque Python conçue pour le calcul distribué. Elle permet de traiter efficacement de grandes quantités de données en exploitant le multi-threading ou le multi-processing.
-        </p>
+        " %}</p>
 
         
                
-        <p>Sources :
+        <p>{% trans "Sources :" %}
             https://www.psbedu.paris/fr/actus/quest-ce-que-la-finance-dentreprise
             https://www.ey.com/fr_fr/services/strategy-transactions/capital-allocation-services</p>
         

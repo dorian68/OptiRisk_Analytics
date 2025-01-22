@@ -3,6 +3,9 @@
 {% block contact %}
 
 {% load static %}
+
+{% load i18n %}
+
 <!-- templates/contact.html -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,7 +20,7 @@
 <body>
     <section>
         <div class="container" style="height: 80vh;margin-top: 50px;">
-        <h2>Envoyez-nous un message</h2>
+        <h2>{% trans "Envoyez-nous un message" %}</h2>
             <form action="/send-message/" method="post">
                 {% csrf_token %}
                 <label for="name">Nom:</label>

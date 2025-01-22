@@ -3,6 +3,8 @@
 {% block article_automation_for_small_business %}
 
 {% load static %}
+
+{% load i18n %}
 <!-- templates/services.html -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,9 +47,9 @@
     <section>
         <div class="container-fluid front_article">
             <div class="text-container">
-                <h2 class="tb-5"><strong>Pourquoi un ingénieur peut complètement optimiser les performances de votre entreprise</strong></h2> 
+                <h2 class="tb-5"><strong>{% trans "Pourquoi un ingénieur peut complètement optimiser les performances de votre entreprise" %}</strong></h2> 
                 <p>
-                  Les ingénieurs ne se limitent pas à la construction de ponts ou à la conception de machines. Leur capacité à résoudre des problèmes complexes, à modéliser des systèmes et à utiliser les données pour optimiser les processus en fait des acteurs incontournables pour améliorer les performances des entreprises.
+                  {% trans "Les ingénieurs ne se limitent pas à la construction de ponts ou à la conception de machines. Leur capacité à résoudre des problèmes complexes, à modéliser des systèmes et à utiliser les données pour optimiser les processus en fait des acteurs incontournables pour améliorer les performances des entreprises." %}
                 </p>
             </div>
         </div>
@@ -55,28 +57,28 @@
       <div class="container mb-4 pb-4 px-4 article_p" style="border-radius: 25px 25px 25px 25px;background-color: white;margin-top: 50px;">       
         <div class="row justify-content-center">
           <div class="col-6">
-            <h3>Les compétences clés des ingénieurs appliquées à l’entreprise</h3>
+            <h3>{% trans "Les compétences clés des ingénieurs appliquées à l’entreprise" %}</h3>
             <p>
-              Voici quelques-unes des forces qu’un ingénieur peut apporter à votre organisation :
+              {% trans "Voici quelques-unes des forces qu’un ingénieur peut apporter à votre organisation :" %}
             </p>
             <ul>
               <li>
-                <strong>Approche analytique :</strong> Un ingénieur est formé pour décortiquer des systèmes complexes, identifier les inefficacités et proposer des solutions optimales.
+                <strong>{% trans "Approche analytique :" %}</strong>{% trans "Un ingénieur est formé pour décortiquer des systèmes complexes, identifier les inefficacités et proposer des solutions optimales." %}
               </li>
               <li>
-                <strong>Optimisation des processus :</strong> En automatisant certaines tâches ou en concevant des outils sur mesure, un ingénieur peut réduire les coûts et augmenter la productivité.
+                <strong>{% trans "Optimisation des processus :" %}</strong>{% trans " En automatisant certaines tâches ou en concevant des outils sur mesure, un ingénieur peut réduire les coûts et augmenter la productivité." %}
               </li>
               <li>
-                <strong>Vision à long terme :</strong> Grâce à leur capacité à modéliser des scénarios futurs, les ingénieurs aident à prévoir les impacts des décisions actuelles sur l’entreprise.
+                <strong>{% trans "Vision à long terme :" %}</strong>{% trans "Grâce à leur capacité à modéliser des scénarios futurs, les ingénieurs aident à prévoir les impacts des décisions actuelles sur l’entreprise." %}
               </li>
             </ul>
-            <h3>Exemples concrets de valeur ajoutée</h3>
+            <h3>{% trans "Exemples concrets de valeur ajoutée" %}</h3>
             <p>
-              Prenons l’exemple d’une entreprise locale de distribution. Un ingénieur peut concevoir un système qui suit en temps réel les ventes, les stocks et les performances des employés, offrant ainsi des insights précieux pour optimiser l’ensemble de la chaîne d’approvisionnement.
+              {% trans "Prenons l’exemple d’une entreprise locale de distribution. Un ingénieur peut concevoir un système qui suit en temps réel les ventes, les stocks et les performances des employés, offrant ainsi des insights précieux pour optimiser l’ensemble de la chaîne d’approvisionnement." %}
             </p>
-            <h3>Pourquoi choisir OptiRisk Analytics ?</h3>
+            <h3>{% trans "Pourquoi choisir OptiRisk Analytics ?" %}</h3>
             <p>
-              Notre équipe combine une expertise en ingénierie et en gestion financière pour vous offrir des solutions innovantes, adaptées à vos besoins spécifiques. Nous croyons fermement que chaque entreprise, peu importe sa taille, peut bénéficier des méthodologies et des outils utilisés par les grandes organisations.
+              {% trans "Notre équipe combine une expertise en ingénierie et en gestion financière pour vous offrir des solutions innovantes, adaptées à vos besoins spécifiques. Nous croyons fermement que chaque entreprise, peu importe sa taille, peut bénéficier des méthodologies et des outils utilisés par les grandes organisations." %}
             </p>
           </div>
           </div>

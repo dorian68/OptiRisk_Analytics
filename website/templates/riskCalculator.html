@@ -3,6 +3,9 @@
 {% block riskCalculator %}
 
 {% load static %}
+
+{% load i18n %}
+
 <!-- templates/services.html -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,10 +21,10 @@
 <body>
     <section>        
         <div class="constainer" style="height: 100vh;margin-top: 50px;">
-            <h1 class="text-center">EN CONSTRUCTION</h1>
+            <h1 class="text-center">{% trans "EN CONSTRUCTION" %}</h1>
         <div class="container my-4">
-            <h4 class="text-white">What If...</h4>
-            <label class="text-white">We Decrease Our Return Rate (%) to:</label>
+            <h4 class="text-white">{% trans "What If..."%}</h4>
+            <label class="text-white">{% trans "We Decrease Our Return Rate (%) to:"%}</label>
             <div class="conatainer d-flex align-items-center">
                 <!-- Input pour saisir la valeur -->
                 <input type="number" id="sliderValue" class="form-control me-3" min="0" max="100" value="42" style="width: 80px;">

@@ -3,6 +3,9 @@
 {% block article_ml_for_small_business %}
 
 {% load static %}
+
+{% load i18n %}
+
 <!-- templates/services.html -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,8 +48,8 @@
     <section>
         <div class="container-fluid front_article">
             <div class="text-container">
-                <h2 class="tb-5"><strong>L'apport du machine learning aux petites et moyennes entreprises guadeloupéennes</strong></h2> 
-                <p>En Guadeloupe, où les petites et moyennes entreprises (PME) représentent l'épine dorsale de l'économie locale, la compétitivité est souvent freinée par des ressources limitées, des marchés fluctuants et des défis logistiques. Le machine learning (ou apprentissage automatique) offre une solution puissante pour ces entreprises en leur permettant d’exploiter pleinement leurs données pour mieux anticiper les risques, optimiser leurs processus et améliorer leurs performances.
+                <h2 class="tb-5"><strong>{% trans "L'apport du machine learning aux petites et moyennes entreprises guadeloupéennes" %}</strong></h2> 
+                <p>{% trans "En Guadeloupe, où les petites et moyennes entreprises (PME) représentent l'épine dorsale de l'économie locale, la compétitivité est souvent freinée par des ressources limitées, des marchés fluctuants et des défis logistiques. Le machine learning (ou apprentissage automatique) offre une solution puissante pour ces entreprises en leur permettant d’exploiter pleinement leurs données pour mieux anticiper les risques, optimiser leurs processus et améliorer leurs performances." %}
                 </p>                    
             </div>
         </div>
@@ -62,37 +65,37 @@
 
             <div class="col-6">
 
-              <h3>Qu'est-ce que le machine learning et pourquoi est-il pertinent pour les PME ?</h3>
+              <h3>{% trans "Qu'est-ce que le machine learning et pourquoi est-il pertinent pour les PME ?" %}</h3>
               <p>
-                Le machine learning est une branche de l'intelligence artificielle qui permet aux ordinateurs d’apprendre à partir de données sans être explicitement programmés. Grâce à cette technologie, les entreprises peuvent :
+                {% trans "Le machine learning est une branche de l'intelligence artificielle qui permet aux ordinateurs d’apprendre à partir de données sans être explicitement programmés. Grâce à cette technologie, les entreprises peuvent :" %}
               </p>
               <ul>
-                <li>Analyser des volumes de données massifs pour en tirer des tendances et des prédictions.</li>
-                <li>Automatiser des tâches répétitives, réduisant ainsi les coûts opérationnels.</li>
-                <li>Améliorer la prise de décision grâce à des analyses basées sur des faits concrets.</li>
+                <li>{% trans "Analyser des volumes de données massifs pour en tirer des tendances et des prédictions." %}</li>
+                <li>{% trans "Automatiser des tâches répétitives, réduisant ainsi les coûts opérationnels." %}</li>
+                <li>{% trans "Améliorer la prise de décision grâce à des analyses basées sur des faits concrets." %}</li>
               </ul>
-              <h3>Applications concrètes en Guadeloupe</h3>
+              <h3>{% trans "Applications concrètes en Guadeloupe" %}</h3>
               <p>
-                Voici comment le machine learning peut transformer des secteurs spécifiques en Guadeloupe :
+                {% trans "Voici comment le machine learning peut transformer des secteurs spécifiques en Guadeloupe :" %}
               </p>
               <ul>
                 <li>
-                  <strong>Distribution alimentaire :</strong> Prédire les fluctuations de la demande en fonction des saisons, des jours fériés et des conditions météorologiques pour réduire les pertes.
+                  <strong>{% trans "Distribution alimentaire :" %}</strong> {% trans "Prédire les fluctuations de la demande en fonction des saisons, des jours fériés et des conditions météorologiques pour réduire les pertes." %}
                 </li>
                 <li>
-                  <strong>Tourisme :</strong> Anticiper les préférences des visiteurs en analysant leurs comportements en ligne pour proposer des offres sur mesure et optimiser les taux de réservation.
+                  <strong>{% trans "Tourisme :" %}</strong>{% trans "Anticiper les préférences des visiteurs en analysant leurs comportements en ligne pour proposer des offres sur mesure et optimiser les taux de réservation." %}
                 </li>
                 <li>
-                  <strong>Agriculture :</strong> Détecter les maladies des cultures grâce à des modèles de reconnaissance d’images et optimiser l’utilisation des ressources naturelles.
+                  <strong>{% trans "Agriculture :" %}</strong>{% trans "Détecter les maladies des cultures grâce à des modèles de reconnaissance d’images et optimiser l’utilisation des ressources naturelles." %}
                 </li>
               </ul>
-              <h3>Les défis à relever</h3>
+              <h3>{% trans "Les défis à relever" %}</h3>
               <p>
-                Bien que prometteur, le machine learning nécessite une collecte de données rigoureuse et une formation des employés pour interpréter les résultats. Les PME peuvent cependant s’appuyer sur des experts comme OptiRisk Analytics pour surmonter ces obstacles.
+                {% trans "Bien que prometteur, le machine learning nécessite une collecte de données rigoureuse et une formation des employés pour interpréter les résultats. Les PME peuvent cependant s’appuyer sur des experts comme OptiRisk Analytics pour surmonter ces obstacles." %}
               </p>
-              <h3>Comment OptiRisk Analytics peut vous accompagner</h3>
+              <h3>{% trans "Comment OptiRisk Analytics peut vous accompagner" %}</h3>
               <p>
-                Chez OptiRisk Analytics, nous proposons des solutions adaptées aux spécificités des PME guadeloupéennes. Nous vous aidons à exploiter vos données existantes, à développer des outils sur mesure et à tirer parti des dernières avancées en intelligence artificielle pour transformer vos défis en opportunités.
+                {% trans "Chez OptiRisk Analytics, nous proposons des solutions adaptées aux spécificités des PME guadeloupéennes. Nous vous aidons à exploiter vos données existantes, à développer des outils sur mesure et à tirer parti des dernières avancées en intelligence artificielle pour transformer vos défis en opportunités." %}
               </p>
    
             </div>

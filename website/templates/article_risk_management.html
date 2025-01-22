@@ -3,6 +3,9 @@
 {% block article_risk_management %}
 
 {% load static %}
+
+{% load i18n %}
+
 <!-- templates/services.html -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,40 +48,40 @@
     <section>
         <div class="container-fluid front_article">
             <div class="text-container">
-                <h1 class="tb-5"><strong>Les bénéfices d'une bonne gestion financière</strong></h1> 
+                <h1 class="tb-5"><strong>{% trans "Les bénéfices d'une bonne gestion financière" %}</strong></h1> 
                 <p>
-                  La gestion financière est bien plus qu’une simple comptabilité : elle constitue la boussole qui oriente chaque décision stratégique d’une entreprise. Pour les petites et moyennes entreprises (PME), une gestion financière efficace peut faire la différence entre croissance et déclin, surtout dans un contexte économique souvent imprévisible comme celui de la Guadeloupe.
+                  {% trans "La gestion financière est bien plus qu’une simple comptabilité : elle constitue la boussole qui oriente chaque décision stratégique d’une entreprise. Pour les petites et moyennes entreprises (PME), une gestion financière efficace peut faire la différence entre croissance et déclin, surtout dans un contexte économique souvent imprévisible comme celui de la Guadeloupe." %}
                 </p>
             </div>
         </div>
       <div class="container mb-4 pb-4 px-4 article_p" style="border-radius: 25px 25px 25px 25px;background-color: white;margin-top: 50px;">       
         <div class="row justify-content-center">
           <div class="col-6">
-            <h3>Quels sont les piliers d'une bonne gestion financière ?</h3>
+            <h3>{% trans "Quels sont les piliers d'une bonne gestion financière ?" %}</h3>
             <p>
-              Une gestion financière rigoureuse repose sur plusieurs axes fondamentaux :
+              {% trans "Une gestion financière rigoureuse repose sur plusieurs axes fondamentaux :" %}
             </p>
             <ul>
-              <li><strong>Analyse de la trésorerie :</strong> Garantir que les flux de trésorerie sont suffisants pour couvrir les charges courantes et anticiper les périodes de creux.</li>
-              <li><strong>Planification stratégique :</strong> Identifier les investissements clés et aligner les ressources financières sur les objectifs à long terme.</li>
-              <li><strong>Contrôle des coûts :</strong> Réduire les dépenses inutiles et optimiser chaque euro dépensé.</li>
+              <li><strong>{% trans "Analyse de la trésorerie :" %}</strong> {% trans "Garantir que les flux de trésorerie sont suffisants pour couvrir les charges courantes et anticiper les périodes de creux." %}</li>
+              <li><strong>{% trans "Planification stratégique :" %}</strong> {% trans "Identifier les investissements clés et aligner les ressources financières sur les objectifs à long terme." %}</li>
+              <li><strong>{% trans "Contrôle des coûts :" %}</strong> {% trans "Réduire les dépenses inutiles et optimiser chaque euro dépensé." %}</li>
             </ul>
-            <h3>Les risques d'une mauvaise gestion financière</h3>
+            <h3>{% trans "Les risques d'une mauvaise gestion financière" %}</h3>
             <p>
-              Ignorer ces piliers expose une entreprise à des risques majeurs :
+              {% trans "Ignorer ces piliers expose une entreprise à des risques majeurs :" %}
             </p>
             <ul>
-              <li>Une incapacité à honorer les paiements, conduisant à une perte de crédibilité auprès des fournisseurs.</li>
-              <li>Une difficulté à obtenir des financements pour des projets de croissance.</li>
-              <li>Un risque accru de faillite en cas de crise économique ou de baisse soudaine des revenus.</li>
+              <li>{% trans "Une incapacité à honorer les paiements, conduisant à une perte de crédibilité auprès des fournisseurs." %}</li>
+              <li>{% trans "Une difficulté à obtenir des financements pour des projets de croissance." %}</li>
+              <li>{% trans "Un risque accru de faillite en cas de crise économique ou de baisse soudaine des revenus." %}</li>
             </ul>
-            <h3>Les bénéfices concrets d’une gestion optimisée</h3>
+            <h3>{% trans "Les bénéfices concrets d’une gestion optimisée" %}</h3>
             <p>
-              Une entreprise qui maîtrise ses finances peut non seulement stabiliser son activité, mais aussi saisir de nouvelles opportunités de marché. Par exemple, une gestion proactive des coûts peut libérer des fonds pour investir dans des innovations ou élargir son portefeuille de clients.
+              {% trans "Une entreprise qui maîtrise ses finances peut non seulement stabiliser son activité, mais aussi saisir de nouvelles opportunités de marché. Par exemple, une gestion proactive des coûts peut libérer des fonds pour investir dans des innovations ou élargir son portefeuille de clients." %}
             </p>
-            <h3>OptiRisk Analytics : votre allié pour une gestion financière optimale</h3>
+            <h3>{% trans "OptiRisk Analytics : votre allié pour une gestion financière optimale" %}</h3>
             <p>
-              Nous aidons les PME à structurer et à surveiller leurs finances grâce à des outils personnalisés. Nos solutions permettent de suivre en temps réel les indicateurs clés, de simuler des scénarios financiers et de prendre des décisions basées sur des données précises.
+              {% trans "Nous aidons les PME à structurer et à surveiller leurs finances grâce à des outils personnalisés. Nos solutions permettent de suivre en temps réel les indicateurs clés, de simuler des scénarios financiers et de prendre des décisions basées sur des données précises." %}
             </p>
           </div>
         </div>  
