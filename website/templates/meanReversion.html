@@ -44,6 +44,29 @@
             max-width: 90%; /* Largeur maximale pour éviter les dépassements */
             overflow: hidden; /* Empêche les débordements */
         }
+        /* Adaptation pour les écrans mobiles */
+        @media (max-width: 768px) {
+        .front_article {
+        background-size: cover; /* Zoom pour petits écrans */
+        background-attachment: fixed; /* Désactive l'effet fixe */
+        height: 100vh; /* Ajuste la hauteur */
+        }
+
+        .front_article .text-container {
+        font-size: 22px; /* Réduit la taille du texte */
+        padding: 10px; /* Ajoute un léger padding */
+        text-align: center; /* Centre le texte horizontalement */
+        }
+
+        .front_article .text-container h1 {
+        font-size: 29px; /* Réduit la taille du titre */
+        font-weight: bold;
+        }
+
+        .small_header {
+        font-size: 22px; /* Réduit la taille du texte */
+        }
+    }
     </style>
         <section>
             <div class="container-fluid front_article">
