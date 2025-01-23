@@ -66,49 +66,175 @@
         font-size: 22px; /* Réduit la taille du texte */
         }
     }
+    /* -------------------------------------------- FORMAT ARTICLES -------------------------------------------- */
+
+  /* Conteneur principal */
+.blog-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.blog-container {
+    display: flex;
+    justify-content: space-between; /* Les colonnes sont espacées */
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.sidebar {
+    flex: 1; /* La colonne du sommaire occupe 25% de l'espace */
+    order: 1; /* Affiche le sommaire en premier */
+    margin-right: 20px;
+    position: sticky; /* Reste visible en haut de l'écran lors du défilement */
+    top: 20px; /* Reste fixe en haut */
+    align-self: flex-start;
+    max-height: calc(100vh - 40px); /* Hauteur max pour le défilement */
+    overflow-y: auto;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.main-content {
+    flex: 3; /* La colonne principale occupe 75% de l'espace */
+    order: 2; /* Affiche le contenu après le sommaire */
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        flex-direction: column; /* Les colonnes passent en mode vertical */
+    }
+
+    .sidebar {
+        order: 0; /* Affiche le sommaire en haut */
+        margin-right: 0;
+        margin-bottom: 10%;
+        width: 100%;
+        position:relative /* Reste visible en haut de l'écran lors du défilement */
+    }
+
+    .main-content {
+        order: 1; /* Affiche le contenu principal après */
+        width: 100%;
+    }
+}
+
+
+/* Sommaire */
+.toc {
+  position: sticky;
+  top: 0;
+}
+
+.toc h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc ul li {
+  margin-bottom: 10px;
+}
+
+.toc ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.toc ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Liens dans le contenu principal */
+.main-content h2 {
+  margin-top: 40px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.main-content p {
+  margin: 20px 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 </style>
-    <section>
-        <div class="container-fluid front_article">
-            <div class="text-container">
-                <h2 class="tb-5"><strong>{% trans "Automatisez vos envois de mail Outlook " %}</strong></h2> 
-                <p>
-                  {% trans "Envoyer un email est la tache la plus commune que etes amené à effectuer dans votre activité professionnelle, mais saviez vous que votre ordinateur peut s'en charger à votre place ?" %}
-                </p>
-            </div>
-        </div>
+<div class="container-fluid front_article">
+  <div class="text-container">
+      <h2 class="tb-5"><strong>{% trans "Automatisez vos envois de mail Outlook " %}</strong></h2> 
+      <p>
+        {% trans "Envoyer un email est la tache la plus commune que etes amené à effectuer dans votre activité professionnelle, mais saviez vous que votre ordinateur peut s'en charger à votre place ?" %}
+      </p>
+  </div>
+</div>
+  <div class="container my-5">
 
-      <div class="container mb-4 pb-4 px-4 article_p" style="border-radius: 25px 25px 25px 25px;background-color: white;margin-top: 50px;">       
-        <div class="row justify-content-center">
-          <div class="col-lg-6 col-sm-12">
-            <h3>{% trans "Les compétences clés des ingénieurs appliquées à l’entreprise" %}</h3>
-            <p>
-              {% trans "Voici quelques-unes des forces qu’un ingénieur peut apporter à votre organisation :" %}
-            </p>
-            <ul>
-              <li>
-                <strong>{% trans "Approche analytique :" %}</strong>{% trans "Un ingénieur est formé pour décortiquer des systèmes complexes, identifier les inefficacités et proposer des solutions optimales." %}
-              </li>
-              <li>
-                <strong>{% trans "Optimisation des processus :" %}</strong>{% trans " En automatisant certaines tâches ou en concevant des outils sur mesure, un ingénieur peut réduire les coûts et augmenter la productivité." %}
-              </li>
-              <li>
-                <strong>{% trans "Vision à long terme :" %}</strong>{% trans "Grâce à leur capacité à modéliser des scénarios futurs, les ingénieurs aident à prévoir les impacts des décisions actuelles sur l’entreprise." %}
-              </li>
-            </ul>
-            <h3>{% trans "Exemples concrets de valeur ajoutée" %}</h3>
-            <p>
-              {% trans "Prenons l’exemple d’une entreprise locale de distribution. Un ingénieur peut concevoir un système qui suit en temps réel les ventes, les stocks et les performances des employés, offrant ainsi des insights précieux pour optimiser l’ensemble de la chaîne d’approvisionnement." %}
-            </p>
-            <h3>{% trans "Pourquoi choisir OptiRisk Analytics ?" %}</h3>
-            <p>
-              {% trans "Notre équipe combine une expertise en ingénierie et en gestion financière pour vous offrir des solutions innovantes, adaptées à vos besoins spécifiques. Nous croyons fermement que chaque entreprise, peu importe sa taille, peut bénéficier des méthodologies et des outils utilisés par les grandes organisations." %}
-            </p>
-          </div>
-          </div>
-        </div> 
-      </div> 
+  </div>
+  <div class="blog-container">
+      <!-- Colonne gauche : Contenu principal -->
+      <div class="col-4 main-content">
+          <h3 id="section1">{% trans "Les compétences clés des ingénieurs appliquées à l’entreprise" %}</h3>
+          <p>
+            {% trans "Voici quelques-unes des forces qu’un ingénieur peut apporter à votre organisation :" %}
+          </p>
+          <ul>
+            <li>
+              <strong>{% trans "Approche analytique :" %}</strong>{% trans "Un ingénieur est formé pour décortiquer des systèmes complexes, identifier les inefficacités et proposer des solutions optimales." %}
+            </li>
+            <li>
+              <strong>{% trans "Optimisation des processus :" %}</strong>{% trans " En automatisant certaines tâches ou en concevant des outils sur mesure, un ingénieur peut réduire les coûts et augmenter la productivité." %}
+            </li>
+            <li>
+              <strong>{% trans "Vision à long terme :" %}</strong>{% trans "Grâce à leur capacité à modéliser des scénarios futurs, les ingénieurs aident à prévoir les impacts des décisions actuelles sur l’entreprise." %}
+            </li>
+          </ul>
+          <h3 id="section2">{% trans "Exemples concrets de valeur ajoutée" %}</h3>
+          <p>
+            {% trans "Prenons l’exemple d’une entreprise locale de distribution. Un ingénieur peut concevoir un système qui suit en temps réel les ventes, les stocks et les performances des employés, offrant ainsi des insights précieux pour optimiser l’ensemble de la chaîne d’approvisionnement." %}
+          </p>
+          <h3 id="section3">{% trans "Pourquoi choisir OptiRisk Analytics ?" %}</h3>
+          <p>
+            {% trans "Notre équipe combine une expertise en ingénierie et en gestion financière pour vous offrir des solutions innovantes, adaptées à vos besoins spécifiques. Nous croyons fermement que chaque entreprise, peu importe sa taille, peut bénéficier des méthodologies et des outils utilisés par les grandes organisations." %}
+          </p>
+      </div>
 
-    </section>
+      <!-- Colonne droite : Sommaire -->
+      <aside class="sidebar">
+          <div class="toc">
+              <h3>{% trans "Sommaire" %}</h3>
+              <ul>
+                  <li><a href="#section1">{% trans "Les compétences clés des ingénieurs appliquées à l’entreprise" %}</a></li>
+                  <li><a href="#section2">{% trans "Exemples concrets de valeur ajoutée" %}</a></li>
+                  <li><a href="#section3">{% trans "Pourquoi choisir OptiRisk Analytics ?" %}</a></li>
+              </ul>
+          </div>
+      </aside>
+  </div>
+
+
+  <section>
+
+ 
+</section>
+
+
 </body>
 </html>
 
