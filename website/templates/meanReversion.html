@@ -67,6 +67,114 @@
         font-size: 22px; /* Réduit la taille du texte */
         }
     }
+    
+  /* Conteneur principal */
+.blog-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.blog-container {
+    display: flex;
+    justify-content: space-between; /* Les colonnes sont espacées */
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.sidebar {
+    flex: 1; /* La colonne du sommaire occupe 25% de l'espace */
+    order: 1; /* Affiche le sommaire en premier */
+    margin-right: 20px;
+    position: sticky; /* Reste visible en haut de l'écran lors du défilement */
+    top: 20px; /* Reste fixe en haut */
+    align-self: flex-start;
+    max-height: calc(100vh - 40px); /* Hauteur max pour le défilement */
+    overflow-y: auto;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.main-content {
+    flex: 3; /* La colonne principale occupe 75% de l'espace */
+    order: 2; /* Affiche le contenu après le sommaire */
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        flex-direction: column; /* Les colonnes passent en mode vertical */
+    }
+
+    .sidebar {
+        order: 0; /* Affiche le sommaire en haut */
+        margin-right: 0;
+        margin-bottom: 10%;
+        width: 100%;
+        position:relative /* Reste visible en haut de l'écran lors du défilement */
+    }
+
+    .main-content {
+        order: 1; /* Affiche le contenu principal après */
+        width: 100%;
+    }
+}
+
+
+/* Sommaire */
+.toc {
+  position: sticky;
+  top: 0;
+}
+
+.toc h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc ul li {
+  margin-bottom: 10px;
+}
+
+.toc ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.toc ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Liens dans le contenu principal */
+.main-content h2 {
+  margin-top: 40px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.main-content p {
+  margin: 20px 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
     </style>
         <section>
             <div class="container-fluid front_article">
@@ -75,47 +183,55 @@
                     <p>{% trans "Dans cet article, nous explorons la stratégie de mean reversion appliquée aux marchés financiers, et son implémentation en Python dans un environnement de calcul haute performance (HPC) à l'aide de Dask. Nous démontrons également comment backtester et optimiser cette stratégie pour maximiser ses performances." %}</p>                    
                 </div>
             </div>
-
-            <div class="container mb-4 pb-4 px-4 article_p" style="border-radius: 25px 25px 25px 25px;background-color: white;margin-top: 50px;">       
-                <div class="row justify-content-center">
-                  <div class="col-lg-6 col-sm-12">
-
-        <h2>{% trans "1. Stratégie Mean Reversion" %}</h2>  
-        <h3>{% trans "Qu'est-ce que c'est?" %}</h3>
-        <p>{% trans "La stratégie mean reversion repose sur l’idée que les prix des actifs financiers fluctuent autour d’une moyenne à long terme. Lorsqu’un prix s’éloigne trop de cette moyenne, la stratégie suppose un retour probable vers la moyenne, offrant des opportunités d'achat (survente) ou de vente (surachat)." %}</p>
-        <h3>{% trans "Définition de la stratégie" %}</h3>
-        
-        <p>{% trans "Pour implémenter une stratégie de mean reversion :" %}</p>
-            <li>{% trans "Définir la moyenne de référence : Cela peut être une moyenne mobile (SMA/EMA) ou une valeur statistique calculée." %}</li>
-            <li>{% trans "Déterminer les signaux d'achat ou de vente : " %}
-                <ul>
-                    <li>{% trans "Achat : Lorsque le prix est significativement en dessous de la moyenne (sous-évalué)." %}</li>
-                    <li>{% trans "Vente : Lorsque le prix est significativement au-dessus de la moyenne (sur-évalué)." %}</li>    
-                </ul>
-            </li>
-            <li>{% trans "Ajouter des filtres pour renforcer les signaux, comme le RSI, les Bandes de Bollinger, ou les volumes." %}</li>
-        
-        
-            <p>{% trans "Indicateurs couramment utilisés :" %}</p>
-            <li>{% trans "RSI (Relative Strength Index) : Mesure la vitesse et l’amplitude des mouvements de prix pour détecter des niveaux de surachat/survente." %}</li>
-            <li>{% trans "Moyennes mobiles : Les SMA et EMA sont essentielles pour définir la moyenne de référence." %}</li>
-            <li>{% trans "Bandes de Bollinger : Identifient les écarts significatifs autour de la moyenne." %}</li>
-            <li>{% trans "Volumes : Utilisés pour confirmer la validité des signaux." %}</li>
-            <li>{% trans "ATX (Average True Range) : Indique la volatilité du marché." %}</li>
-        </p>
-        <p>
-            <h2>{% trans "2. Configuration de l'environnement HPC" %}</h2>
-            {% trans "Dask est une bibliothèque Python conçue pour le calcul distribué. Elle permet de traiter efficacement de grandes quantités de données en exploitant le multi-threading ou le multi-processing." %}
-        </p>
-
-        
-               
-        <p>{% trans "Sources :" %}
-            https://www.psbedu.paris/fr/actus/quest-ce-que-la-finance-dentreprise
-            https://www.ey.com/fr_fr/services/strategy-transactions/capital-allocation-services</p>
-        
-        </div>
+            <div class="blog-container">
+                <!-- Colonne gauche : Contenu principal -->
+                <div class="col-4 main-content">
+ 
+                    <h2 id="section1">{% trans "1. Stratégie Mean Reversion" %}</h2>  
+                    <h3>{% trans "Qu'est-ce que c'est?" %}</h3>
+                    <p>{% trans "La stratégie mean reversion repose sur l’idée que les prix des actifs financiers fluctuent autour d’une moyenne à long terme. Lorsqu’un prix s’éloigne trop de cette moyenne, la stratégie suppose un retour probable vers la moyenne, offrant des opportunités d'achat (survente) ou de vente (surachat)." %}</p>
+                    <h3>{% trans "Définition de la stratégie" %}</h3>
+                    
+                    <p>{% trans "Pour implémenter une stratégie de mean reversion :" %}</p>
+                        <li>{% trans "Définir la moyenne de référence : Cela peut être une moyenne mobile (SMA/EMA) ou une valeur statistique calculée." %}</li>
+                        <li>{% trans "Déterminer les signaux d'achat ou de vente : " %}
+                            <ul>
+                                <li>{% trans "Achat : Lorsque le prix est significativement en dessous de la moyenne (sous-évalué)." %}</li>
+                                <li>{% trans "Vente : Lorsque le prix est significativement au-dessus de la moyenne (sur-évalué)." %}</li>    
+                            </ul>
+                        </li>
+                        <li>{% trans "Ajouter des filtres pour renforcer les signaux, comme le RSI, les Bandes de Bollinger, ou les volumes." %}</li>
+                    
+                    
+                        <p>{% trans "Indicateurs couramment utilisés :" %}</p>
+                        <li>{% trans "RSI (Relative Strength Index) : Mesure la vitesse et l’amplitude des mouvements de prix pour détecter des niveaux de surachat/survente." %}</li>
+                        <li>{% trans "Moyennes mobiles : Les SMA et EMA sont essentielles pour définir la moyenne de référence." %}</li>
+                        <li>{% trans "Bandes de Bollinger : Identifient les écarts significatifs autour de la moyenne." %}</li>
+                        <li>{% trans "Volumes : Utilisés pour confirmer la validité des signaux." %}</li>
+                        <li>{% trans "ATX (Average True Range) : Indique la volatilité du marché." %}</li>
+                    </p>
+                    <p>
+                        <h2 id="section2">{% trans "2. Configuration de l'environnement HPC" %}</h2>
+                        {% trans "Dask est une bibliothèque Python conçue pour le calcul distribué. Elle permet de traiter efficacement de grandes quantités de données en exploitant le multi-threading ou le multi-processing." %}
+                    </p>
+            
+                    
+                           
+                    <p>{% trans "Sources :" %}
+                        https://www.psbedu.paris/fr/actus/quest-ce-que-la-finance-dentreprise
+                        https://www.ey.com/fr_fr/services/strategy-transactions/capital-allocation-services</p>
+                    
                 </div>
+                   <!-- Colonne droite : Sommaire -->
+    <aside class="sidebar">
+        <div class="toc">
+            <h3>{% trans "Sommaire" %}</h3>
+            <ul>
+                <li><a href="#section1">{% trans "1. Stratégie Mean Reversion" %}</a></li>
+                <li><a href="#section2">{% trans "2. Configuration de l'environnement HPC" %}</a></li>
+            </ul>
+        </div>
+    </aside>
             </div>
         </section>
 </body>
