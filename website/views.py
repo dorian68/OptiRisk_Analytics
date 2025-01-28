@@ -142,12 +142,6 @@ def process_file(request, file_id):
         labels = df.iloc[:, 0].astype(str).tolist()
         values = df["values"].tolist() # Deuxième colonne pour les valeurs
 
-        # open excel report as html
-        #with open(r"C:\Users\Do\Mail\~XLRange.htm","r") as file:
-        #    df_excel_tab = file.read()
-
-
-
         # Convertir les données en JSON pour JavaScript
         context = {
             "table_html": html_table_perso,
