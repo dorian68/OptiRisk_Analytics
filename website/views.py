@@ -143,8 +143,8 @@ def process_file(request, file_id):
         values = df["values"].tolist() # Deuxième colonne pour les valeurs
 
         # open excel report as html
-        with open(r"C:\Users\Do\Mail\~XLRange.htm","r") as file:
-            df_excel_tab = file.read()
+        #with open(r"C:\Users\Do\Mail\~XLRange.htm","r") as file:
+        #    df_excel_tab = file.read()
 
 
 
