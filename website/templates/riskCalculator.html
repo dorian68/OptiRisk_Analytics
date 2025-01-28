@@ -17,69 +17,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <section>        
-        <div class="constainer" style="height: 100vh;margin-top: 50px;">
-            <h1 class="text-center">{% trans "EN CONSTRUCTION" %}</h1>
-        <div class="container my-4">
-            <h4 class="text-white">{% trans "What If..."%}</h4>
-            <label class="text-white">{% trans "We Decrease Our Return Rate (%) to:"%}</label>
-            <div class="conatainer d-flex align-items-center">
-                <!-- Input pour saisir la valeur -->
-                <input type="number" id="sliderValue" class="form-control me-3" min="0" max="100" value="42" style="width: 80px;">
-                <!-- Slider pour ajuster la valeur -->
-                <input type="range" id="slider" class="form-range" min="0" max="100" value="42">
-                <script>
-                    const slider = document.getElementById('slider');
-                    const sliderValue = document.getElementById('sliderValue');
-                
-                    // Synchronise la valeur de l'input avec le slider
-                    slider.addEventListener('input', () => {
-                        sliderValue.value = slider.value;
-                    });
-                
-                    // Synchronise la valeur du slider avec l'input
-                    sliderValue.addEventListener('input', () => {
-                        slider.value = sliderValue.value;
-                    });
-                </script>
-            </div>
-            <div style="width: 70%; margin: 0 auto;">
-                <canvas id="myChart"></canvas>
-            </div>
-            <script>
-                async function loadChartData() {
-                    // Charger les données depuis l'API Django
-                    const response = await fetch("{% url 'chart_data' %}");
-                    const chartData = await response.json();
+    <section>    
+    </head>
+        <!-- LOADING FORM -->
+<body>
+    <div class="container"  style="height: 80vh;margin-top: 50px;">
+        <h1>Chargez un fichier CSV pour le traitement</h1>
+        <form method="post" enctype="multipart/form-data" id="upload-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary" onclick="showLoading()">Charger le fichier</button>
+        </form>
         
-                    // Configuration du graphique
-                    const ctx = document.getElementById('myChart').getContext('2d');
-                    new Chart(ctx, {
-                        type: 'line',
-                        data: chartData,
-                        options: {
-                            responsive: true,
-                            plugins: {
-                                legend: {
-                                    position: 'top',
-                                },
-                                title: {
-                                    display: true,
-                                    text: 'Exemple de courbe'
-                                }
-                            }
-                        }
-                    });
-                }
-        
-                loadChartData();
-            </script>
+        <div id="loading" style="display: none;">
+            <p>Chargement en cours...</p>
+            <div class="spinner-border" role="status"></div>
         </div>
         
+        <script>
+        function showLoading() {
+            document.getElementById("upload-form").style.display = "none";
+            document.getElementById("loading").style.display = "block";
+        }
+        </script>
 
-    </section>
+    </div>
+        <!-- END LOADING FORM -->
+
+        <!-- REPORT -->
+       </section>
 </body>
 </html>
 

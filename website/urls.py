@@ -22,4 +22,7 @@ urlpatterns = [
     path("chart-data/", views.chart_data, name="chart_data"),
     path("article_automation_email_sending/",views.article_automation_email_sending, name="article_automation_email_sending"),
     path("chart/", views.chart_view, name="chart_view"),
+    path("upload/", views.upload_file, name="upload_file"),
+    path('process_file/<int:file_id>/', views.process_file, name='process_file'),  
+
 ]

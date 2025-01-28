@@ -149,3 +149,6 @@ LOCALE_PATHS = [
     BASE_DIR / 'locale',  # Ou tout autre dossier où vous souhaitez stocker vos traductions
 ]
 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
