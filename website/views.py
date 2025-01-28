@@ -8,8 +8,10 @@ from django.shortcuts import redirect
 from .forms import UploadedFileForm
 from .models import UploadedFile
 import pandas as pd
+import numpy as np
 import json
 import os
+from website.utils.cls_ExcelToHTML import ExcelToHTML
 
 def upload_file(request):
     data = None  # Pour stocker les données traitées
@@ -76,7 +78,6 @@ def meanReversion(request):
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import UploadedFileForm
 from .models import UploadedFile
-import pandas as pd
 
 def tool_risk_calculator(request):
     form = UploadedFileForm()
@@ -106,9 +107,11 @@ def process_file(request, file_id):
         if df.empty:
             print("df is empty")
             return render(request, "error.html", {"message": "Le fichier est vide ou mal formaté."})
+        
+        html_table_perso = ""
+        dev = True
 
         # Create Values
-        import numpy as np
 
         # Supposons que df existe déjà
         n = len(df)  # Taille du DataFrame
@@ -124,6 +127,14 @@ def process_file(request, file_id):
         # Ajout au DataFrame sous une nouvelle colonne
         df["values"] = brownian_motion
 
+        # Shrink our dataframe
+        df = df.head(5)
+
+        df_input = ExcelToHTML(df)
+
+        # work on user inputs then transforms to html
+        html_table_perso = df_input.to_html()
+
         # Convertir le DataFrame en HTML
         table_html = df.to_html(classes="table table-striped", index=False)
 
@@ -131,13 +142,20 @@ def process_file(request, file_id):
         labels = df.iloc[:, 0].astype(str).tolist()
         values = df["values"].tolist() # Deuxième colonne pour les valeurs
 
+        # open excel report as html
+        with open(r"C:\Users\Do\Mail\~XLRange.htm","r") as file:
+            df_excel_tab = file.read()
+
+
+
         # Convertir les données en JSON pour JavaScript
         context = {
-            "table_html": df.to_html(classes="table table-striped"),
+            "table_html": html_table_perso,
+            #"table_html": df_excel_tab,
+            #"table_html": df.to_html(classes="table table-striped"),
             "labels_json": json.dumps(labels),  # Convertir en JSON
             "values_json": json.dumps(values),  # Convertir en JSON
         }
- 
         return render(request, "report.html", context)
 
     except Exception as e:
