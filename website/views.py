@@ -5,8 +5,9 @@ from django.http import JsonResponse
 from django.http import HttpResponse
 from .models import UploadedFile
 from django.shortcuts import redirect
-from .forms import UploadedFileForm
+from .forms import UploadedFileForm, RiskSimlatorfielsForm
 from .models import UploadedFile
+from django.core.files.storage import default_storage
 import pandas as pd
 import numpy as np
 import json
@@ -15,32 +16,41 @@ from website.utils.cls_ExcelToHTML import ExcelToHTML
 
 def upload_file(request):
     data = None  # Pour stocker les données traitées
+    print("Uploaded_file called")
+    try:
+        if request.method == 'POST':
+            form = UploadedFileForm(request.POST, request.FILES)
 
-    if request.method == 'POST':
-        form = UploadedFileForm(request.POST, request.FILES)
-        if form.is_valid():
-            uploaded_file = form.save()  # Enregistre le fichier en base
-            file_path = uploaded_file.file.path  # Récupère le chemin du fichier
+            if 'csv_file' in request.FILES:
+                if form.is_valid():
+                    uploaded_file = form.save()  # Enregistre le fichier en base
+                    file_path = uploaded_file.file.path  # Récupère le chemin du fichier
+                            # Charger le fichier dans un DataFrame pandas
+                
+                    if file_path.endswith('.csv'):
+                        data = pd.read_csv(file_path)
+                    elif file_path.endswith(('.xls', '.xlsx')):
+                        data = pd.read_excel(file_path)
 
-            # Charger le fichier dans un DataFrame pandas
-            try:
-                if file_path.endswith('.csv'):
-                    data = pd.read_csv(file_path)
-                elif file_path.endswith(('.xls', '.xlsx')):
-                    data = pd.read_excel(file_path)
+                    # Convertir en HTML pour affichage
+                    data_html = data.head(10).to_html(classes="table table-striped")
 
-                # Convertir en HTML pour affichage
-                data_html = data.head(10).to_html(classes="table table-striped")
+                    # Extraire les colonnes pour les charger dans un combobox
+                    columns = data.columns.tolist()  
 
-                return render(request, 'report.html', {'data': data_html})
+                    # Enregistrer les données CSV temporairement pour la session ou base de données
+                    uploaded_csv = UploadedFile.objects.create(file=file_path)
 
-            except Exception as e:
-                return render(request, 'upload.html', {'form': form, 'error': str(e)})
+                    return render(request, 'report.html', {'data': data_html,"columns": columns, "df_json": data.to_json(orient="records")})
+            elif 'column_choices' in request.POST:
+                # formule avec les colonnes choisies
+                formSelect = RiskSimlatorfielsForm(request.POST)
+                if formSelect.valid():
+                    selected_columns = formSelect.cleaned_data
+                    return render(request, 'upload.html', {'form': form})
 
-    else:
-        form = UploadedFileForm()
-
-    return render(request, 'upload.html', {'form': form})
+    except Exception as e:
+        return render(request, 'upload.html', {'form': form, 'error': str(e)})
 
 def home2(request):
     return render(request, 'home2.html')
@@ -82,18 +92,63 @@ from .models import UploadedFile
 def tool_risk_calculator(request):
     form = UploadedFileForm()
     
-    if request.method == "POST":
-        form = UploadedFileForm(request.POST, request.FILES)
-        if form.is_valid():
-            uploaded_file = form.save()
-            return redirect("process_file", file_id=uploaded_file.id)  # Redirection après upload
-    
+    if request.method == "POST":  
+        file = request.FILES.get("file")
+        allowed_types = ['text/csv', 'text/plain', 'application/vnd.ms-excel'] 
+
+        #if file.content_type in allowed_types:
+        if not file is None:
+            form = UploadedFileForm(request.POST, request.FILES)
+            if form.is_valid():
+                uploaded_file = form.save()
+                print("------------------------------------------------------")
+                print(f"uploaded_file type is {type(uploaded_file)}")
+                print(f"uploaded_file is {uploaded_file}")
+                print("------------------------------------------------------")
+                file_path = uploaded_file.file.path  # Récupère le chemin du fichier
+                # Charger le fichier dans un DataFrame pandas
+                if file_path.endswith('.csv'):
+                    data = pd.read_csv(file_path)
+                elif file_path.endswith(('.xls', '.xlsx')):
+                    data = pd.read_excel(file_path)
+                
+                # Sauvegarde le fichier en session
+                request.session['csv_file_path'] = file_path
+
+                # Sauvegarde le fichier en session
+                request.session['file_id'] = uploaded_file.id
+
+                # Convertir en HTML pour affichage
+                data_html = data.head(10).to_html(classes="table table-striped")
+
+                # Extraire les colonnes pour les charger dans un combobox
+                columns = data.columns.tolist()  
+                return render(request, "riskCalculator.html", {"form": form, "columns": columns,"df_json": data.to_json(orient="records")})
+        elif file is None:
+            file_path = request.session.get('csv_file_path', None)
+            file_id = request.session.get('file_id')
+
+            # Get fields choosen by the user
+            context = {
+                "column_labels" : request.POST.get("column_labels"),
+                "index_labels" : request.POST.get("index_labels"),
+                "value_labels" : request.POST.get("value_labels"),
+            }
+
+            context = request.POST.dict()  # Convertit les données POST en dictionnaire
+            request.session["context"] = context  # Stocker en session
+              
+            print("------------------------------------------------------")
+            print(f"file_path type is {type(file_path)}")
+            print(f"file_id is {file_id}")
+            print("------------------------------------------------------")
+            return redirect("process_file", file_id=file_id)  # Redirection après upload
     return render(request, "riskCalculator.html", {"form": form})
 
 def process_file(request, file_id):
     uploaded_file = get_object_or_404(UploadedFile, id=file_id)
     file_path = uploaded_file.file.path
-
+    context = request.session.get("context", {})  # Récupère le contexte stocké en session
     # Détection automatique du format
     try:
         if file_path.endswith(".csv"):
@@ -111,15 +166,8 @@ def process_file(request, file_id):
         html_table_perso = ""
         dev = True
 
-        # Create Values
-
         # Supposons que df existe déjà
-        n = len(df)  # Taille du DataFrame
-
-        # Paramètres du mouvement brownien
-        mu = 150      # Drift moyen (peut être modifié)
-        sigma = 1    # Volatilité
-        dt = 1       # Pas de temps (1 par défaut)
+        n,mu,sigma,dt  = len(df),150,1,1 
 
         # Génération du mouvement brownien
         brownian_motion = np.cumsum(np.random.normal(mu * dt, sigma * np.sqrt(dt), n))
@@ -128,28 +176,32 @@ def process_file(request, file_id):
         df["values"] = brownian_motion
 
         # Shrink our dataframe
-        df = df.head(5)
+        df = df.head(7)
 
-        df_input = ExcelToHTML(df)
+        df_input = ExcelToHTML(df,style={"border": "2px solid skyblue","width":"auto","white-space": "nowrap"})
 
         # work on user inputs then transforms to html
-        html_table_perso = df_input.to_html()
+        #html_table_perso = df_input.to_html()
 
         # Convertir le DataFrame en HTML
-        table_html = df.to_html(classes="table table-striped", index=False)
+        #table_html = df.to_html(classes="table table-striped", index=False)
+        
 
         # Choisir une colonne à afficher (ex: la première colonne comme labels)
         labels = df.iloc[:, 0].astype(str).tolist()
         values = df["values"].tolist() # Deuxième colonne pour les valeurs
 
         # Convertir les données en JSON pour JavaScript
+        index_labels = [context["index_labels"]]
+        column_labels=[context["column_labels"]]
+        value_labels =[context["value_labels"]]
+
         context = {
-            "table_html": html_table_perso,
-            #"table_html": df_excel_tab,
-            #"table_html": df.to_html(classes="table table-striped"),
+            "table_html": df_input.generate_pivot_html(index_labels, column_labels, value_labels),
             "labels_json": json.dumps(labels),  # Convertir en JSON
             "values_json": json.dumps(values),  # Convertir en JSON
         }
+        default_storage.delete(file_path)
         return render(request, "report.html", context)
 
     except Exception as e:

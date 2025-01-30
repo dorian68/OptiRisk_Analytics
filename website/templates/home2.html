@@ -19,6 +19,13 @@
   </div>-->
 
 <style>
+
+.dynamic_button:hover {
+    transform: scale(1.10) translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.2);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 .carousel:hover {
 transform: scale(1.10) translateY(-10px);
 box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.2);
@@ -211,7 +218,7 @@ font-size: 22px; /* Réduit la taille du texte */
             <p>{% trans "Etablissons ensemble un état des lieux de la performance de votre entreprise" %}</p>
             <p>{% trans "Une revue régulière de vos scénarios de gains et pertes potentiels" %} </p>
             <p>{% trans "Pilotons et surveillons régulièrement l'atteinte de vos objectifs grace à l'IA" %}</p>
-            <a type="button" class="btn btn-outline-primary" href="{% url 'service_analysis' %}">{% trans "Voir plus" %}</a>
+            <a type="button" class="btn btn-outline-primary dynamic_button" href="{% url 'service_analysis' %}">{% trans "Voir plus" %}</a>
         </div>
     </div>
 
@@ -232,7 +239,7 @@ font-size: 22px; /* Réduit la taille du texte */
         <div class="col mx-auto">
             <h1>{% trans "Construisons votre outil de gestion financière personnalisé" %}</h1>
             <p>{% trans "Qu'ils soient bureautique, sous Excel sur le web, sous mobile ou intégrant une intelligence artificielle, nous vous accompagnons dans le développemment de vos outils fait maison pour qu'ils correspondent a " %}<strong> {% trans "vos besoins" %}</strong></p>
-            <a type="button" class="btn btn-outline-primary" href="{% url 'service_dev_tool' %}">{% trans "Voir plus" %}</a>
+            <a type="button" class="btn btn-outline-primary dynamic_button" href="{% url 'service_dev_tool' %}">{% trans "Voir plus" %}</a>
         </div>
         <div class="col mx-auto">
             <img src="../static/outil_bureautique2.png" class="img-fluid"  style="width:100%"></img>
@@ -263,7 +270,7 @@ font-size: 22px; /* Réduit la taille du texte */
             <p>   •	{% trans "Interface Excel" %}</p>
             <p>   •	{% trans "Outil d’intégration d’inputs " %}</p>
             <p>   •	{% trans "Collecte des données " %}</p>
-            <a type="button" class="btn btn-outline-primary" href="{% url 'service_data_management' %}">{% trans "Voir plus" %}</a>
+            <a type="button" class="btn btn-outline-primary dynamic_button" href="{% url 'service_data_management' %}">{% trans "Voir plus" %}</a>
         </div>        
     </div>
 

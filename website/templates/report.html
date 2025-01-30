@@ -18,41 +18,44 @@
 </head>
 <body>
     <section>
-        <div class="container" style="height: 120vh;margin-top: 50px;">
-            <div class="row row-cols-1 row-cols-md-2">
-                <div class="col-auto">
+        <div class="container" style="height: 120vh; margin-top: 50px;">
+            <div class="row d-flex align-items-start">
+                <!-- Tableau -->
+                <div class="col-lg-6 col-md-12">
                     <h2 class="mb-3">Résultats de l'analyse</h2>
-
                     {% if table_html %}
                         <div class="table-responsive">
                             {{ table_html|safe }}
                         </div>
                     {% else %}
                         <p class="alert alert-warning">Aucune donnée à afficher.</p>
-                    {% endif %} 
+                    {% endif %}
                 </div>
-                <div class="col-auto">
+        
+                <!-- Graphique -->
+                <div class="col-lg-6 col-md-12 mt-3 mt-md-0">
                     <h3>Graphique des données</h3>
-                    <!-- Injection sécurisée des JSON -->
                     {{ labels_json|json_script:"labels-data" }}
                     {{ values_json|json_script:"values-data" }}
-                    
-                    {% if values_json %}   
-                    <canvas id="dataChart" style="width: 100vh"></canvas>
+        
+                    {% if values_json %}
+                        <div class="chart-container">
+                            <canvas id="dataChart"></canvas>
+                        </div>
                     {% else %}
-                    <p class="alert alert-warning">Aucune donnée à afficher.</p>
-                    {% endif  %}
+                        <p class="alert alert-warning">Aucune donnée à afficher.</p>
+                    {% endif %}
                 </div>
             </div>
+        
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
-                    // Récupération des données JSON injectées par Django
                     var labels = JSON.parse(document.getElementById("labels-data").textContent);
                     var values = JSON.parse(document.getElementById("values-data").textContent);
-            
+        
                     var ctx = document.getElementById("dataChart").getContext("2d");
-            
-                    var dataChart = new Chart(ctx, {
+        
+                    new Chart(ctx, {
                         type: "line",
                         data: {
                             labels: labels,
@@ -66,6 +69,7 @@
                         },
                         options: {
                             responsive: true,
+                            maintainAspectRatio: false,
                             scales: {
                                 y: { beginAtZero: true }
                             }
@@ -74,9 +78,32 @@
                 });
             </script>
         </div>
-
+        
         <a href="{% url 'tool_risk_calculator' %}" class="btn btn-primary my-5">Retour</a>
-    </section>
+        
+        <style>
+            /* Force le tableau à être affiché entièrement et permet au graphique de passer en dessous */
+            .table-responsive {
+                max-width: 100%;
+                width: 100%;
+            }
+        
+            .chart-container {
+                width: 100%;
+                height: 300px;
+            }
+        
+            @media (max-width: 992px) { /* Si l'écran est plus petit que 992px */
+                .row {
+                    flex-direction: column;
+                }
+        
+                .chart-container {
+                    margin-top: 20px;
+                }
+            }
+        </style>
+            </section>
 </body>
 </html>
 

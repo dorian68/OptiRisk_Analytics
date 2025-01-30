@@ -79,7 +79,70 @@
      
         <!-- END LOADING FORM -->
 
-        <!-- REPORT -->
+        <!-- SELECT COLUMNS -->  
+        {% if columns %}
+
+        <hr>
+        <h3>Créer un tableau croisé dynamique</h3>
+        <form id="pivotForm" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="df_json" value='{{ df_json|escapejs }}'>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Sélectionner les colonnes :</label>
+                    <select name="column_labels" multiple class="form-control">
+                        {% for col in columns %}
+                            <option value="{{ col }}">{{ col }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Sélectionner les lignes :</label>
+                    <select name="index_labels" multiple class="form-control">
+                        {% for col in columns %}
+                            <option value="{{ col }}">{{ col }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Sélectionner les valeurs :</label>
+                    <select name="value_labels" multiple class="form-control">
+                        {% for col in columns %}
+                            <option value="{{ col }}">{{ col }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-success mt-3">Générer</button>
+        </form>
+
+        <hr>
+        <!--<h3>Tableau croisé dynamique</h3>
+        <div id="pivotTableContainer" class="table-responsive"></div>
+        
+        </div>-->
+        {% endif %}
+    <script>
+        $(document).ready(function () {
+            $("#pivotForm").submit(function (event) {
+                event.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "{% url 'upload_file' %}",
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        $("#pivotTableContainer").html(response.pivot_html);
+                    },
+                    error: function () {
+                        alert("Erreur lors de la génération du tableau croisé dynamique.");
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- END SELECT COLUMNS -->
        </section>
 </body>
 </html>
