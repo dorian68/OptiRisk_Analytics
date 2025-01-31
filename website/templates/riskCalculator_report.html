@@ -74,11 +74,11 @@
             }
         </style>
 
-        <div class="container-fluid mt-5" style="height: 80vh;margin-bottom: 0%;">
+        <div class="container-fluid mt-5" style="height: 80vh">
             <h2>Rapport - Vue façon Excel</h2>
         
             <!-- Conteneur de la "feuille Excel" -->
-            <div class="excel-container" style="height: 80%;margin-bottom: 0%">
+            <div class="excel-container">
                 <div class="tab-content" id="excelTabContent">
                     <div class="tab-pane fade show active" id="sheet1" role="tabpanel">
                         <h3>Ventes</h3>
@@ -108,17 +108,15 @@
                     </div>
                     <div class="tab-pane fade" id="sheet2" role="tabpanel">
                         <h3>CA par postes</h3>
-                        <p>Contenu du rapport - Feuille 2.</p>
+                        <p>{{ data_json|escapejs }}</p>
                         <div id="table-excel"></div>
                         <script>
                             var container = document.getElementById('table-excel');
+                            var data = JSON.parse('{{ data_json|escapejs }}');
+                            console.log(data)
                             var hot = new Handsontable(container, {
-                                data: [
-                                    ["Nom", "Âge", "Salaire"],
-                                    ["Jean", 30, "3000€"],
-                                    ["Marie", 28, "3200€"]
-                                ],
-                                colHeaders: true,
+                                data: data,
+                                colHeaders: '{{ columns|escapejs }}',
                                 rowHeaders: true,
                                 filters: true,
                                 dropdownMenu: true,
@@ -151,9 +149,7 @@
                             </script>
                     </div>
                     <div class="tab-pane fade" id="sheet3" role="tabpanel">
-                        <h3>Ventes par périodes</h3>
-                        <p>Contenu du rapport - Feuille 3.</p>
-                        <h2>Graphique des ventes</h2>
+                        <h3>Portion Ventes par périodes</h3>
                         <canvas id="myChart3"></canvas>
                     
                         <script>

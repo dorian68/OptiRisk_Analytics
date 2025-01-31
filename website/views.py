@@ -88,6 +88,8 @@ def meanReversion(request):
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import UploadedFileForm
 from .models import UploadedFile
+import pandas as pd
+from django.conf import settings
 
 def tool_risk_calculator(request):
     form = UploadedFileForm()
@@ -209,7 +211,16 @@ def process_file(request, file_id):
         return render(request, "error.html", {"message": f"Erreur lors du traitement du fichier : {e}"})
 
 def riskCalculator_report(request):
-    return render(request, "riskCalculator_report.html") 
+    file_path = os.path.join(settings.BASE_DIR, 'media', 'uploads/orders_trainTEMP.csv')
+    df_data = pd.read_csv(file_path, sep=',')
+    df_data = df_data.head()
+    columns = list(df_data.columns)
+    print(columns)
+    # Conversion du DataFrame en JSON
+    data = df_data.to_dict(orient='records')
+    data_json = json.dumps(data)
+
+    return render(request, "riskCalculator_report.html", { "data_json" : data_json, "col" : columns }) 
 
 def article_automation_for_small_business(request):
     return render(request, 'article_automation_for_small_business.html')
