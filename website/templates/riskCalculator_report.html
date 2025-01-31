@@ -83,14 +83,14 @@
                     <div class="tab-pane fade show active" id="sheet1" role="tabpanel">
                         <h3>Ventes</h3>
                         <h2>Graphique des ventes</h2>
-                        <canvas id="myChart" style="width: 90px;"></canvas>
+                        <canvas id="myChart1" style="width: 90px;"></canvas>
                     
                         <script>
                             // Récupérer les données depuis la vue Django
                             fetch("{% url 'chart_data' %}")
                             .then(response => response.json())
                             .then(data => {
-                                const ctx = document.getElementById("myChart").getContext("2d");
+                                const ctx = document.getElementById("myChart1").getContext("2d");
                     
                                 new Chart(ctx, {
                                     type: "line",
@@ -127,14 +127,14 @@
                             });
                         </script>
                             <h2>Graphique des ventes</h2>
-                            <canvas id="myChart"></canvas>
+                            <canvas id="myChart2"></canvas>
                         
                             <script>
                                 // Récupérer les données depuis la vue Django
                                 fetch("{% url 'chart_data' %}")
                                 .then(response => response.json())
                                 .then(data => {
-                                    const ctx = document.getElementById("myChart").getContext("2d");
+                                    const ctx = document.getElementById("myChart2").getContext("2d");
                         
                                     new Chart(ctx, {
                                         type: "line",
@@ -154,14 +154,14 @@
                         <h3>Ventes par périodes</h3>
                         <p>Contenu du rapport - Feuille 3.</p>
                         <h2>Graphique des ventes</h2>
-                        <canvas id="myChart"></canvas>
+                        <canvas id="myChart3"></canvas>
                     
                         <script>
                             // Récupérer les données depuis la vue Django
                             fetch("{% url 'chart_data' %}")
                             .then(response => response.json())
                             .then(data => {
-                                const ctx = document.getElementById("myChart").getContext("2d");
+                                const ctx = document.getElementById("myChart3").getContext("2d");
                     
                                 new Chart(ctx, {
                                     type: "pie",
