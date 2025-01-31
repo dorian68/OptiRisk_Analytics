@@ -44,7 +44,7 @@ class ExcelToHTML:
 
         # Ajout de styles CSS pour l'affichage
         styled_table = pivot_table.style.set_table_styles([
-            {"selector": "thead th", "props": [("background-color", "#4CAF50"),
+            {"selector": "thead th", "props": [("background-color", "#43438A"),
                                             ("color", "white"),
                                             ("text-align", "center"),
                                             ("font-weight", "bold"),

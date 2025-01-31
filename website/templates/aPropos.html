@@ -53,12 +53,36 @@
             .optirisk_container {
                 height: 80vh;
             }
+            .text-container {
+                color: white;
+                font-size: 24px;
+                font-weight: bold;
+                max-width: 90%; /* Largeur maximale pour éviter les dépassements */
+                overflow: hidden; /* Empêche les débordements */
+            }
+             /* Adaptation pour les écrans mobiles */
+            @media (max-width: 768px) {
+
+                .text-container {
+                font-size: 22px; /* Réduit la taille du texte */
+                padding: 10px; /* Ajoute un léger padding */
+                text-align: center; /* Centre le texte horizontalement */
+                }
+
+                .text-container h1 {
+                font-size: 29px; /* Réduit la taille du titre */
+                font-weight: bold;
+                }
+            }
+
         }
         </style>
         <!-- PRICING -->
-        <div class="row my-5">
-            <h2 class="text-center" style="color: #2E86C1;"><strong>{% trans "Optirisk Analytics - la liberté de pouvoir piloter votre avenir" %}</strong></h2>
-        <div>
+        <div class="container-fluid my-5">
+            <div class="text-container">
+                <h2 class="text-center" style="color: #2E86C1;"><strong>{% trans "Optirisk Analytics - la liberté de pouvoir piloter votre avenir" %}</strong></h2> 
+            </div>
+          </div>
         <div class="container my-4 optirisk_container">
 
             <!-- VISION OPTIRISK -->

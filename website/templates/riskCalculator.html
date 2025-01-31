@@ -22,75 +22,84 @@
 <body>
     <section>    
     <!-- LOADING FORM -->
-    <div class="container" style="height: 80vh; margin-top: 50px;">
-        <h1>Chargez un fichier CSV pour le traitement</h1>
-        <form method="post" enctype="multipart/form-data" id="upload-form">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary" onclick="showLoading()">Charger le fichier</button>
-        </form>
-    </div>
-    
-    <!-- Écran de chargement en plein écran -->
+    {% if not columns %}
+    <div class="container d-flex justify-content-center align-items-center vh-100" style="width: 50%;">
+        <div class="row mx-5">
+                <hr>
+                <h2>{% trans "Choix du report à afficher" %}</h2>
+                <label>{% trans "Sélectionner votre reporting :" %}</label>
+                <select name="column_labels" multiple class="form-control">
+                    {% for report in report_list %}
+                        <option value="{{ report }}">{{ report }}</option>
+                    {% endfor %}
+                </select>
 
-    <div id="loading" class="loading-overlay">
-        <div class="spinner-container">
-            <p> <strong>Chargement en cours...</strong></p>
-            <div class="spinner-border" style="width: 9rem; height: 9rem;" role="status"></div>
+                <h3 class="mt-5">{% trans "Chargez un fichier CSV pour le traitement" %}</h3>
+                <form method="post" enctype="multipart/form-data" id="upload-form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary" onclick="showLoading('upload-form')">Charger le fichier</button>
+                </form>
+                <hr class="mt-4">
+            </div>
+            
+        <!-- Écran de chargement en plein écran -->
+        <div id="loading" class="loading-overlay">
+            <div class="spinner-container">
+                <p> <strong>{% trans "Chargement en cours..." %}</strong></p>
+                <div class="spinner-border" style="width: 9rem; height: 9rem;" role="status"></div>
+            </div>
         </div>
-    </div>
-    
-    <!-- JavaScript -->
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("loading").style.display = "none"; // Cache l'écran au chargement
-    });
-    
-    function showLoading() {
-        document.getElementById("loading").style.display = "flex"; // Affiche l'écran lors du clic
-        document.getElementById("upload-form").style.display = "none"; // Cache le formulaire
-    }
-    </script>
-    
-    <!-- CSS -->
-    <style>
-    /* Cache l'écran de chargement au démarrage */
-    .loading-overlay {
-        display: none; /* Initialement masqué */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.9);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-    
-    /* Animation du spinner */
-    .spinner-container {
-        text-align: center;
-        font-size: 2.5rem;
-        color: rgb(67, 67, 138);
-    }
-    </style>
-     
+        <!-- JavaScript -->
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("loading").style.display = "none"; // Cache l'écran au chargement
+        });
+        
+        function showLoading() {
+            document.getElementById("loading").style.display = "flex"; // Affiche l'écran lors du clic
+            document.getElementById("upload-form").style.display = "none"; // Cache le formulaire
+        }
+        </script>
+        <!-- CSS -->
+        <style>
+        /* Cache l'écran de chargement au démarrage */
+        .loading-overlay {
+            display: none; /* Initialement masqué */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        /* Animation du spinner */
+        .spinner-container {
+            text-align: center;
+            font-size: 2.5rem;
+            color: rgb(67, 67, 138);
+        }
+        </style>
         <!-- END LOADING FORM -->
 
+    </div>
         <!-- SELECT COLUMNS -->  
-        {% if columns %}
-
+        {% else %}
+        <div class="container" style="height: 80vh; margin-top: 50px;">
         <hr>
-        <h3>Créer un tableau croisé dynamique</h3>
+        <h3>{% trans "Créer un tableau croisé dynamique" %}</h3>
         <form id="pivotForm" method="post">
             {% csrf_token %}
             <input type="hidden" name="df_json" value='{{ df_json|escapejs }}'>
 
             <div class="row">
                 <div class="col-md-4">
-                    <label>Sélectionner les colonnes :</label>
+                    <label>{% trans "Sélectionner les colonnes :" %}</label>
                     <select name="column_labels" multiple class="form-control">
                         {% for col in columns %}
                             <option value="{{ col }}">{{ col }}</option>
@@ -98,7 +107,7 @@
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <label>Sélectionner les lignes :</label>
+                    <label>{% trans "Sélectionner les lignes :" %}</label>
                     <select name="index_labels" multiple class="form-control">
                         {% for col in columns %}
                             <option value="{{ col }}">{{ col }}</option>
@@ -106,7 +115,7 @@
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <label>Sélectionner les valeurs :</label>
+                    <label>{% trans "Sélectionner les valeurs :" %}</label>
                     <select name="value_labels" multiple class="form-control">
                         {% for col in columns %}
                             <option value="{{ col }}">{{ col }}</option>
@@ -115,14 +124,55 @@
                 </div>
             </div>
             
-            <button type="submit" class="btn btn-success mt-3">Générer</button>
+            <button type="submit" class="btn btn-primary my-3" onclick="showLoading('pivotForm')">Générer</button>
         </form>
 
         <hr>
-        <!--<h3>Tableau croisé dynamique</h3>
-        <div id="pivotTableContainer" class="table-responsive"></div>
         
-        </div>-->
+    <div id="loading2" class="loading-overlay2">
+        <div class="spinner-container2">
+            <p> <strong>{% trans "Chargement en cours..." %}</strong></p>
+            <div class="spinner-border" style="width: 9rem; height: 9rem;" role="status"></div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("loading2").style.display = "none"; // Cache l'écran au chargement
+        });
+        
+        function showLoading() {
+            document.getElementById("loading2").style.display = "flex"; // Affiche l'écran lors du clic
+            document.getElementById("pivotForm").style.display = "none"; // Cache le formulaire
+        }
+    </script>
+    <style>
+        /* Cache l'écran de chargement au démarrage */
+        .loading-overlay2 {
+            display: none; /* Initialement masqué */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        /* Animation du spinner */
+        .spinner-container2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: rgb(67, 67, 138);
+        }
+        </style>
+    
+        </div>
+
         {% endif %}
     <script>
         $(document).ready(function () {

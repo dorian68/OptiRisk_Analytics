@@ -91,6 +91,7 @@ from .models import UploadedFile
 
 def tool_risk_calculator(request):
     form = UploadedFileForm()
+    report_list = ["Reporting de performances", "Simulateur de risques", "Prévision de trésorie"]
     
     if request.method == "POST":  
         file = request.FILES.get("file")
@@ -143,7 +144,7 @@ def tool_risk_calculator(request):
             print(f"file_id is {file_id}")
             print("------------------------------------------------------")
             return redirect("process_file", file_id=file_id)  # Redirection après upload
-    return render(request, "riskCalculator.html", {"form": form})
+    return render(request, "riskCalculator.html", {"form": form, "report_list": report_list})
 
 def process_file(request, file_id):
     uploaded_file = get_object_or_404(UploadedFile, id=file_id)
@@ -219,6 +220,9 @@ def article_risk_management(request):
 def article_automation_email_sending(request):
     return render(request, 'article_automation_email_sending.html')
 
+def riskCalculator_frontPage(request):
+    return render(request, 'riskCalculator_frontPage.html')
+
 def chart_data(request):
     # Exemple de données pour la courbe
     data = {
@@ -237,5 +241,6 @@ def chart_data(request):
 
 def chart_view(request):
     return render(request, "chart.html")
+
 
 

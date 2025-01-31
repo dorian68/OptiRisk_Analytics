@@ -33,7 +33,7 @@
                     <a class="nav-link" href="{% url 'about' %}" style="color:white;">{% trans "A propos" %}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'tool_risk_calculator' %}" style="color:white;">{% trans "Simulateur de risques" %}</a>
+                    <a class="nav-link" href="{% url 'riskCalculator_frontPage' %}" style="color:white;">{% trans "Simulateur de risques" %}</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link" href="{% url 'articles' %}" style="color:white;">
@@ -64,6 +64,7 @@
   </header>
     <section>
         {% block riskCalculator %}{% endblock %}
+        {% block riskCalculator_frontPage %}{% endblock %}
         {% block contact %}{% endblock %}
         {% block home2 %}{% endblock %}
         {% block ratesAnalysis %}{% endblock %}
