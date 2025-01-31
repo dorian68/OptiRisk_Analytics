@@ -208,6 +208,9 @@ def process_file(request, file_id):
     except Exception as e:
         return render(request, "error.html", {"message": f"Erreur lors du traitement du fichier : {e}"})
 
+def riskCalculator_report(request):
+    return render(request, "riskCalculator_report.html") 
+
 def article_automation_for_small_business(request):
     return render(request, 'article_automation_for_small_business.html')
 
