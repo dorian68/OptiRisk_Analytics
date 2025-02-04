@@ -20,6 +20,19 @@
 
 <style>
 
+
+.carousel{
+    border-radius: 25px 25px 25px 25px;
+    background-color: rgba(231, 231, 236, 0.915);
+}
+
+.carousel-caption {
+    margin-top: 20px; /* Ajuste cette valeur selon la hauteur de ton carousel */
+    position: relative;
+    color: black;
+    border-radius: 25px 25px 25px 25px; width: 70%;height: 70%;
+}
+
 .dynamic_button:hover {
     transform: scale(1.10) translateY(-10px);
     box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.2);
@@ -120,6 +133,7 @@ font-size: 22px; /* Réduit la taille du texte */
     }
 }
 }
+
 </style>
 
 <div class="container-fluid front_img">
@@ -184,7 +198,7 @@ font-size: 22px; /* Réduit la taille du texte */
                     <img src="../static/home_page5.jpg" class="d-block w-100" style=" border-radius: 25px 25px 25px 25px; width: 300px;height: 300px;">
                     <div class="carousel-caption d-md-block" style="margin-top: 10px;">
                     <h5>{% trans "Pilotage" %}</h5>
-                    <p>{% trans "'Prévoir' est le mot d'ordre de OptiRisk Analytics, nous mettrons à votre disposition notre expertise en IA afin que vous ayez le controle." %} </p>
+                    <p class="d-flex justify-content-center align-items-center">{% trans "'Prévoir' est le mot d'ordre de OptiRisk Analytics, nous mettrons à votre disposition notre expertise en IA afin que vous ayez le controle." %} </p>
                     </div>
                 </div>
                 </div>
@@ -209,12 +223,12 @@ font-size: 22px; /* Réduit la taille du texte */
     
     </div>
     <!-- Prestation 1-->
-    <div class="row row-cols-1 row-cols-md-3 mt-4">
+    <div class="row justify-content-center align-items-center vh-90 row-cols-1 row-cols-lg-3 mt-4">
         <div class="col mx-auto">
             <img src="../static/bilan_act1.png" class="img-fluid" style="width:100%"></img>
         </div>
-        <div class="col mx-auto">
-            <h1>{% trans "Construisons votre bilan d’activité" %}</h1>
+        <div class="col d-flex flex-column justify-content-center align-items-center mx-auto">
+            <h3><strong>{% trans "Construisons votre bilan d’activité" %}</strong></h2>
             <p>{% trans "Etablissons ensemble un état des lieux de la performance de votre entreprise" %}</p>
             <p>{% trans "Une revue régulière de vos scénarios de gains et pertes potentiels" %} </p>
             <p>{% trans "Pilotons et surveillons régulièrement l'atteinte de vos objectifs grace à l'IA" %}</p>
@@ -235,9 +249,9 @@ font-size: 22px; /* Réduit la taille du texte */
     
     </div>
     <!-- Prestation 2-->
-    <div class="row row-cols-1 row-cols-md-3 mt-4">
-        <div class="col mx-auto">
-            <h1>{% trans "Construisons votre outil de gestion financière personnalisé" %}</h1>
+    <div class="row justify-content-center align-items-center vh-90 row-cols-1 row-cols-lg-3 mt-4">
+        <div class="col d-flex flex-column justify-content-center align-items-center mx-auto">
+            <h3><strong>{% trans "Construisons votre outil de gestion financière personnalisé" %}</strong></h3>
             <p>{% trans "Qu'ils soient bureautique, sous Excel sur le web, sous mobile ou intégrant une intelligence artificielle, nous vous accompagnons dans le développemment de vos outils fait maison pour qu'ils correspondent a " %}<strong> {% trans "vos besoins" %}</strong></p>
             <a type="button" class="btn btn-outline-primary dynamic_button" href="{% url 'service_dev_tool' %}">{% trans "Voir plus" %}</a>
         </div>
@@ -259,14 +273,14 @@ font-size: 22px; /* Réduit la taille du texte */
     
     </div>
     <!-- Prestation 3-->
-    <div class="row row-cols-1 row-cols-md-3 mt-4">
+    <div class="row justify-content-center align-items-center vh-90 row-cols-1 row-cols-lg-3 mt-4">
         <div class="col mx-auto">
             <img src="https://www.eurotechconseil.com/wp-content/uploads/2023/12/evolution-data.webp" class="img-fluid" style="width:200%"></img>
         </div>
-        <div class="col mx-auto">
-            <h1>{% trans "Construisons l'architecture de collecte et gestion des données interne de votre entreprise" %}</h1>
+        <div class="col d-flex flex-column justify-content-center align-items-center mx-auto">
+            <h3><strong>{% trans "Construisons l'architecture de collecte et gestion des données interne de votre entreprise" %}</strong></h3>
             <p> {% trans "Etablissons ensemble une architecture sécurisé pour la gestion de vos données" %}</p>
-            <p>   •	{% trans "Installation d’une base de données interne (Sql serveur, …)" %}</p>
+            <p>   •	{% trans "Installation d’une base de données interne" %}</p>
             <p>   •	{% trans "Interface Excel" %}</p>
             <p>   •	{% trans "Outil d’intégration d’inputs " %}</p>
             <p>   •	{% trans "Collecte des données " %}</p>
