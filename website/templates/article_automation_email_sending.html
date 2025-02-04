@@ -180,7 +180,7 @@ html {
   <div class="text-container">
       <h2 class="tb-5"><strong>{% trans "Automatisez vos envois de mail Outlook " %}</strong></h2> 
       <p>
-        {% trans "Envoyer un email est la tache la plus commune que etes amené à effectuer dans votre activité professionnelle, mais saviez vous que votre ordinateur peut s'en charger à votre place ?" %}
+        {% trans "Envoyer un email est la tache la plus commune que etes amené à effectuer dans votre activité professionnelle, mais saviez vous que votre ordinateur pouvait s'en charger à votre place ?" %}
       </p>
   </div>
 </div>
@@ -190,29 +190,82 @@ html {
 <div class="blog-container">
     <!-- Colonne gauche : Contenu principal -->
     <div class="col-4 main-content">
-        <h3 id="section1">{% trans "Les compétences clés des ingénieurs appliquées à l’entreprise" %}</h3>
+        <h3 id="section1">{% trans "Automatisez vos envois d’e-mails sur Windows : Gagnez du temps et optimisez votre productivité !" %}</h3>
         <p>
-          {% trans "Voici quelques-unes des forces qu’un ingénieur peut apporter à votre organisation :" %}
+          {% blocktrans %}
+          Dans un monde où l’efficacité est reine, l’automatisation des tâches répétitives 
+          est devenue une nécessité. Que vous soyez une PME, un indépendant ou une grande 
+          entreprise, envoyer des e-mails manuellement peut rapidement devenir chronophage 
+          et source d’erreurs. Et si vous pouviez planifier et automatiser ces envois sur 
+          Windows ? C’est possible, et c’est plus simple que vous ne le pensez !          
+          {% endblocktrans %}
         </p>
+        <h3>{% trans "Pourquoi automatiser l’envoi de vos e-mails ?" %}</h3>
+        <p>L’automatisation de l’envoi d’e-mails présente de nombreux avantages :</p>
         <ul>
           <li>
-            <strong>{% trans "Approche analytique :" %}</strong>{% trans "Un ingénieur est formé pour décortiquer des systèmes complexes, identifier les inefficacités et proposer des solutions optimales." %}
+            <strong>{% trans "Gain de temps : " %}</strong>{% trans "Plus besoin de rédiger et d’envoyer chaque e-mail manuellement." %}
           </li>
           <li>
-            <strong>{% trans "Optimisation des processus :" %}</strong>{% trans " En automatisant certaines tâches ou en concevant des outils sur mesure, un ingénieur peut réduire les coûts et augmenter la productivité." %}
+            <strong>{% trans "Réduction des erreurs humaines : " %}</strong>{% trans "Fini les oublis et les erreurs de destinataires." %}
           </li>
           <li>
-            <strong>{% trans "Vision à long terme :" %}</strong>{% trans "Grâce à leur capacité à modéliser des scénarios futurs, les ingénieurs aident à prévoir les impacts des décisions actuelles sur l’entreprise." %}
+            <strong>{% trans "Meilleure gestion des suivis : " %}</strong>{% trans "Planifiez des relances automatiques sans y penser." %}
+          </li>
+          <li>
+            <strong>{% trans "Augmentation de la productivité : " %}</strong>{% trans "Concentrez-vous sur des tâches à plus forte valeur ajoutée." %}
           </li>
         </ul>
-        <h3 id="section2">{% trans "Exemples concrets de valeur ajoutée" %}</h3>
+        <p>{% trans "Que ce soit pour l’envoi de factures, de newsletters, de rappels ou de notifications internes, un système d’automatisation bien conçu peut faire toute la différence." %}</p>
+        <h3 id="section2">{% trans "Comment automatiser l’envoi d’e-mails sur Windows ?" %}</h3>
+        <ol>
+          <li>
+            <h4><strong>{% trans "Utiliser des scripts PowerShell" %}</strong></h4>
+            <p>
+              {% blocktrans %}
+              Windows permet d’envoyer des e-mails automatiquement en utilisant PowerShell, 
+              un outil puissant intégré au système d’exploitation. Avec quelques lignes de code, 
+              vous pouvez configurer un script qui envoie des e-mails à une liste de destinataires 
+              à une heure précise.
+              {% endblocktrans %}
+            </p>
+          </li>
+          <li>
+            <h4><strong>{% trans "Planifier des tâches avec le Planificateur de tâches Windows" %}</strong></h4>
+            <p>
+              {% blocktrans %}
+              Une fois votre script prêt, vous pouvez utiliser le Planificateur de tâches Windows 
+              pour exécuter automatiquement l’envoi d’e-mails selon un calendrier défini (quotidien, 
+              hebdomadaire, mensuel, etc.).
+              {% endblocktrans %}
+            </p>
+          </li>
+          <li>
+            <h4><strong>{% trans "Exploiter des outils tiers" %}</strong></h4>
+            <p>
+              {% blocktrans %}
+              Si vous recherchez une solution plus intuitive, des logiciels comme Outlook avec 
+              des macros VBA, Zapier, ou encore Automate.io permettent d’automatiser l’envoi 
+              d’e-mails sans nécessiter de connaissances en programmation.
+              {% endblocktrans %}
+            </p>
+          </li>
+        </ol>
+        <h3 id="section3">{% trans "Cas d'usage concrets" %}</h3>
+        <ul>
+          <li><strong>{% trans "Gestion de la relation client : " %}</strong>{% trans "Envoyer automatiquement des réponses ou des confirmations après une prise de contact." %}</li>
+          <li><strong>{% trans "Suivi de facturation : " %}</strong>{% trans "Relancer les clients automatiquement lorsqu’une facture est en attente de paiement." %}</li>
+          <li><strong>{% trans "Alertes internes : " %}</strong>{% trans "Notifier votre équipe des mises à jour importantes sans intervention manuelle." %}</li>
+        </ul>
+        <h3 id="section4">{% trans "Besoin d’une solution sur mesure ?" %}</h3>
         <p>
-          {% trans "Prenons l’exemple d’une entreprise locale de distribution. Un ingénieur peut concevoir un système qui suit en temps réel les ventes, les stocks et les performances des employés, offrant ainsi des insights précieux pour optimiser l’ensemble de la chaîne d’approvisionnement." %}
+          {% blocktrans %}
+          Chez OptiRisk Analytics, nous vous accompagnons dans l’automatisation de vos processus métier, y compris l’envoi d’e-mails automatisé sur 
+          Windows. Nous développons des solutions sur mesure adaptées à votre entreprise, que ce soit via des scripts, des logiciels spécifiques ou 
+          des intégrations avec vos outils existants.
+          {% endblocktrans %}
         </p>
-        <h3 id="section3">{% trans "Pourquoi choisir OptiRisk Analytics ?" %}</h3>
-        <p>
-          {% trans "Notre équipe combine une expertise en ingénierie et en gestion financière pour vous offrir des solutions innovantes, adaptées à vos besoins spécifiques. Nous croyons fermement que chaque entreprise, peu importe sa taille, peut bénéficier des méthodologies et des outils utilisés par les grandes organisations." %}
-        </p>
+        <p><strong>{% trans "Vous souhaitez optimiser vos envois d’e-mails et gagner en efficacité ? Contactez-nous dès aujourd’hui pour une consultation gratuite !" %}</strong></p>
     </div>
 
     <!-- Colonne droite : Sommaire -->
@@ -220,9 +273,10 @@ html {
         <div class="toc">
             <h3>{% trans "Sommaire" %}</h3>
             <ul>
-                <li><a href="#section1">{% trans "Les compétences clés des ingénieurs appliquées à l’entreprise" %}</a></li>
-                <li><a href="#section2">{% trans "Exemples concrets de valeur ajoutée" %}</a></li>
-                <li><a href="#section3">{% trans "Pourquoi choisir OptiRisk Analytics ?" %}</a></li>
+                <li><a href="#section1">{% trans "Automatisez vos envois d’e-mails sur Windows : Gagnez du temps et optimisez votre productivité !" %}</a></li>
+                <li><a href="#section2">{% trans "Comment automatiser l’envoi d’e-mails sur Windows ?" %}</a></li>
+                <li><a href="#section3">{% trans "Cas d'usage concrets" %}</a></li>
+                <li><a href="#section4">{% trans "Besoin d’une solution sur mesure ?" %}</a></li>
             </ul>
         </div>
     </aside>
