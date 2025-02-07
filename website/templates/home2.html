@@ -20,7 +20,6 @@
 
 <style>
 
-
 .carousel{
     border-radius: 25px 25px 25px 25px;
     background-color: rgba(231, 231, 236, 0.915);
@@ -31,6 +30,11 @@
     position: relative;
     color: black;
     border-radius: 25px 25px 25px 25px; width: 70%;height: 70%;
+}
+
+.carousel-caption .title {
+    margin-top: 50px !important; /* Ajuste cette valeur selon la hauteur de ton carousel */
+    height: 100%;
 }
 
 .dynamic_button:hover {
@@ -167,8 +171,12 @@ font-size: 22px; /* Réduit la taille du texte */
                 <div class="carousel-item active">
                     <img src="../static/home_page2.jpg" class="d-block w-100" style=" border-radius: 25px 25px 25px 25px; width: 300px;height: 300px;">
                     <div class="carousel-caption d-md-block">
-                    <h5>{% trans "Saisonnalité" %}</h5>
                     <p class="cText">{% trans "Nous vous aidons à identifier les tendances intrèseques à votre activité pour que vous sachiez quand prendre les bonnes décisions" %} </p>    
+                    </div>
+                </div>
+                <div class="carousel-item active d-flex align-items-center w-100" style="width: 300px;height: 300px;padding: 30px; font-size: 30px !important;">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center title">
+                    <h5 style="color: white;font-size: 2rem;"><strong>{% trans "Saisonnalité" %}</strong></h5>
                     </div>
                 </div>
                 </div>
@@ -182,8 +190,12 @@ font-size: 22px; /* Réduit la taille du texte */
                 <div class="carousel-item active">
                     <img src="../static/home_page4.jpg" class="d-block w-100" style=" border-radius: 25px 25px 25px 25px; width: 300px;height: 300px;">
                     <div class="carousel-caption d-md-block">
-                    <h5>{% trans "Granularité" %}</h5>
                     <p>{% trans "Les petits mouvements composent les grandes tendances. OptiRisk Analytics vous accompagne dans la décomposition des postes clés pour que vous compreniez les dynamiques de votre activité" %}</p>
+                    </div>
+                </div>
+                <div class="carousel-item active d-flex align-items-center w-100" style="width: 300px;height: 300px;padding: 30px; font-size: 30px !important;">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center title">
+                    <h5 style="color: white;font-size: 2rem;"><strong>{% trans "Granularité" %}</strong></h5>
                     </div>
                 </div>
                 </div>
@@ -197,8 +209,12 @@ font-size: 22px; /* Réduit la taille du texte */
                 <div class="carousel-item active">
                     <img src="../static/home_page5.jpg" class="d-block w-100" style=" border-radius: 25px 25px 25px 25px; width: 300px;height: 300px;">
                     <div class="carousel-caption d-md-block" style="margin-top: 10px;">
-                    <h5>{% trans "Pilotage" %}</h5>
                     <p class="d-flex justify-content-center align-items-center">{% trans "'Prévoir' est le mot d'ordre de OptiRisk Analytics, nous mettrons à votre disposition notre expertise en IA afin que vous ayez le controle." %} </p>
+                    </div>
+                </div>
+                <div class="carousel-item active d-flex align-items-center w-100" style="width: 300px;height: 300px;padding: 30px; font-size: 30px !important;">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center title">
+                    <p style="color: white;font-size: 2rem;"><strong>{% trans "Pilotage" %}</strong></p>
                     </div>
                 </div>
                 </div>
