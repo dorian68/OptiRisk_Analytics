@@ -1,0 +1,94 @@
+<!-- templates/home.html -->
+{% load static %}
+
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiQuant IA</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" sizes="16x16" href="{% static 'entreprise.png' %}">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Pour les icônes -->
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body style="background-color: rgb(244, 244, 244);line-height: 1.8;">
+  <header>
+    <!--<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-fixed-top">-->
+      <!--<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2E86C1;">-->
+        <nav class="navbar fixed-top navbar-expand-md navbar-light" style="background-image:linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)), url('../static/home_pageTWO.jpg');background-attachment: fixed;background-position: auto,center top;">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home2' %}" style="color: white;">OptiQuant IA</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}" style="color:white;">{% trans "A propos" %}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'riskCalculator_frontPage' %}" style="color:white;">{% trans "Simulateur de risques" %}</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" href="{% url 'articles' %}" style="color:white;">
+                      {% trans "Blog" %}                   </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'services' %}" style="color:white;">{% trans "Tarifs" %}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}" style="color:white;">{% trans "Contact" %}</a>
+                  </li>
+                </ul>
+                <form class="form-inline ms-auto" action="{% url 'set_language' %}" method="post">
+                  {% csrf_token %}
+                  {% get_available_languages as LANGUAGES %}
+                  {% for lang_code, lang_name in LANGUAGES %}
+                      <button class="btn btn-link text-white" type="submit" name="language" value="{{ lang_code }}">
+                          {{ lang_name }}
+                      </button>
+                  {% endfor %}
+              </form>
+              </div>      
+          </div>    
+        </nav> 
+  </header>
+    <section>
+      <script src="{% static 'js/chatbot.js' %}"></script>    
+        {% block riskCalculator %}{% endblock %}
+        {% block riskCalculator_frontPage %}{% endblock %}
+        {% block riskCalculator_report %}{% endblock %}
+        {% block contact %}{% endblock %}
+        {% block home2 %}{% endblock %}
+        {% block ratesAnalysis %}{% endblock %}
+        {% block corpoFinance %}{% endblock %}
+        {% block meanReversion %}{% endblock %}
+        {% block services %}{% endblock %}
+        {% block service_analysis %}{% endblock %}
+        {% block service_dev_tool %}{% endblock %}
+        {% block service_data_management %}{% endblock %}
+        {% block aPropos %}{% endblock %}
+        {% block articles %}{% endblock %}
+        {% block article_automation_for_small_business %}{% endblock %}
+        {% block article_ml_for_small_business %}{% endblock %}
+        {% block article_risk_management %}{% endblock %}
+        {% block article_automation_email_sending %}{% endblock %}
+        {% block report %}{% endblock %}
+        {% block process %}{% endblock %}
+        {% block upload %}{% endblock %}
+
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<footer class="footer">
+  <p>&copy; 2024 OptiQuant IA. Tous droits réservés.</p>
+</footer>
+</html>
+

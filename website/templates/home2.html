@@ -1,0 +1,329 @@
+{% extends "./index.html"%}
+
+{% block home2 %}
+
+{% load static %}
+
+{% load i18n %}
+
+<!--<img src="../static/home_pageTWO.jpg" style="background-image: url('../static/home_pageTWO.jpg');background-attachment: fixed;background-position: center top;width: 100%;">-->
+
+<!--<div class="container-fluid" style="position: relative; width: 100%;background-attachment: fixed;">
+    <img class="img-fluid" alt="Responsive image" src="../static/home_pageONE.jpg" style="width: 100%; height: auto;" >
+    <div style="position: absolute; top: 12%; left: 10%; right: 50%; translate(-50%, -50%); color: white; font-size: 24px; font-weight: bold; text-align: left;">
+        <h1><strong>« La liberté de piloter votre futur financier »</strong></h1>
+        <p><strong>OptiQuant IA, votre partenaire 
+            pour une croissance sans surprises.</strong></p>
+    
+    </div>
+  </div>-->
+
+<style>
+
+.carousel{
+    border-radius: 25px 25px 25px 25px;
+    background-color: rgba(231, 231, 236, 0.915);
+}
+
+.carousel-caption {
+    margin-top: 20px; /* Ajuste cette valeur selon la hauteur de ton carousel */
+    position: relative;
+    color: black;
+    border-radius: 25px 25px 25px 25px; width: 70%;height: 70%;
+}
+
+.carousel-caption .title {
+    margin-top: 50px !important; /* Ajuste cette valeur selon la hauteur de ton carousel */
+    height: 100%;
+}
+
+.dynamic_button:hover {
+    transform: scale(1.10) translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.2);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel:hover {
+transform: scale(1.10) translateY(-10px);
+box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.2);
+box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.middle_image {
+background-image: url('../static/outil_bureautique.jpg');
+background-position: center;
+background-attachment: fixed;
+position: relative;
+width: 100%;
+height: 300px;
+}
+
+.middle_image2 {
+background-image: url('../static/modern_tool.jpg');
+background-position: center;
+background-attachment: fixed;
+position: relative;
+width: 110%;
+height: 300px;
+zoom: 100%;
+}
+
+.middle_image3 {
+background-image: url('../static/dataBase.jpg');
+background-position: center;
+background-attachment: fixed;
+position: relative;
+width: 110%;
+height: 300px;
+zoom: 100%;
+}
+
+    /* Style par défaut pour l'image */
+.front_img {
+background-size: contain;
+background-position: center;
+background-image: url('../static/home_pageONE_correct.jpg');
+position: relative;
+width: 100%;
+height: 700px;
+background-attachment: fixed;
+overflow: hidden; /* Empêche les débordements */
+display: flex;
+justify-content: center; /* Centre horizontalement */
+align-items: center; /* Centre verticalement */
+text-align: center;
+padding: 20px; /* Ajoute un padding pour éviter les débords */
+box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+/* Style du texte */
+.front_img .text-container {
+color: white;
+font-size: 24px;
+font-weight: bold;
+max-width: 90%; /* Largeur maximale pour éviter les dépassements */
+overflow: hidden; /* Empêche les débordements */
+}
+
+/* Adaptation pour les écrans mobiles */
+@media (max-width: 768px) {
+.front_img {
+background-size: cover; /* Zoom pour petits écrans */
+background-attachment: fixed; /* Désactive l'effet fixe */
+height: 100vh; /* Ajuste la hauteur */
+}
+
+.front_img .text-container {
+font-size: 22px; /* Réduit la taille du texte */
+padding: 10px; /* Ajoute un léger padding */
+text-align: center; /* Centre le texte horizontalement */
+}
+
+.front_img .text-container h1 {
+font-size: 29px; /* Réduit la taille du titre */
+font-weight: bold;
+}
+
+.small_header {
+font-size: 22px; /* Réduit la taille du texte */
+}
+
+@media (max-width: 768px) {
+    .custom-spacing .col{
+        margin-bottom: 20px;
+    }
+    .carousel {
+        height: 20%;
+    }
+}
+}
+
+</style>
+
+<div class="container-fluid front_img">
+    <div class="text-container">
+        <h1 class="th1"><strong>{% trans "« La liberté de piloter votre futur financier »" %}</strong></h1>
+        <p><strong>{% trans "OptiQuant IA, votre partenaire pour une croissance sans surprises."%}</strong></p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-1 mt-4">
+        <div class="col mx-auto">
+            <div class="card h-100 shadow-lg p-3 bg-white" style="border-radius: 25px 25px 25px 25px;">
+                <div class="card-body">   
+                    <p class="card-text">
+                    <!--PRESTATIONS BASIQUE-->
+                        <h1 class="text-center small_header">{% trans "Des solutions numériques innovantes" %}</h1>
+                        <h4><i>{% trans "« Avec OptiQuant IA, transformez vos données financières en leviers de croissance. Anticipez les risques, optimisez vos ressources et pilotez l'avenir de votre entreprise avec des outils sur mesure combinant IA et gestion de risques. »"%}</i></h4>
+                    <!--FIN PRESTATIONS BASIQUE-->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="row row-cols-1 row-cols-md-3 mt-4 custom-spacing">
+        <div class="col mx-auto">
+            <div id="carouselExampleCaptions" class="carousel slide mx-auto" style="width: auto;">
+                <div class="carousel-indicators">
+                </div>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../static/home_page2.jpg" class="d-block w-100" style=" border-radius: 25px 25px 25px 25px; width: 300px;height: 300px;">
+                    <div class="carousel-caption d-md-block">
+                    <p class="cText">{% trans "Nous vous aidons à identifier les tendances intrèseques à votre activité pour que vous sachiez quand prendre les bonnes décisions" %} </p>    
+                    </div>
+                </div>
+                <div class="carousel-item active d-flex align-items-center w-100" style="width: 300px;height: 300px;padding: 30px; font-size: 30px !important;">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center title">
+                    <h5 style="color: white;font-size: 2rem;"><strong>{% trans "Saisonnalité" %}</strong></h5>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col mx-auto">
+            <div id="carouselExampleCaptions" class="carousel slide mx-auto" style="width: auto;">
+                <div class="carousel-indicators">
+                </div>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../static/home_page4.jpg" class="d-block w-100" style=" border-radius: 25px 25px 25px 25px; width: 300px;height: 300px;">
+                    <div class="carousel-caption d-md-block">
+                    <p>{% trans "Les petits mouvements composent les grandes tendances. OptiQuant IA vous accompagne dans la décomposition des postes clés pour que vous compreniez les dynamiques de votre activité" %}</p>
+                    </div>
+                </div>
+                <div class="carousel-item active d-flex align-items-center w-100" style="width: 300px;height: 300px;padding: 30px; font-size: 30px !important;">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center title">
+                    <h5 style="color: white;font-size: 2rem;"><strong>{% trans "Granularité" %}</strong></h5>
+                    </div>
+                </div>
+                </div>
+           </div>
+        </div>
+        <div class="col mx-auto">
+            <div id="carouselExampleCaptions" class="carousel slide mx-auto" style="width: auto;">
+                <div class="carousel-indicators">
+                </div>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../static/home_page5.jpg" class="d-block w-100" style=" border-radius: 25px 25px 25px 25px; width: 300px;height: 300px;">
+                    <div class="carousel-caption d-md-block" style="margin-top: 10px;">
+                    <p class="d-flex justify-content-center align-items-center">{% trans "'Prévoir' est le mot d'ordre de OptiQuant IA, nous mettrons à votre disposition notre expertise en IA afin que vous ayez le controle." %} </p>
+                    </div>
+                </div>
+                <div class="carousel-item active d-flex align-items-center w-100" style="width: 300px;height: 300px;padding: 30px; font-size: 30px !important;">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center title">
+                    <p style="color: white;font-size: 2rem;"><strong>{% trans "Pilotage" %}</strong></p>
+                    </div>
+                </div>
+                </div>
+        </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+
+    </div>
+
+</div>
+
+<!-- FIRST FIXED IMAGE -->
+<div class="container-fluid middle_image mt-4">
+
+</div>
+
+<div class="container text-left mt-4">
+
+    <!--SAPCING-->
+    <div class="row mt-4">
+    
+    </div>
+    <!-- Prestation 1-->
+    <div class="row justify-content-center align-items-center vh-90 row-cols-1 row-cols-lg-3 mt-4">
+        <div class="col mx-auto">
+            <img src="../static/bilan_act1.png" class="img-fluid" style="width:100%"></img>
+        </div>
+        <div class="col d-flex flex-column justify-content-center align-items-center mx-auto">
+            <h3><strong>{% trans "Construisons votre bilan d’activité" %}</strong></h2>
+            <p>{% trans "Etablissons ensemble un état des lieux de la performance de votre entreprise" %}</p>
+            <p>{% trans "Une revue régulière de vos scénarios de gains et pertes potentiels" %} </p>
+            <p>{% trans "Pilotons et surveillons régulièrement l'atteinte de vos objectifs grace à l'IA" %}</p>
+            <a type="button" class="btn btn-outline-primary dynamic_button" href="{% url 'service_analysis' %}">{% trans "Voir plus" %}</a>
+        </div>
+    </div>
+
+ </div>
+
+<!-- SECOND FIXED IMAGE -->
+<div class="container-fluid middle_image2 mt-4">
+
+</div>
+
+<div class="container text-left mt-4">
+    <!--SAPCING-->
+    <div class="row mt-4">
+    
+    </div>
+    <!-- Prestation 2-->
+    <div class="row justify-content-center align-items-center vh-90 row-cols-1 row-cols-lg-3 mt-4">
+        <div class="col d-flex flex-column justify-content-center align-items-center mx-auto">
+            <h3><strong>{% trans "Construisons votre outil de gestion financière personnalisé" %}</strong></h3>
+            <p>{% trans "Qu'ils soient bureautique, sous Excel sur le web, sous mobile ou intégrant une intelligence artificielle, nous vous accompagnons dans le développemment de vos outils fait maison pour qu'ils correspondent a " %}<strong> {% trans "vos besoins" %}</strong></p>
+            <a type="button" class="btn btn-outline-primary dynamic_button" href="{% url 'service_dev_tool' %}">{% trans "Voir plus" %}</a>
+        </div>
+        <div class="col mx-auto">
+            <img src="../static/outil_bureautique2.png" class="img-fluid"  style="width:100%"></img>
+        </div>
+    </div>
+</div>
+
+<!-- THIRD FIXED IMAGE -->
+<div class="container-fluid middle_image3 mt-4">
+
+</div>
+
+<div class="container text-left mt-4">
+    
+    <!--SAPCING-->
+    <div class="row mt-4">
+    
+    </div>
+    <!-- Prestation 3-->
+    <div class="row justify-content-center align-items-center vh-90 row-cols-1 row-cols-lg-3 mt-4">
+        <div class="col mx-auto">
+            <img src="https://www.eurotechconseil.com/wp-content/uploads/2023/12/evolution-data.webp" class="img-fluid" style="width:200%"></img>
+        </div>
+        <div class="col d-flex flex-column justify-content-center align-items-center mx-auto">
+            <h3><strong>{% trans "Construisons l'architecture de collecte et gestion des données interne de votre entreprise" %}</strong></h3>
+            <p> {% trans "Etablissons ensemble une architecture sécurisé pour la gestion de vos données" %}</p>
+            <p>   •	{% trans "Installation d’une base de données interne" %}</p>
+            <p>   •	{% trans "Interface Excel" %}</p>
+            <p>   •	{% trans "Outil d’intégration d’inputs " %}</p>
+            <p>   •	{% trans "Collecte des données " %}</p>
+            <a type="button" class="btn btn-outline-primary dynamic_button" href="{% url 'service_data_management' %}">{% trans "Voir plus" %}</a>
+        </div>        
+    </div>
+
+    <!--SAPCING-->
+    <div class="row mt-4">
+
+    </div>  
+
+
+
+    <!--SAPCING-->
+    <div class="row mt-4">
+
+    </div>
+
+    
+    <!--SAPCING-->
+    <div class="row mt-4">
+    
+    </div>
+</div>
+
+{% endblock %}
+
+
+<!--https://www.eurotechconseil.com/gestion-de-la-base-de-donnees/-->

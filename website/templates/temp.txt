@@ -1,0 +1,124 @@
+
+
+        <div class="row row-cols-1 row-cols-md-3 mt-4">
+        <div class="col mx-auto">
+            <div id="carouselExampleCaptions" class="carousel slide mx-auto my-5" style="width: auto;">
+                <div class="carousel-indicators">
+            <!--<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+                </div>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../static/home_page2.jpg" class="d-block w-100" style=" border-radius: 55px 55px 55px 55px; width: 250px;height: 250px;">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Saisonnalité</h5>
+                    <p>Nous vous aidons à identifier les répétitions de tendances intrèseques à votre activité pour que vous sachiez quand prendre les bonnes décisions </p>    
+                    </div>
+                </div>
+            <!--<div class="carousel-item">
+                    <img src="../static/home_page1.jpg" class="d-block w-100" style=" border-radius: 55px 55px 55px 55px; width: 250px;height: 250px;">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Granularité</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../static/modern_tool.jpg" class="d-block w-100" style=" border-radius: 55px 55px 55px 55px; width: 250px;height: 250px;">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Pilotage</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>-->
+                </div>
+            <!--<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>-->
+        </div>
+        </div>
+        <div class="col mx-auto">
+            <div id="carouselExampleCaptions" class="carousel slide mx-auto my-5" style="width: auto;">
+                <div class="carousel-indicators">
+            <!--<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+                </div>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../static/home_page4.jpg" class="d-block w-100" style=" border-radius: 55px 55px 55px 55px; width: 250px;height: 250px;">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Granularité</h5>
+                    <p>Les petits mouvements composent les grandes tendances, OptiRisk Analytics vous accompagner dans la décomposition des postes clés pour que vous compreniez les dynamiques de votre activité</p>
+                    </div>
+                </div>
+            <!--<div class="carousel-item">
+                    <img src="../static/home_page4.jpg" class="d-block w-100" style=" border-radius: 55px 55px 55px 55px; width: 250px;height: 250px;">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Saisonnalité</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../static/home_page3.jpg" class="d-block w-100" style=" border-radius: 55px 55px 55px 55px; width: 250px;height: 250px;">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Pilotage</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>-->
+                </div>
+            <!--<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>-->
+        </div>
+        </div>
+        <div class="col mx-auto">
+            <div id="carouselExampleCaptions" class="carousel slide mx-auto my-5" style="width: auto;">
+                <div class="carousel-indicators">
+            <!--<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+                </div>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../static/home_page5.jpg" class="d-block w-100" style=" border-radius: 55px 55px 55px 55px; width: 250px;height: 250px;">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Pilotage</h5>
+                    <p>"Prévoir" est le mot d'ordre de OptiRisk Analytics, nous mettrons à votre dispositions tout les outils nécessaire afin que vous ayez le controle. </p>
+                    </div>
+                </div>
+            <!--<div class="carousel-item">
+                    <img src="../static/home_pic.jpg" class="d-block w-100" style=" border-radius: 55px 55px 55px 55px; width: 250px;height: 250px;">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Saisonnalité</h5>
+                    <p>Nous vous aidons à identifier les répétions de tendances intrèseque à votre activité pour que vous sachiez quand prendre les bonnes décisions </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../static/../static/home_pic2.jpg" class="d-block w-100" style=" border-radius: 55px 55px 55px 55px; width: 250px;height: 250px;">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Granularité</h5>
+                    <p>Parceque les petits mouvements composent les grandes tendances, OptiRisk Analytics souhaite vous accompagner dans la décomposition des postes clés pour que vous compreniez les dynamiques de votre activité</p>
+                    </div>
+                </div>-->
+                </div>
+            <!--<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>-->
+        </div>
+        </div>
+    </div>

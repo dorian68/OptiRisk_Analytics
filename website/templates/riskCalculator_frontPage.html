@@ -1,0 +1,274 @@
+{% extends "./index.html" %}
+
+{% block riskCalculator_frontPage %}
+
+{% load static %}
+
+{% load i18n %}
+<!-- templates/services.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_article.css' %}">
+</head>
+<body>
+  <style>
+    .front_article {
+        background-size: contain;
+        background-position: center;
+        background-image: url('../static/email.jpg');
+        position: relative;
+        width: 100%;
+        height: 700px;
+        background-attachment: fixed;
+        overflow: hidden; /* Empêche les débordements */
+        display: flex;
+        justify-content: center; /* Centre horizontalement */
+        align-items: center; /* Centre verticalement */
+        text-align: center;
+        padding: 20px; /* Ajoute un padding pour éviter les débords */
+        box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    }
+    /* Style du texte */
+    .front_article .text-container {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        max-width: 90%; /* Largeur maximale pour éviter les dépassements */
+        overflow: hidden; /* Empêche les débordements */
+    }
+    /* Adaptation pour les écrans mobiles */
+    @media (max-width: 768px) {
+        .front_article {
+        background-size: cover; /* Zoom pour petits écrans */
+        background-attachment: fixed; /* Désactive l'effet fixe */
+        height: 100vh; /* Ajuste la hauteur */
+        }
+
+        .front_article .text-container {
+        font-size: 22px; /* Réduit la taille du texte */
+        padding: 10px; /* Ajoute un léger padding */
+        text-align: center; /* Centre le texte horizontalement */
+        }
+
+        .front_article .text-container h1 {
+        font-size: 29px; /* Réduit la taille du titre */
+        font-weight: bold;
+        }
+
+        .small_header {
+        font-size: 22px; /* Réduit la taille du texte */
+        }
+    }
+    /* -------------------------------------------- FORMAT ARTICLES -------------------------------------------- */
+
+  /* Conteneur principal */
+.blog-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.blog-container {
+    display: flex;
+    justify-content: space-between; /* Les colonnes sont espacées */
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.sidebar {
+    flex: 1; /* La colonne du sommaire occupe 25% de l'espace */
+    order: 1; /* Affiche le sommaire en premier */
+    margin-right: 20px;
+    position: sticky; /* Reste visible en haut de l'écran lors du défilement */
+    top: 20px; /* Reste fixe en haut */
+    align-self: flex-start;
+    max-height: calc(100vh - 40px); /* Hauteur max pour le défilement */
+    overflow-y: auto;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.main-content {
+    flex: 3; /* La colonne principale occupe 75% de l'espace */
+    order: 2; /* Affiche le contenu après le sommaire */
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        flex-direction: column; /* Les colonnes passent en mode vertical */
+    }
+
+    .sidebar {
+        order: 0; /* Affiche le sommaire en haut */
+        margin-right: 0;
+        margin-bottom: 10%;
+        width: 100%;
+        position:relative /* Reste visible en haut de l'écran lors du défilement */
+    }
+
+    .main-content {
+        order: 1; /* Affiche le contenu principal après */
+        width: 100%;
+    }
+}
+
+
+/* Sommaire */
+.toc {
+  position: sticky;
+  top: 0;
+}
+
+.toc h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc ul li {
+  margin-bottom: 10px;
+}
+
+.toc ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.toc ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Liens dans le contenu principal */
+.main-content h2 {
+  margin-top: 40px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.main-content p {
+  margin: 20px 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+</style>
+<div class="container-fluid my-5">
+  <div class="text-container">
+      <h2 class="text-center mt-5" style="color: #2E86C1;"><strong>{% trans "OptiQuant IA vous accompagne dans vos previsions" %}</strong></h2> 
+  </div>
+</div>
+<div class="container mt-2">
+
+</div>
+<div class="blog-container">
+    <!-- Colonne gauche : Contenu principal -->
+    <div class="col-4 main-content">
+      <h2 class="text-center">{% trans "Découvrez nos solutions" %}</h2>
+      <h3 id="section1">{% trans "Reporting de performance – Suivez et optimisez vos KPI" %}</h3>
+      <p>
+        {% blocktrans %}
+          Une gestion efficace passe par une visibilité précise sur vos indicateurs clés. Notre outil génère
+          des reportings dynamiques qui transforment vos données financières en insights exploitables pour 
+          améliorer votre rentabilité et affiner vos prises de décision.      
+        {% endblocktrans %}      
+      </p>
+      <p>{% trans "Types de reporting disponibles" %}</p>
+      <ul>
+        <li>
+          <strong>{% trans "Reporting financier global " %}</strong> {% trans ": bilan, compte de résultat et flux de trésorerie en temps réel." %}
+        </li>
+        <li>
+          <strong>{% trans "Analyse de rentabilité " %}</strong>{% trans ": suivi des marges, des coûts opérationnels et des performances par produit/service." %}
+        </li>
+        <li>
+          <strong>{% trans "Suivi de trésorerie et liquidité " %}</strong>{% trans " : projections, cash flows prévisionnels et analyse des besoins en financement." %}
+        </li>
+        <li>
+          <strong>{% trans "Reporting de risque " %}</strong>{% trans " : indicateurs d’exposition aux risques de marché, de crédit et de liquidité." %}
+        </li>
+        <li>
+          <strong>{% trans "Reporting personnalisé " %}</strong>{% trans " : tableaux de bord sur mesure adaptés à vos besoins stratégiques." %}
+        </li>
+      </ul>
+      <h3 id="section2">{% trans "Simulateur de risques – Anticipez et maîtrisez vos risques" %}</h3>
+      <p>
+        {% trans "Bien que prometteur, le machine learning nécessite une collecte de données rigoureuse et une formation des employés pour interpréter les résultats. Les PME peuvent cependant s’appuyer sur des experts comme OptiQuant IA pour surmonter ces obstacles." %}
+      </p>
+      <h3 id="section3">{% trans "Comment OptiQuant IA peut vous accompagner" %}</h3>
+      <p>
+        {% blocktrans %} 
+          Au-delà du suivi de la performance, il est essentiel d’anticiper les scénarios 
+          pouvant impacter votre activité. Grâce à des modèles quantitatifs avancés et des 
+          algorithmes de simulation, notre outil vous aide à identifier les risques majeurs 
+          et à tester différentes stratégies.  
+        {% endblocktrans %}           
+      </p>
+      <p><strong>{% trans "Comment l’utiliser ?" %}</strong></p>
+      <ul>
+        <li>
+          <strong>{% trans "Saisissez vos paramètres " %}</strong> {% trans " : variables économiques, flux de trésorerie, exposition aux taux d’intérêt…" %}
+        </li>
+        <li>
+          <strong>{% trans "Choisissez un scénario " %}</strong> {% trans " : fluctuations de marché, stress tests, impact de décisions stratégiques…" %}
+        </li>
+        <li>
+          <strong>{% trans "Obtenez une analyse détaillée " %}</strong> {% trans " : visualisez les risques sous forme de graphiques interactifs et rapports approfondis." %}
+        </li>
+        <li>
+          <strong>{% trans "Prenez des décisions éclairées " %}</strong> {% trans " : ajustez vos stratégies grâce aux prévisions et recommandations de notre outil." %}
+        </li>
+      </ul>
+
+      <h3>{% trans "Passez à l’action dès maintenant !" %}</h3>
+      <p>{% trans "Testez notre solution et prenez le contrôle de votre gestion financière avec OptiQuant IA." %}</p>
+
+    </div>
+
+    <!-- Colonne droite : Sommaire -->
+    <aside class="sidebar">
+        <div class="toc">
+            <h3>{% trans "Sommaire" %}</h3>
+            <ul>
+                <li><a href="#section1">{% trans "Reporting de performance & Simulateur de risques" %}</a></li>
+                <li><a href="#section2">{% trans "Reporting de performance" %}</a></li>
+                <li><a href="#section3">{% trans "Simulateur de risques" %}</a></li>
+            </ul>
+            <a class="btn btn-outline-primary dynamic_button mb-4" href="{% url 'tool_risk_calculator' %}">Essayez notre simulateur</a>
+            <a class="btn btn-outline-primary dynamic_button" href="{% url 'riskCalculator_report' %}">Explorez nos reports</a>
+          </div>
+    </aside>
+</div>
+
+<section>
+
+ 
+</section>
+
+</body>
+</html>
+
+{% endblock %}

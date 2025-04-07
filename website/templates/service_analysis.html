@@ -1,0 +1,307 @@
+{% extends "./index.html" %}
+
+{% block service_analysis %}
+
+{% load static %}
+
+{% load i18n %}
+
+<!-- templates/firstService.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+        <section>
+            <style>
+                @media (max-width: 768px) {
+                    .custom-spacing .col{
+                        margin-bottom: 30px;
+                    }
+                }
+            </style>
+
+            <!--TITLE-->
+            <div class="container-fluid my-5">
+                <div class="text-container">
+                    <h2 class="row mt-5 text-center" style="color: #2E86C1;"><strong>{% trans "Gestion des risques et optimisation de vos performances financières" %}</strong></h2> 
+                </div>
+            </div>
+            <!--CONTAINER-->
+            <div class="container mb-4">
+                    <!--FIRST ROW-->
+                    <div class="row justify-content-center align-items-center vh-90 row-cols-1 row-cols-lg-2 my-5 custom-spacing">
+                        <div class="col mx-auto">
+                            <img src="../static/outil_bureautique.jpg" class="img-fluid rounded-pill" style="width:100%"></img>
+                        </div>
+                        <div class="col d-flex flex-column justify-content-center align-items-center mx-auto">
+                            <h4><strong>{% trans "Tableaux de bord personnalisés : Une gestion financière éclairée" %}</strong></h4>
+                            <p>
+                                {% blocktrans %}
+                                Chez OptiQuant IA, nous croyons qu’une prise de décision efficace repose sur
+                                des données claires et pertinentes. C’est pourquoi nous proposons des tableaux de
+                                bord personnalisés, adaptés aux besoins spécifiques des petites et moyennes entreprises, 
+                                pour optimiser leur gestion financière et surveiller leurs performances en temps réel.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                    </div>
+                    <!--END FIRST ROW-->
+
+                    <!--SAPCING-->
+                    <div class="row mt-4">
+                    
+                    </div>
+
+                    <!--SECOND ROW-->
+                    <div class="row justify-content-center align-items-center vh-90 row-cols-1 row-cols-lg-2 mb-5 justify-content-start">
+                        <div class="col d-flex flex-column justify-content-center align-items-center mx-auto">
+                            <ul><h5><strong>{% trans "Des outils modernes et intuitifs :" %}</strong></h5>
+                                <li><h6><strong>{% trans "Automatisation et interactivité :" %}</strong></h6>
+                                    Vos données sont mises à jour en temps réel, et les dirigeants peuvent explorer leurs performances via des graphiques dynamiques.
+                                </li>
+                                <li><h6><strong>{% trans "Comparaisons sectorielles :" %}</strong></h6>
+                                    {% trans "Comparez vos performances avec celles d’entreprises similaires pour vous situer dans votre secteur." %}
+                                </li>
+                                <li><h6><strong>{% trans "Une expertise locale adaptée aux PME/TPE en Guadeloupe :" %}</strong></h6>
+                                    {% blocktrans %}
+                                        Nous comprenons les spécificités économiques et fiscales de la Guadeloupe, comme l’impact de l’octroi de mer ou les enjeux liés à l’import/export.
+                                        Notre connaissance approfondie du contexte local nous permet de proposer des solutions adaptées aux besoins des entreprises guadeloupéennes.
+                                    {% endblocktrans %}
+                                </li>
+                            </ul>  
+                        </div>
+                        <div class="col mx-auto">
+                            <img src="../static/modern_tool.jpg" class="img-fluid rounded-pill" style="width:100%"></img>
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-lg-4 mb-5 custom-spacing">
+                        <div class="col mx-auto">
+                            <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 7%;">
+                                <h5 class="card-header text-center">{% trans "Analyse de rentabilité" %}</h5>
+                                <div class="card-body">   
+                                  <p class="card-text">
+                                  <!--PRESTATIONS BASIQUE-->
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {% trans "Évaluation précise des marges et de la rentabilité par produit et par client." %}
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {% trans "Identification des produits et services les plus rentables pour une allocation optimale des ressources." %}               </label>
+                                  </div>
+                                  <!--FIN PRESTATIONS BASIQUE-->
+                                  </p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col mx-auto">
+                            <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 7%;">
+                                <h5 class="card-header text-center">{% trans "Optimisation des coûts" %}</h5>
+                                <div class="card-body">   
+                                  <p class="card-text">
+                                  <!--PRESTATIONS BASIQUE-->
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {% trans "Analyse des coûts fixes et variables pour identifier les leviers d’économies." %}
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {% trans "Propositions de stratégies pour réduire les charges tout en maintenant la performance." %}
+                                    </label>
+                                  </div>
+                                  <!--FIN PRESTATIONS BASIQUE-->
+                                  </p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col mx-auto">
+                            <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 7%;">
+                                <h5 class="card-header text-center">{% trans "Optimisation des stratégies de pricing" %}</h5>
+                                <div class="card-body">   
+                                  <p class="card-text">
+                                  <!--PRESTATIONS BASIQUE-->
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {% trans "Analyse des coûts fixes et variables pour identifier les leviers d’économies." %}
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {% trans "Étude de l'élasticité prix-demande pour ajuster les tarifs en fonction du marché et maximiser les marges." %}
+                                    </label>
+                                  </div>
+                                  <!--FIN PRESTATIONS BASIQUE-->
+                                  </p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col mx-auto">
+                            <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 7%;">
+                                <h5 class="card-header text-center">{% trans "Gestion proactive des risques fiscaux" %}</h5>
+                                <div class="card-body">   
+                                  <p class="card-text">
+                                  <!--PRESTATIONS BASIQUE-->
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {% trans "Accompagnement sur des sujets complexes tels que l’octroi de mer, la TVA, et les obligations fiscales spécifiques à la Guadeloupe." %}
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {% trans "Scénarios de simulation pour anticiper les impacts financiers des évolutions réglementaires." %}
+                                    </label>
+                                  </div>
+                                  <!--FIN PRESTATIONS BASIQUE-->
+                                  </p>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <!--END SECOND ROW-->
+                    <!--THIRD ROW-->
+                    <div class="row row-cols-1 row-cols-lg-3 mb-5">
+                        <div class="col mx-auto">
+                            <h4><strong>{% trans "Pourquoi choisir OptiQuant IA ?" %}</strong></h4>
+                            <ul><h5><strong>{% trans "plus-value unique face à un comptable traditionnel :" %}</strong></h5>
+                                <li><h6><strong>{% trans "Vision dynamique et stratégique :" %}</strong></h6>
+                                    Là où le comptable fournit des données historiques, nous utilisons ces données pour anticiper l’avenir et proposer des stratégies concrètes d’optimisation.
+                                </li>
+                                <li><h6><strong>{% trans "Indicateurs sur-mesure :" %}</strong></h6>
+                                    Nos tableaux de bord interactifs intègrent des indicateurs avancés comme la rentabilité par client ou par produit, souvent négligés par les outils traditionnels.
+                                </li>
+                                <li><h6><strong>{% trans "Simulations et scénarios \"what-if\" :" %}</strong></h6>
+                                    Nous analysons les impacts potentiels de décisions stratégiques, telles qu’un investissement ou une hausse de prix, pour réduire les incertitudes.
+                                </li>
+                            </ul>                       
+                        </div>
+                        <div class="col mx-auto">
+                            <img src="../static/dynamic_view.jpg" class="img-fluid rounded-circle" style="width:100%"></img>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col text-center">
+                            <h4><strong>{% trans "Valeurs ajoutées pour votre entreprise " %}</strong>
+                        </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-lg-4 mb-5 custom-spacing">
+                        <div class="col mx-auto">
+                            <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 7%;">
+                                <h5 class="card-header text-center">{% trans "Anticipation des risques financiers" %}</h5>
+                                <div class="card-body">   
+                                    <p class="card-text">
+                                    <!--PRESTATIONS BASIQUE-->
+                                    <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {% trans "Grâce à des analyses prédictives, vous identifiez les risques avant qu’ils n’affectent vos performances." %}</label>
+                                    </div>
+                                    <!--FIN PRESTATIONS BASIQUE-->
+                                   </p>
+                                </div>
+                                </div>
+                        </div>
+                        <div class="col mx-auto">
+                            <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 7%;">
+                                <h5 class="card-header text-center">{% trans "Optimisation continue" %}</h5>
+                                <div class="card-body">   
+                                    <p class="card-text">
+                                    <!--PRESTATIONS BASIQUE-->
+                                    <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {% trans "Nos recommandations vous aident à maximiser vos marges et à réduire les inefficacités dans vos processus." %}</label>
+                                    </div>
+                                    <!--FIN PRESTATIONS BASIQUE-->
+                                    </p>
+                                </div>
+                                </div>
+                        </div>
+                        <div class="col mx-auto">
+                            <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 7%;">
+                                <h5 class="card-header text-center">{% trans "Gain de temps" %}</h5>
+                                <div class="card-body">   
+                                    <p class="card-text">
+                                    <!--PRESTATIONS BASIQUE-->
+                                    <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {% trans "Libérez-vous des tâches manuelles et concentrez-vous sur votre cœur de métier grâce à nos outils numériques automatisés." %}</label>
+                                    </div>
+                                    <!--FIN PRESTATIONS BASIQUE-->
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mx-auto">
+                            <div class="card h-100 shadow-lg p-3 mb-5 bg-white" style="border-radius: 7%;">
+                                <h5 class="card-header text-center">Accessibilité et flexibilité</h5>
+                                <div class="card-body">   
+                                    <p class="card-text">
+                                    <!--PRESTATIONS BASIQUE-->
+                                    <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {% trans "Nos services sont adaptés aux budgets et besoins spécifiques des TPE/PME locales." %}
+                                    </label>
+                                    </div>
+                                    <!--FIN PRESTATIONS BASIQUE-->
+                                    </p>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                    
+
+                    <!--END FOURTH ROW-->
+                    <!--FIFTH ROW-->
+                    <div class="row row-cols-1 row-cols-lg-3 mb-5">
+                        <div class="col mx-auto">
+                            <ol><h4><strong>{% trans "Comment ça fonctionne ?" %}</strong></h4>
+                                <li><h6><strong>{% trans "Étape 1 : Analyse initiale" %}</strong></h6>
+                                    {% trans "Collecte et étude des données financières disponibles (bilan, factures, flux de trésorerie)." %}
+                                </li>
+                                <li><h6><strong>{% trans "Étape 2 : Construction du tableau de bord" %}</strong></h6>
+                                    {% trans "Création d’un tableau de bord personnalisé incluant vos indicateurs clés de performance (KPI)." %}
+                                </li>
+                                <li><h6><strong>{% trans "Étape 3 : Suivi et accompagnement" %}</strong></h6>
+                                    {% trans "Monitoring régulier des performances et ajustements stratégiques pour atteindre vos objectifs." %}
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="col mx-auto">
+                            <img src="https://m.gofisher.net/sites/default/files/strategy-performance-reporting.png" class="img-fluid" style="width:100%"></img>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <p><strong>{% trans "Découvrez comment un tableau de bord personnalisé par OptiQuant IA peut transformer vos données en décisions stratégiques. Contactez-nous dès aujourd’hui pour une consultation gratuite !" %}</strong></p>
+                    </div>
+                    <div class="row mb-5">
+                    </div>
+                    <!--END FIFTH ROW-->
+            </div>
+            <!--END CONTAINER-->
+        </section>
+</body>
+</html>
+
+{% endblock %}
+

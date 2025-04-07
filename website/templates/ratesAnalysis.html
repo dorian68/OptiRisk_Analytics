@@ -1,0 +1,114 @@
+{% extends "./index.html" %}
+
+{% block ratesAnalysis %}
+{% load static %}
+
+{% load i18n %}
+
+<!-- templates/rates1.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <section>
+        <!-- PRICING -->
+
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center">Bilan d’activité et anayyyyyyyylyse de performance</h1>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col col-lg-4">
+                  <div class="card h-100 shadow">
+                    <div class="card-header">
+                      <h5 class="card-title text-center">BASIC</h5>
+                    </div>
+                    <div class="card-body">   
+                      <p class="card-text">
+                        Analyse des flux de trésorie, de bilan et recommandations pour améliorer la gestion de la trésorie (3 - 5 pages)
+                      </p>
+                    </div>
+                    <div class="card-footer">
+                      <a href="#" class="btn btn-primary">Continuer avec le tarif basic?</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-body" text-align="left">
+                      <div class="card-header">
+                        <h5 class="text-center">INTERMEDIARY</h5>
+                      </div>    
+                      <p class="card-text"><div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Default checkbox
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                          <ul>Service intermediaire :
+                            <li>Analyse approfondie de la rentabilité et des ratios pertinents pour évaluer la santé finanicère de l'entreprise </li>>
+                            <li>Listing + modélisation de l'impact des principaux risques financiers ( 10 - 15 pages ) </li>
+                        </ul>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminateDisabled" disabled>
+                        <label class="form-check-label" for="flexCheckIndeterminateDisabled">
+                          Disabled indeterminate checkbox
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+                        <label class="form-check-label" for="flexCheckDisabled">
+                          Disabled checkbox
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled>
+                        <label class="form-check-label" for="flexCheckCheckedDisabled">
+                          Disabled checked checkbox
+                        </label>
+                      </div>
+                    </p>
+                    <div class="card-footer">
+                      <a href="#" class="btn btn-primary">Continuer avec le tarif intermediaire</a>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col col-lg-4">
+                    <div class="card h-100">
+                      <div class="card-header">
+                        <h5 class="card-title text-center">PREMIUM</h5>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">Rapport détaillé et approfondi incluant des scénarios de crises dans le but de simuler l'impact sur la trésorie et l'estimation de la capacité de l'entreprise à survivre à une crise financière, une catastrophe climatique ou une crise sociale</p>
+                      </div>
+                      <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Continuer avec le tarif premium</a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="shadow-lg p-3 mb-5 bg-white rounded">Larger shadow</div>
+              </div>
+        </div>
+
+        <!-- ------ -->
+
+    </section>
+</body>
+</html>
+
+{% endblock %}

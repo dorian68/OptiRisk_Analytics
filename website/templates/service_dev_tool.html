@@ -1,0 +1,33 @@
+{% extends "./index.html" %}
+
+{% block service_dev_tool %}
+{% load static %}
+
+{% load i18n %}
+
+<!-- templates/firstService.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+        <section>
+            <div class="container" style="height: 80vh;margin-top: 50px;">
+                <div class="row m-5">
+                <h3 class="tb-5"><strong>{% trans "Construisons votre outil bureautique de gestion financière personnalisé" %}</strong></h3> 
+                
+        
+        </div>
+        </div>
+        </section>
+</body>
+</html>
+
+{% endblock %}
+

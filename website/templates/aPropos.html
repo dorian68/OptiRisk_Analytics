@@ -1,0 +1,176 @@
+{% extends "./index.html" %}
+
+{% block aPropos %}
+
+{% load static %}
+
+{% load i18n %}
+
+<!-- templates/services.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <section>
+        <style>
+            .in_between_image {
+            background-image: url('../static/NYC.jpeg');
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            width: 110%;
+            height: 400px;
+            zoom: 100%;
+            }
+
+            .in_between_image2 {
+            background-image: url('../static/Graduation.jfif');
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            width: 110%;
+            height: 400px;
+            zoom: 100%;
+            }
+
+            .optirisk_container {
+                height: 450px;
+            }
+
+            @media (max-width: 768px) {
+            .optirisk_img {
+                height: 70%; /* Ajuste la hauteur */
+                margin-bottom: 100px;
+            }
+            .optirisk_container {
+                height: 80vh;
+            }
+            .text-container {
+                color: white;
+                font-size: 24px;
+                font-weight: bold;
+                max-width: 90%; /* Largeur maximale pour éviter les dépassements */
+                overflow: hidden; /* Empêche les débordements */
+            }
+             /* Adaptation pour les écrans mobiles */
+            @media (max-width: 768px) {
+
+                .text-container {
+                font-size: 22px; /* Réduit la taille du texte */
+                padding: 10px; /* Ajoute un léger padding */
+                text-align: center; /* Centre le texte horizontalement */
+                }
+
+                .text-container h1 {
+                font-size: 29px; /* Réduit la taille du titre */
+                font-weight: bold;
+                }
+            }
+
+        }
+        </style>
+        <!-- PRICING -->
+        <div class="container-fluid my-5">
+            <div class="text-container">
+                <h2 class="row my-5 text-center" style="color: #2E86C1;"><strong>{% trans "OptiQuant IA - la liberté de pouvoir piloter votre avenir" %}</strong></h2> 
+            </div>
+        </div>
+        <div class="container my-4 optirisk_container">
+
+            <!-- VISION OPTIRISK -->
+            <div class="row justify-content-center align-items-center vh-90 row-cols-1 row-cols-lg-2 mt-5">
+                <div class="col d-flex flex-column justify-content-center align-items-center mx-auto">
+                    <h3><strong>{% trans "Optirisk - Faire le choix de piloter votre futur" %}</strong></h3>
+                    <p>{% blocktrans %}
+                        Chez OptiQuant IA, nous croyons que chaque entreprise mérite de disposer des outils nécessaires
+                       pour piloter son avenir avec confiance. Nous mettons un point d’honneur à offrir des solutions sur mesure 
+                       pour aider les entreprises à optimiser leurs performances financières, analyser leurs flux de trésorerie, 
+                       et anticiper les risques potentiels.
+                        Notre objectif est simple : fournir aux dirigeants une vision claire et en temps réel de leurs indicateurs 
+                        clés de performance, leur permettant de prendre des décisions stratégiques éclairées.
+                        Grâce à une expertise pointue combinant finance quantitative et innovation technologique, OptiQuant IA 
+                        ne se contente pas de fournir des données. Nous transformons vos chiffres en opportunités, en plaçant 
+                        l'autonomie et la transparence au cœur de notre démarche. 
+                        {% endblocktrans %}</p>
+                </div>
+                <div class="col mx-auto">
+                    <img src="../static/logo_optirisk_analytics.PNG" class="optirisk_img img-fluid rounded-pill" style="width:100%">                   
+                </div>
+            </div>
+            <!-- END VISION OPTIRISK -->
+        </div>
+
+        <!-- SECOND FIXED IMAGE -->
+        <div class="container-fluid in_between_image mt-4">
+
+        </div>
+
+        <!-- SECOND ABOUT -->
+        <div class="container mt-4">
+               <!-- PRESENTATION DORIAN - ETUDE -->
+               <div class="row justify-content-center align-items-center vh-90 row-cols-1 row-cols-lg-2 mb-5">
+                <div class="col mx-auto">
+                    <img src="../static/new-york-wall-street.jpg" class="img-fluid rounded-pill" style="width:100%">
+                </div>
+                <div class="col d-flex flex-column justify-content-center align-items-center mx-auto">
+                    <h3><strong>{% trans "Un parcours professionnel riche et international" %}</strong></h3>
+                    <p>{% blocktrans %}
+                        Après plusieurs années passées dans les salles de marché des plus grandes banques françaises, 
+                        notamment à Paris et à New York, j’ai acquis une solide expérience dans le développement d'outils 
+                        financiers et l’analyse des risques. À Société Générale Americas, j’ai travaillé au cœur de Wall Street,
+                        sur la certification des métriques de risques et la création de solutions automatisées pour le reporting.
+                        Cette immersion dans des environnements dynamiques et exigeants m’a permis de développer une expertise 
+                        unique en gestion des risques et en optimisation de la performance. Mon passage par des institutions 
+                        comme BNP Paribas et AXA a également renforcé mes compétences en transformation digitale et en pilotage 
+                        stratégique.
+                       {% endblocktrans %}</p>
+                </div>
+            </div>
+            <!-- END PRESENTATION DORIAN - ETUDE -->
+
+        </div>
+
+        <!-- THIRD FIXED IMAGE -->
+        <div class="container-fluid in_between_image2 mt-4">
+
+        </div>
+
+        <!-- THIRD ABOUT -->
+        <div class="container text-left mt-4">
+                <!-- PRESENTATION DORIAN - PRO -->
+                <div class="row justify-content-center align-items-center vh-90 row-cols-1 row-cols-lg-2 mb-5">
+                    <div class="col d-flex flex-column justify-content-center align-items-center mx-auto">
+                        <h3><strong>{% trans "Un double parcours académique d’excellence" %}</strong></h3>
+                        <p>{% blocktrans %}
+                            Mon parcours académique reflète mon ambition de toujours repousser les limites de mes compétences. 
+                           Diplômé de l’ESILV en ingénierie financière, j’ai ensuite obtenu un Executive Master en Finance Quantitative 
+                           délivré par deux institutions parmi les plus prestigieuses : l’Université Paris Dauphine et l’ENSAE Paris.
+                           Ce double diplôme a été obtenu tout en travaillant, illustrant ma capacité à conjuguer rigueur professionnelle 
+                           et engagement académique. À travers cette formation, j’ai approfondi des domaines comme la gestion des risques, 
+                           les produits financiers complexes, et les modélisations avancées, des piliers qui soutiennent aujourd’hui 
+                           l’approche d’OptiRisk logo_optirisk_analytics
+                           {% endblocktrans %}</p>
+                    </div>
+                    <div class="col mx-auto">
+                        <img src="https://cdn.jobs.makesense.org/projects/9561/project/1716457565390lwj2ilse.webp" class="img-fluid rounded-pill" style="width:100%">
+                    </div>
+                </div>
+        </div>
+
+        <!-- END PRESENTATION DORIAN - PRO -->
+        <div class="row mb-5">
+        <!-- ------ -->
+
+
+    </section>
+</body>
+</html>
+
+{% endblock %}

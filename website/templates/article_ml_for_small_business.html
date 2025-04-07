@@ -1,0 +1,261 @@
+{% extends "./index.html" %}
+
+{% block article_ml_for_small_business %}
+
+{% load static %}
+
+{% load i18n %}
+
+<!-- templates/services.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_article.css' %}">
+</head>
+<body>
+  <style>
+    .front_article {
+        background-size: contain;
+        background-position: center;
+        background-image: url('../static/ai-ml.jpg');
+        position: relative;
+        width: 100%;
+        height: 700px;
+        background-attachment: fixed;
+        overflow: hidden; /* Empêche les débordements */
+        display: flex;
+        justify-content: center; /* Centre horizontalement */
+        align-items: center; /* Centre verticalement */
+        text-align: center;
+        padding: 20px; /* Ajoute un padding pour éviter les débords */
+        box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    }
+    /* Style du texte */
+    .front_article .text-container {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        max-width: 90%; /* Largeur maximale pour éviter les dépassements */
+        overflow: hidden; /* Empêche les débordements */
+    }
+    /* Adaptation pour les écrans mobiles */
+    @media (max-width: 768px) {
+        .front_article {
+        background-size: cover; /* Zoom pour petits écrans */
+        background-attachment: fixed; /* Désactive l'effet fixe */
+        height: 100vh; /* Ajuste la hauteur */
+        }
+
+        .front_article .text-container {
+        font-size: 22px; /* Réduit la taille du texte */
+        padding: 10px; /* Ajoute un léger padding */
+        text-align: center; /* Centre le texte horizontalement */
+        }
+
+        .front_article .text-container h1 {
+        font-size: 29px; /* Réduit la taille du titre */
+        font-weight: bold;
+        }
+
+        .small_header {
+        font-size: 22px; /* Réduit la taille du texte */
+        }
+    }
+    
+  /* Conteneur principal */
+.blog-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.blog-container {
+    display: flex;
+    justify-content: space-between; /* Les colonnes sont espacées */
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.sidebar {
+    flex: 1; /* La colonne du sommaire occupe 25% de l'espace */
+    order: 1; /* Affiche le sommaire en premier */
+    margin-right: 20px;
+    position: sticky; /* Reste visible en haut de l'écran lors du défilement */
+    top: 20px; /* Reste fixe en haut */
+    align-self: flex-start;
+    max-height: calc(100vh - 40px); /* Hauteur max pour le défilement */
+    overflow-y: auto;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.main-content {
+    flex: 3; /* La colonne principale occupe 75% de l'espace */
+    order: 2; /* Affiche le contenu après le sommaire */
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        flex-direction: column; /* Les colonnes passent en mode vertical */
+    }
+
+    .sidebar {
+        order: 0; /* Affiche le sommaire en haut */
+        margin-right: 0;
+        margin-bottom: 10%;
+        width: 100%;
+        position:relative /* Reste visible en haut de l'écran lors du défilement */
+    }
+
+    .main-content {
+        order: 1; /* Affiche le contenu principal après */
+        width: 100%;
+    }
+}
+
+
+/* Sommaire */
+.toc {
+  position: sticky;
+  top: 0;
+}
+
+.toc h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc ul li {
+  margin-bottom: 10px;
+}
+
+.toc ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.toc ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Liens dans le contenu principal */
+.main-content h2 {
+  margin-top: 40px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.main-content p {
+  margin: 20px 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+</style>
+    <section>
+        <div class="container-fluid front_article">
+            <div class="text-container">
+                <h2 class="tb-5"><strong>{% trans "L'apport du machine learning aux petites et moyennes entreprises guadeloupéennes" %}</strong></h2> 
+                <p>{% trans "En Guadeloupe, où les petites et moyennes entreprises (PME) représentent l'épine dorsale de l'économie locale, la compétitivité est souvent freinée par des ressources limitées, des marchés fluctuants et des défis logistiques. Le machine learning (ou apprentissage automatique) offre une solution puissante pour ces entreprises en leur permettant d’exploiter pleinement leurs données pour mieux anticiper les risques, optimiser leurs processus et améliorer leurs performances." %}
+                </p>                    
+            </div>
+        </div>
+
+      <!--SPACING-->
+        <div class="container">
+          <div class="row mb-5">
+
+          </div>
+        </div>
+        <div class="container mb-4 pb-4 px-4 article_p" style="border-radius: 25px 25px 25px 25px;background-color: white;margin-top: 50px;">
+          <div class="row justify-content-center">
+
+            <div class="col-lg-6 col-sm-12">
+
+
+            </div>
+          </div>
+        </div>
+        <!--SPACING-->
+        <div class="container my-5">
+
+        </div>
+        <div class="blog-container">
+          <!-- Colonne gauche : Contenu principal -->
+          <div class="col-4 main-content">
+            <h3 id="section1">{% trans "Qu'est-ce que le machine learning et pourquoi est-il pertinent pour les PME ?" %}</h3>
+            <p>
+              {% trans "Le machine learning est une branche de l'intelligence artificielle qui permet aux ordinateurs d’apprendre à partir de données sans être explicitement programmés. Grâce à cette technologie, les entreprises peuvent :" %}
+            </p>
+            <ul>
+              <li>{% trans "Analyser des volumes de données massifs pour en tirer des tendances et des prédictions." %}</li>
+              <li>{% trans "Automatiser des tâches répétitives, réduisant ainsi les coûts opérationnels." %}</li>
+              <li>{% trans "Améliorer la prise de décision grâce à des analyses basées sur des faits concrets." %}</li>
+            </ul>
+            <h3 id="section2">{% trans "Applications concrètes en Guadeloupe" %}</h3>
+            <p>
+              {% trans "Voici comment le machine learning peut transformer des secteurs spécifiques en Guadeloupe :" %}
+            </p>
+            <ul>
+              <li>
+                <strong>{% trans "Distribution alimentaire :" %}</strong> {% trans "Prédire les fluctuations de la demande en fonction des saisons, des jours fériés et des conditions météorologiques pour réduire les pertes." %}
+              </li>
+              <li>
+                <strong>{% trans "Tourisme :" %}</strong>{% trans "Anticiper les préférences des visiteurs en analysant leurs comportements en ligne pour proposer des offres sur mesure et optimiser les taux de réservation." %}
+              </li>
+              <li>
+                <strong>{% trans "Agriculture :" %}</strong>{% trans "Détecter les maladies des cultures grâce à des modèles de reconnaissance d’images et optimiser l’utilisation des ressources naturelles." %}
+              </li>
+            </ul>
+            <h3 id="section3">{% trans "Les défis à relever" %}</h3>
+            <p>
+              {% trans "Bien que prometteur, le machine learning nécessite une collecte de données rigoureuse et une formation des employés pour interpréter les résultats. Les PME peuvent cependant s’appuyer sur des experts comme OptiQuant IA pour surmonter ces obstacles." %}
+            </p>
+            <h3 id="section4">{% trans "Comment OptiQuant IA peut vous accompagner" %}</h3>
+            <p>
+              {% trans "Chez OptiQuant IA, nous proposons des solutions adaptées aux spécificités des PME guadeloupéennes. Nous vous aidons à exploiter vos données existantes, à développer des outils sur mesure et à tirer parti des dernières avancées en intelligence artificielle pour transformer vos défis en opportunités." %}
+            </p>
+ 
+          </div>
+      
+          <!-- Colonne droite : Sommaire -->
+          <aside class="sidebar">
+              <div class="toc">
+                  <h3>{% trans "Sommaire" %}</h3>
+                  <ul>
+                      <li><a href="#section1">{% trans "Qu'est-ce que le machine learning et pourquoi est-il pertinent pour les PME ?" %}</a></li>
+                      <li><a href="#section2">{% trans "Applications concrètes en Guadeloupe" %}</a></li>
+                      <li><a href="#section3">{% trans "Les défis à relever" %}</a></li>
+                      <li><a href="#section4">{% trans "Comment OptiQuant IA peut vous accompagner" %}</a></li>
+                  </ul>
+              </div>
+          </aside>
+      </div>
+    </section>
+</body>
+</html>
+
+{% endblock %}

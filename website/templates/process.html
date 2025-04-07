@@ -1,0 +1,48 @@
+
+{% extends "./index.html" %}
+
+{% block process %}
+
+{% load static %}
+
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Fichier</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container-fluid" style="height: 80vh;margin-top: 50px;">
+        <h2 class="mb-3">Résultats de l'analyse _ element1</h2>
+
+        <div class="container my-4">
+            <h4 class="text-white">{% trans "What If..."%}</h4>
+            <label class="text-white">{% trans "We Decrease Our Return Rate (%) to:"%}</label>
+            <div class="conatainer d-flex align-items-center">
+                <!-- Input pour saisir la valeur -->
+                <input type="number" id="sliderValue" class="form-control me-3" min="0" max="100" value="42" style="width: 80px;">
+                <!-- Slider pour ajuster la valeur -->
+                <input type="range" id="slider" class="form-range" min="0" max="100" value="42">
+                <script>
+                    const slider = document.getElementById('slider');
+                    const sliderValue = document.getElementById('sliderValue');
+                
+                    // Synchronise la valeur de l'input avec le slider
+                    slider.addEventListener('input', () => {
+                        sliderValue.value = slider.value;
+                    });
+                
+                    // Synchronise la valeur du slider avec l'input
+                    sliderValue.addEventListener('input', () => {
+                        slider.value = sliderValue.value;
+                    });
+                </script>
+        </div>
+        <!-- CHART -->
+    </div>   
+</body>
+</html>
+
+{% endblock %}

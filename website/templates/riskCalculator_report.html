@@ -1,0 +1,200 @@
+{% extends "./index.html" %}
+
+{% block riskCalculator_report %}
+
+{% load static %}
+
+{% load i18n %}
+
+<!-- templates/services.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable@12.1.2/dist/handsontable.full.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@12.1.2/dist/handsontable.full.min.js"></script>
+
+</head>
+<body>
+    <section>    
+
+        <style>
+            /* Conteneur du "tableau Excel" */
+            .excel-container {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 15px;
+                min-height: 300px;
+                position: relative;
+                background-color: white;
+            }
+    
+            /* Onglets type Excel en bas */
+            .excel-tabs {
+                position: absolute;
+                bottom: -40px;
+                left: 0;
+                width: 100%;
+                display: flex;
+                justify-content: start;
+                background: #f8f9fa;
+                border-radius: 5px;
+                border-top: 2px solid #ccc;
+                padding: 5px;
+            }
+    
+            .excel-tabs .nav-link {
+                border: 1px solid #ccc;
+                border-bottom: none;
+                border-radius: 5px 5px 0 0;
+                padding: 8px 15px;
+                background-color: #f8f9fa;
+                font-size: 14px;
+                font-weight: bold;
+                margin-right: 5px;
+            }
+    
+            .excel-tabs .nav-link.active {
+                background-color: white;
+                border-top: 2px solid #007bff;
+                border-bottom: none;
+                color: #007bff;
+            }
+    
+            /* Permet d'éviter que l'onglet "cache" le contenu */
+            .tab-content {
+                padding-bottom: 50px;
+            }
+        </style>
+
+        <div class="container-fluid mt-5" style="height: 80vh">
+            <h2>Rapport - Vue façon Excel</h2>
+        
+            <!-- Conteneur de la "feuille Excel" -->
+            <div class="excel-container">
+                <div class="tab-content" id="excelTabContent">
+                    <div class="tab-pane fade show active" id="sheet1" role="tabpanel">
+                        <h3>Ventes</h3>
+                        <h2>Graphique des ventes</h2>
+                        <canvas id="myChart1" style="width: 90px;"></canvas>
+                    
+                        <script>
+                            // Récupérer les données depuis la vue Django
+                            fetch("{% url 'chart_data' %}")
+                            .then(response => response.json())
+                            .then(data => {
+                                const ctx = document.getElementById("myChart1").getContext("2d");
+                    
+                                new Chart(ctx, {
+                                    type: "line",
+                                    data: data,
+                                    options: {
+                                        responsive: true,
+                                        scales: {
+                                            y: { beginAtZero: true }
+                                        }
+                                    }
+                                });
+                            })
+                            .catch(error => console.error("Erreur lors du chargement des données :", error));
+                        </script>
+                    </div>
+                    <div class="tab-pane fade" id="sheet2" role="tabpanel">
+                        <h3>CA par postes</h3>
+                        <p>{{ data_json|escapejs }}</p>
+                        <div id="table-excel"></div>
+                        <script>
+                            var container = document.getElementById('table-excel');
+                            var data = JSON.parse('{{ data_json|escapejs }}');
+                            console.log(data)
+                            var hot = new Handsontable(container, {
+                                data: data,
+                                colHeaders: '{{ columns|escapejs }}',
+                                rowHeaders: true,
+                                filters: true,
+                                dropdownMenu: true,
+                                contextMenu: true,
+                                licenseKey: 'non-commercial-and-evaluation' // Nécessaire pour Handsontable gratuit
+                            });
+                        </script>
+                            <h2>Graphique des ventes</h2>
+                            <canvas id="myChart2"></canvas>
+                        
+                            <script>
+                                // Récupérer les données depuis la vue Django
+                                fetch("{% url 'chart_data' %}")
+                                .then(response => response.json())
+                                .then(data => {
+                                    const ctx = document.getElementById("myChart2").getContext("2d");
+                        
+                                    new Chart(ctx, {
+                                        type: "line",
+                                        data: data,
+                                        options: {
+                                            responsive: true,
+                                            scales: {
+                                                y: { beginAtZero: true }
+                                            }
+                                        }
+                                    });
+                                })
+                                .catch(error => console.error("Erreur lors du chargement des données :", error));
+                            </script>
+                    </div>
+                    <div class="tab-pane fade" id="sheet3" role="tabpanel">
+                        <h3>Portion Ventes par périodes</h3>
+                        <canvas id="myChart3"></canvas>
+                    
+                        <script>
+                            // Récupérer les données depuis la vue Django
+                            fetch("{% url 'chart_data' %}")
+                            .then(response => response.json())
+                            .then(data => {
+                                const ctx = document.getElementById("myChart3").getContext("2d");
+                    
+                                new Chart(ctx, {
+                                    type: "pie",
+                                    data: data,
+                                    options: {
+                                        responsive: true,
+                                        scales: {
+                                            y: { beginAtZero: true }
+                                        }
+                                    }
+                                });
+                            })
+                            .catch(error => console.error("Erreur lors du chargement des données :", error));
+                        </script>
+                    </div>
+                </div>
+        
+                <!-- Onglets type Excel (en bas du conteneur) -->
+                <ul class="nav excel-tabs" id="excelTab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" id="sheet1-tab" data-bs-toggle="tab" data-bs-target="#sheet1" type="button" role="tab">Ventes</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="sheet2-tab" data-bs-toggle="tab" data-bs-target="#sheet2" type="button" role="tab">CA par postes</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="sheet3-tab" data-bs-toggle="tab" data-bs-target="#sheet3" type="button" role="tab">Ventes par périodes</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        </body>
+        </html>
+        
+    </section>
+</body>
+</html>
+
+{% endblock %}
