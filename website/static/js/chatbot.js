@@ -21,7 +21,7 @@
     chatHeader.style.padding = "10px";
     chatHeader.style.textAlign = "center";
     chatHeader.style.cursor = "pointer";
-    chatHeader.innerText = "Chat avec OptiRisk AI";
+    chatHeader.innerText = "Chat avec OptiQuant";
 
     let chatBody = document.createElement("div");
     chatBody.style.flex = "1";
@@ -88,7 +88,7 @@
         userMessage.style.background = "#d1e7ff";
         userMessage.style.borderRadius = "5px";
         userMessage.style.margin = "5px 0";
-        userMessage.innerText = "Tu : " + userText;
+        userMessage.innerText = "You : " + userText;
         chatBody.appendChild(userMessage);
 
         chatInput.value = "";
@@ -99,7 +99,7 @@
         botMessage.style.background = "#e9ecef";
         botMessage.style.borderRadius = "5px";
         botMessage.style.margin = "5px 0";
-        botMessage.innerText = "Bot : ...";
+        botMessage.innerText = "OptiQuant IA : ...";
         chatBody.appendChild(botMessage);
         chatBody.scrollTop = chatBody.scrollHeight;
 
